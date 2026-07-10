@@ -1,7 +1,11 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getProject } from "../../../data";
+import { getProject, projects } from "../../../data";
 import { MarkdownArticle } from "../../components/MarkdownArticle";
+
+export function generateStaticParams() {
+  return projects.map((project) => ({ id: String(project.id) }));
+}
 
 export default async function ProjectPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;

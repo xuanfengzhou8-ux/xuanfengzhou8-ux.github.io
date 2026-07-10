@@ -1,7 +1,11 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getArticle, getArticleNav } from "../../../data";
+import { articleDetails, getArticle, getArticleNav } from "../../../data";
 import { MarkdownArticle } from "../../components/MarkdownArticle";
+
+export function generateStaticParams() {
+  return articleDetails.map((detail) => ({ id: String(detail.article.id) }));
+}
 
 export default async function ArticlePage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;

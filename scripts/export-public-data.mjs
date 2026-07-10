@@ -57,6 +57,23 @@ const snapshot = {
 const output = fileURLToPath(new URL("../data/public-data.json", import.meta.url));
 await mkdir(dirname(output), { recursive: true });
 await writeFile(output, `${JSON.stringify(snapshot)}\n`, "utf8");
+
+const catalogOutput = fileURLToPath(new URL("../data/catalog.json", import.meta.url));
+await writeFile(catalogOutput, `${JSON.stringify({ paths, courses })}\n`, "utf8");
+
+const searchOutput = fileURLToPath(new URL("../data/search-index.json", import.meta.url));
+await writeFile(searchOutput, `${JSON.stringify({
+  courses,
+  projects: projectDetails,
+  articles: articleDetails.map((item) => ({
+    id: item.article.id,
+    title: item.article.title,
+    summary: item.article.summary,
+    keywords: item.article.keywords,
+    courseTitle: item.courseTitle,
+    chapterTitle: item.chapterTitle,
+  })),
+})}\n`, "utf8");
 console.log(
   `Exported ${paths.length} paths, ${courses.length} courses, ${chapters.length} chapters, ${articleDetails.length} articles, and ${projects.length} projects.`,
 );

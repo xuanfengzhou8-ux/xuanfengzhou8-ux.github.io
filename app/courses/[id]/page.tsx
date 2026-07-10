@@ -1,6 +1,10 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getChapterArticles, getChapters, getCourse } from "../../../data";
+import { courses, getChapterArticles, getChapters, getCourse } from "../../../data";
+
+export function generateStaticParams() {
+  return courses.map((course) => ({ id: String(course.id) }));
+}
 
 export default async function CourseDetailPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;

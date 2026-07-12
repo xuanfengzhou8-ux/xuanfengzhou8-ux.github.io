@@ -1,0 +1,258 @@
+脱敏文本版：2020-05-26复习题--答案.doc
+原始 Word/PDF 附件已移除，避免公开仓库保留学校、公司、个人或文档作者元数据。
+
+2020-05-26复习题--答案
+1. 下面的叙述不正确的是（ BC ）
+A．线性表在链式存储时，查找第i个元素的时间同i的值成正比
+    B. 线性表在链式存储时，查找第i个元素的时间同i的值无关
+C. 线性表在顺序存储时，查找第i个元素的时间同i 的值成正比
+D. 线性表在顺序存储时，查找第i个元素的时间同i的值无关
+
+有8个结点的无向图最多有_______条边。
+  A．14		B.28	C.56	D.112
+答案:C
+
+3.请按层次打印一棵二叉树的每个节点。
+参考代码：
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef int Elety;
+typedef int ElementType;
+typedef struct bitnode
+{
+    Elety data;
+    struct bitnode *lchild,*rchild;
+}BitNode;
+
+typedef struct node
+{
+    BitNode *data;
+    struct node *next;
+}Node;
+
+typedef struct list
+{
+    Node *first;
+    Node *last;
+    int length;//队员个数
+}List;//头节点
+
+//********************创建一颗树*********************//
+BitNode *InitTree()
+{
+    BitNode *root = NULL;
+    BitNode *p = NULL;
+    Elety x;
+    while(1)
+    {
+        scanf("%d",&x);
+        if(x == 0)
+            break;
+        p = (BitNode *)malloc(sizeof(*p));
+        p->data = x;
+        p->lchild = p->rchild = NULL;
+
+        if(root == NULL)
+        {
+            root = p;
+        }
+        else
+        {
+            BitNode *r = root;
+            while(1)
+            {
+                if(r->data > x)
+                {
+                    if(r->lchild == NULL)
+                    {
+                        r->lchild = p;
+                        break;
+                    }
+                    else
+                    {
+                        r = r->lchild;
+                    }
+                }
+                else if(r->data < x)
+                {
+                    if(r->rchild == NULL)
+                    {
+                        r->rchild = p;
+                        break;
+                    }
+                    else
+                    {
+                        r = r->rchild;
+                    }
+                }
+                else
+                {
+                    free(p);
+                    break;
+                }
+            }
+        }
+    }
+    return root;
+}
+
+void pre_order(BitNode *r)
+{
+    if(r)
+    {
+        printf("%d ",r->data);
+        pre_order(r->lchild);
+        pre_order(r->rchild);
+    }
+}
+
+void mid_order(BitNode *r)
+{
+    if(r)
+    {
+        mid_order(r->lchild);
+        printf("%d ",r->data);
+        mid_order(r->rchild);
+    }
+}
+
+void post_order(BitNode *r)
+{
+    if(r)
+    {
+        post_order(r->lchild);
+        post_order(r->rchild);
+        printf("%d ",r->data);
+    }
+}
+
+//*************************队列部分***************************//
+List *InitQueue()
+{
+    List *l = (List *)malloc(sizeof(List));
+    l->first = l->last = NULL;
+    l->length = 0;
+
+    return l;
+}
+
+int QueueEmpty(List *l)
+{
+    if(l)
+    {
+        if(l->length == 0)
+            return 1;
+        else
+            return 0;
+    }
+    return -1;
+}
+
+void EnQueue(List *l,BitNode *x)
+{
+    if(l)
+    {
+        Node *p = (Node *)malloc(sizeof(Node));
+        p->data = x;
+        p->next = NULL;
+
+        if(l->first == NULL)
+        {
+            l->first = l->last = p;
+        }
+        else
+        {
+            l->last->next = p;
+            l->last = p;
+        }
+        l->length++;
+    }
+}
+
+Node *DeQueue(List *l)
+{
+    if(l)
+    {
+        if(!QueueEmpty(l))
+        {
+            Node *r = l->first;
+
+            l->first = r->next;
+            r->next = NULL;
+            l->length--;
+
+            return r;
+        }
+    }
+}
+
+void ClearQueue(List *l)
+{
+    if(l)
+    {
+        Node *r = l->first;
+
+        while(l->length > 0)
+        {
+            r = DeQueue(l);
+            free(r);
+        }
+        l->length = 0;
+    }
+}
+
+void DestroyQueue(List *l)
+{
+    if(l)
+    {
+        ClearQueue(l);
+        free(l);
+        l = NULL;
+    }
+}
+
+/*
+    思路：先把根节点入队，然后先把根节点出队打印，判断该根节点的左子树是否存在，存在入队；再判断右子树是否存在，
+        存在就入队。因为队列是先进先出，所以先打印左子树的根，再按上述方法遍历。再打印右子树的根，再按上述方法遍历。
+ */
+
+void fenc_tree(BitNode *bt)
+{
+    Node *p = NULL;
+    BitNode *s = NULL;
+    List *q = InitQueue();			//初始化一个队列
+    if(bt)
+    {
+        EnQueue(q,bt);				//根入队
+        while(!QueueEmpty(q))		//队列不为空时执行
+        {
+            p = DeQueue(q);			//出队
+            s = p->data;			//队列的类型不一样所以要转换
+            printf("%d ",s->data);
+            if(s->lchild!=NULL)  		//此节点的左子树存在
+                EnQueue(q,s->lchild);	//左子树的根入队
+            if(s->rchild!=NULL)  		//此节点的左子树存在
+                EnQueue(q,s->rchild);	//右子树的根入栈
+        }
+    }
+}
+
+
+int main(int argc, char *argv[])
+{
+    BitNode *r = InitTree();
+//	pre_order(r);
+//	printf("\n");
+    mid_order(r);
+    printf("\n");
+//	post_order(r);
+//	printf("\n");
+
+    //printf("%d ",r->data);
+    fenc_tree(r);
+    printf("\n");
+    return 0;
+}
+
+题目不在多，而在于你需要有计划的复习

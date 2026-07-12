@@ -1,0 +1,44 @@
+schemaVersion: 1
+packageId: legacy-course-8
+version: 1.0.0
+title: FreeRTOS嵌入式操作系统课程内容包
+encoding: UTF-8
+target:
+  learningPath:
+    sourceKey: path:stm32-engineering
+    slug: stm32-engineering
+    name: STM32 工程开发路径
+    description: 从硬件基础到外设、通信协议和 FreeRTOS。
+    sortOrder: 4
+  course:
+    sourceKey: course:legacy:8
+    title: FreeRTOS嵌入式操作系统
+    description: 任务调度和同步机制。
+    level: INTERMEDIATE
+    sortOrder: 2
+    archiveUnmanagedContent: true
+defaults:
+  status: 1
+  keywords:
+    - FreeRTOS嵌入式操作系统
+  includeReferencedAssets: true
+content:
+  - sourceKey: legacy:8:article:15
+    file: 笔记/01-任务与调度.md
+    chapterTitle: 任务与调度
+    articleSlug: freertos-task-create
+    summary: 创建两个任务并理解调度器启动。
+    keywords:
+      - FreeRTOS
+      - 任务
+      - 调度
+    sortOrder: 1
+  - sourceKey: legacy:8:article:16
+    file: 笔记/02-同步与互斥.md
+    chapterTitle: 同步与互斥
+    articleSlug: freertos-mutex
+    summary: 保护共享资源并认识优先级继承。
+    keywords:
+      - FreeRTOS
+      - 互斥锁
+    sortOrder: 2

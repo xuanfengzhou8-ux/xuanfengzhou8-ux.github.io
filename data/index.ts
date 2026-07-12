@@ -1,8 +1,8 @@
 import snapshot from "./public-data.json";
 
-type RecordLike = Record<string, any>;
+type SortableRecord = { sortOrder?: number | string | null };
 
-const bySortOrder = (a: RecordLike, b: RecordLike) =>
+const bySortOrder = <T extends SortableRecord>(a: T, b: T) =>
   Number(a.sortOrder ?? 0) - Number(b.sortOrder ?? 0);
 
 export const generatedAt = snapshot.generatedAt;

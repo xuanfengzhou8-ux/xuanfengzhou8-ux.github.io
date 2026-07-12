@@ -1,0 +1,44 @@
+schemaVersion: 1
+packageId: legacy-course-9
+version: 1.0.0
+title: 嵌入式AI基础课程内容包
+encoding: UTF-8
+target:
+  learningPath:
+    sourceKey: path:embedded-ai
+    slug: embedded-ai
+    name: 嵌入式 AI 路径
+    description: 认识 TinyML 与端侧模型部署，第一版提供方向导览。
+    sortOrder: 5
+  course:
+    sourceKey: course:legacy:9
+    title: 嵌入式AI基础
+    description: 端侧 AI 概念与工具链导览。
+    level: BEGINNER
+    sortOrder: 1
+    archiveUnmanagedContent: true
+defaults:
+  status: 1
+  keywords:
+    - 嵌入式AI基础
+  includeReferencedAssets: true
+content:
+  - sourceKey: legacy:9:article:17
+    file: 笔记/01-TinyML概览.md
+    chapterTitle: TinyML概览
+    articleSlug: tinyml-intro
+    summary: 认识 MCU 上机器学习推理的资源约束。
+    keywords:
+      - TinyML
+      - MCU
+      - AI
+    sortOrder: 1
+  - sourceKey: legacy:9:article:18
+    file: 笔记/02-模型部署工具链.md
+    chapterTitle: 模型部署工具链
+    articleSlug: tflm-workflow
+    summary: 从训练模型到 MCU 推理的基本步骤。
+    keywords:
+      - TFLite Micro
+      - 部署
+    sortOrder: 2

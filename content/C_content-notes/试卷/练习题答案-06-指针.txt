@@ -1,0 +1,22 @@
+指针：
+填空题：
+1.*(p+5)  p[5]
+2.返回值为int*的函数名/函数的地址
+3.void(*p)(int*,int*)
+4.0
+5.efgh
+6.row  a[row][colum]
+7.0  7
+8.9876	876
+9.段错误
+10.lloworld
+11.abcbcc
+
+1~5   BCCBC
+6~10  BBCCC
+11~15 CBCDB
+16~20 AC CDBD
+21~25 DDBDB
+26~30 ABCB CD
+31~35 AADCB
+36~37 AD

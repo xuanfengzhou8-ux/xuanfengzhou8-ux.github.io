@@ -1,0 +1,29 @@
+schemaVersion: 1
+packageId: cross-development-libs
+version: 1.0.0
+quizzes:
+- sourceKey: quiz:cross-dev:01:01
+  chapterSourceKey: cross-dev:chapter:01
+  type: SINGLE
+  stem: 创建动态库时，gcc 常用哪个选项生成共享库？
+  options:
+  - label: A
+    content: -shared
+    isCorrect: true
+  - label: B
+    content: -static
+  - label: C
+    content: -Wall
+  - label: D
+    content: -E
+  analysis: -shared 用于生成共享库；实际编译动态库时通常还会配合 -fPIC。
+  difficulty: EASY
+  sortOrder: 1
+- sourceKey: quiz:cross-dev:01:02
+  chapterSourceKey: cross-dev:chapter:01
+  type: TRUE_FALSE
+  stem: 静态库会在链接时把需要的库代码合入最终可执行程序，因此运行时通常不再依赖该 .a 文件。
+  isCorrect: true
+  analysis: 静态链接会把用到的目标代码复制进可执行文件；动态库则需要运行时能找到对应 .so。
+  difficulty: MEDIUM
+  sortOrder: 2

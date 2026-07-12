@@ -1,0 +1,60 @@
+脱敏文本版：2020-05-28复习题-答案.doc
+原始 Word/PDF 附件已移除，避免公开仓库保留学校、公司、个人或文档作者元数据。
+
+2020-05-28复习题--答案
+1、以下为Linux下的32位C程序，请计算sizeof的值
+Char str[] = “hello”;
+Char *p = str;
+Int n = 10;
+请计算   (1) sizeof (str) =  (2) sizeof(p) =  (3) sizeof(n) =
+
+答案 （1） 6（2） 4 （ 3） 4
+
+请问以下代码有什么问题：
+int main()
+{
+    char a;
+    char *str=&a;
+    strcpy(str,"hello");
+    printf(str);
+    return 0;
+}
+
+参考答案：
+没有为str分配内存空间，将会发生异常
+问题出在将一个字符串复制进一个字符变量指针所指地址。虽然可以正确输出结果，但因为越界进行内在读写而导致程序崩溃。
+
+
+
+3、一个链表的接点结构
+Struct Node
+{
+    int data;
+    Node *next;
+};
+typedef struct Node Node ;
+已知链表的头接点head，写一个函数把这个链表逆序。
+
+参考代码：
+Node * ReverseList(Node *head) //链表逆序
+{
+    if ( head == NULL || head->next == NULL )
+        return head;
+    Node *p1 = head ;
+    Node *p2 = p1->next ;
+    Node *p3 = p2->next ;
+    p1->next = NULL ;
+    while ( p3 != NULL )
+    {
+        p2->next = p1 ;
+        p1 = p2 ;
+        p2 = p3 ;
+        p3 = p3->next ;
+    }
+    p2->next = p1 ;
+    head = p2 ;
+    return head ;
+}
+
+
+题目不在多，而在于你需要有计划的复习

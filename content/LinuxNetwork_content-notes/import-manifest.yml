@@ -1,0 +1,50 @@
+schemaVersion: 1
+packageId: linux-network-programming
+version: 1.0.0
+title: Linux 网络编程课程内容包
+encoding: UTF-8
+
+target:
+  learningPath:
+    sourceKey: path:embedded-linux
+    slug: embedded-linux
+    name: 嵌入式 Linux 应用开发路径
+  course:
+    sourceKey: course:linux-network-programming
+    title: Linux网络编程
+    description: 面向嵌入式 Linux 应用的 TCP/UDP socket、广播组播、Unix 域 socket 和 I/O 多路复用基础。
+    level: INTERMEDIATE
+    sortOrder: 5
+    archiveUnmanagedContent: true
+
+defaults:
+  status: 1
+  keywords: [Linux, 网络编程, socket, TCP, UDP, select, poll, epoll]
+  includeReferencedAssets: true
+
+content:
+  - sourceKey: linux-net:chapter:01
+    file: 笔记/01-网络编程预备知识.md
+    chapterTitle: 网络编程预备知识
+    articleSlug: linux-net-01-network-basics
+    sortOrder: 1
+  - sourceKey: linux-net:chapter:02
+    file: 笔记/02-TCP-socket编程接口.md
+    chapterTitle: TCP socket 编程接口
+    articleSlug: linux-net-02-tcp-socket
+    sortOrder: 2
+  - sourceKey: linux-net:chapter:03
+    file: 笔记/03-UDP广播与组播.md
+    chapterTitle: UDP、广播与组播
+    articleSlug: linux-net-03-udp-broadcast-multicast
+    sortOrder: 3
+  - sourceKey: linux-net:chapter:04
+    file: 笔记/04-Unix域socket.md
+    chapterTitle: Unix 域 socket
+    articleSlug: linux-net-04-unix-domain-socket
+    sortOrder: 4
+  - sourceKey: linux-net:chapter:05
+    file: 笔记/05-IO多路复用.md
+    chapterTitle: I/O 多路复用
+    articleSlug: linux-net-05-io-multiplexing
+    sortOrder: 5

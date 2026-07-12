@@ -1,0 +1,55 @@
+schemaVersion: 1
+packageId: embedded-linux-dev-env
+version: 1.0.0
+title: 搭建嵌入式Linux开发环境课程内容包
+encoding: UTF-8
+
+target:
+  learningPath:
+    sourceKey: path:embedded-linux
+    slug: embedded-linux
+    name: 嵌入式 Linux 应用开发路径
+  course:
+    sourceKey: course:embedded-linux-dev-env
+    title: 搭建嵌入式Linux开发环境
+    description: 主机、开发板和交叉工具链。涵盖 Ubuntu 系统配置、VS Code 开发环境、Keil5 STM32 开发、ARM 交叉编译工具链及虚拟芯片平台A/6818 Linux 开发板环境搭建。
+    level: BEGINNER
+    sortOrder: 1
+    archiveUnmanagedContent: true
+
+defaults:
+  status: 1
+  keywords: [Ubuntu, VS Code, Keil5, STM32, 交叉编译, ARM, 虚拟芯片平台 A, "6818", 嵌入式Linux]
+  includeReferencedAssets: true
+
+content:
+  - sourceKey: el:chapter:01
+    file: 笔记/01-Ubuntu系统安装与基础配置.md
+    chapterTitle: Ubuntu 系统安装与基础配置
+    articleSlug: el-01-ubuntu-setup
+    sortOrder: 1
+  - sourceKey: el:chapter:02
+    file: 笔记/02-VSCode安装与嵌入式插件配置.md
+    chapterTitle: VS Code 安装与嵌入式开发插件
+    articleSlug: el-02-vscode-setup
+    sortOrder: 2
+  - sourceKey: el:chapter:03
+    file: 笔记/03-Keil5与STM32开发环境搭建.md
+    chapterTitle: Keil5 与 STM32 开发环境搭建
+    articleSlug: el-03-keil5-stm32
+    sortOrder: 3
+  - sourceKey: el:chapter:04
+    file: 笔记/04-STM32F103与F407开发板详解与烧录.md
+    chapterTitle: STM32F103 与 F407 开发板详解与烧录
+    articleSlug: el-04-stm32-boards
+    sortOrder: 4
+  - sourceKey: el:chapter:05
+    file: 笔记/05-ARM交叉编译工具链详解.md
+    chapterTitle: ARM 交叉编译工具链详解
+    articleSlug: el-05-cross-compilation
+    sortOrder: 5
+  - sourceKey: el:chapter:06
+    file: 笔记/06-Linux开发板环境搭建-虚拟芯片平台A与6818.md
+    chapterTitle: Linux 开发板环境搭建——虚拟芯片平台A与 6818
+    articleSlug: el-06-linux-dev-boards
+    sortOrder: 6

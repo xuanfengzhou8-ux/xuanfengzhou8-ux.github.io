@@ -1,0 +1,44 @@
+schemaVersion: 1
+packageId: legacy-course-5
+version: 1.0.0
+title: LVGL图形框架课程内容包
+encoding: UTF-8
+target:
+  learningPath:
+    sourceKey: path:gui-application
+    slug: gui-application
+    name: 嵌入式 GUI 与应用项目路径
+    description: 使用 LVGL、C++、Qt 和 OpenCV 构建有界面的应用。
+    sortOrder: 3
+  course:
+    sourceKey: course:legacy:5
+    title: LVGL图形框架
+    description: 轻量级嵌入式 GUI 框架。
+    level: INTERMEDIATE
+    sortOrder: 1
+    archiveUnmanagedContent: true
+defaults:
+  status: 1
+  keywords:
+    - LVGL图形框架
+  includeReferencedAssets: true
+content:
+  - sourceKey: legacy:5:article:9
+    file: 笔记/01-LVGL入门.md
+    chapterTitle: LVGL入门
+    articleSlug: lvgl-object-event
+    summary: 认识对象树和事件回调。
+    keywords:
+      - LVGL
+      - GUI
+      - 事件
+    sortOrder: 1
+  - sourceKey: legacy:5:article:10
+    file: 笔记/02-布局与样式.md
+    chapterTitle: 布局与样式
+    articleSlug: lvgl-flex
+    summary: 用弹性布局减少硬编码坐标。
+    keywords:
+      - LVGL
+      - Flex
+    sortOrder: 2

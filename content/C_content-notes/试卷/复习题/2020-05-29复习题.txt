@@ -1,0 +1,48 @@
+脱敏文本版：2020-05-29复习题.doc
+原始 Word/PDF 附件已移除，避免公开仓库保留学校、公司、个人或文档作者元数据。
+
+2020-05-29复习题
+请问运行test函数会有什么结果？为什么？
+（1）void getmemory( char *p )
+{
+        P=(char*)malloc( 100 );
+}
+    void test( void )
+{
+        Char *str = null;
+        getmemory(str);
+    strcpy( str, “hello world” );
+    Printf( str );
+}
+
+（2）char *getmemory( void )
+{
+        char p[] = “hello world”;
+        return p;
+}
+    void test( void)
+{
+        char *str = null;
+        str = getmemory();
+        printf( str );
+}
+
+（3）void getmemory( char **p, int num )
+{
+        *p =（char*）malloc( num );
+}
+Void test( void )
+{
+        Char* str = null;
+        getmemory( &str, 100 );
+        Strcpy( str, “hello” );
+        Printf( str );
+}
+
+
+用一句语句实现x是否是2的若干次幂的判断？
+
+
+3、不使用库函数，编写函数 int strcmp(char *source, char *dest)相等返回0， 不等返回-1；
+
+题目不在多，而在于你需要有计划的复习

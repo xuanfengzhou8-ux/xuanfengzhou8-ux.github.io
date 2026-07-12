@@ -1,0 +1,123 @@
+schemaVersion: 1
+packageId: linux-concurrency-programming
+version: 1.0.0
+quizzes:
+- sourceKey: quiz:linux-concurrency:01:01
+  chapterSourceKey: linux-concurrency:chapter:01
+  type: SINGLE
+  stem: Linux 中 fork() 的返回值在父进程中通常是什么？
+  options:
+  - label: A
+    content: 子进程 PID
+    isCorrect: true
+  - label: B
+    content: "0"
+  - label: C
+    content: "-2"
+  - label: D
+    content: 文件描述符
+  analysis: fork 成功后，父进程得到子进程 PID，子进程得到 0；失败时返回 -1。
+  difficulty: EASY
+  sortOrder: 1
+- sourceKey: quiz:linux-concurrency:02:01
+  chapterSourceKey: linux-concurrency:chapter:02
+  type: SINGLE
+  stem: 无名管道 pipe 最典型的用途是什么？
+  options:
+  - label: A
+    content: 有亲缘关系进程之间通信
+    isCorrect: true
+  - label: B
+    content: 跨网络主机通信
+  - label: C
+    content: 持久化保存数据
+  - label: D
+    content: 替代互斥锁
+  analysis: 无名管道通常用于父子进程等有亲缘关系的进程通信；无亲缘关系进程可考虑 FIFO。
+  difficulty: EASY
+  sortOrder: 1
+- sourceKey: quiz:linux-concurrency:03:01
+  chapterSourceKey: linux-concurrency:chapter:03
+  type: SINGLE
+  stem: SIGKILL 的特点是什么？
+  options:
+  - label: A
+    content: 不能被捕获、阻塞或忽略
+    isCorrect: true
+  - label: B
+    content: 只能由子进程发送
+  - label: C
+    content: 只用于定时器
+  - label: D
+    content: 一定会生成 core 文件
+  analysis: SIGKILL 是强制终止信号，进程不能安装处理函数捕获它，也不能忽略它。
+  difficulty: MEDIUM
+  sortOrder: 1
+- sourceKey: quiz:linux-concurrency:04:01
+  chapterSourceKey: linux-concurrency:chapter:04
+  type: SINGLE
+  stem: 共享内存通信效率高的主要原因是什么？
+  options:
+  - label: A
+    content: 进程可直接访问映射到自身地址空间的共享区域
+    isCorrect: true
+  - label: B
+    content: 所有数据都经过文本编码
+  - label: C
+    content: 必须走网络协议栈
+  - label: D
+    content: 不需要任何同步
+  analysis: 共享内存把同一段物理内存映射到多个进程地址空间，减少了内核中转复制；但通常仍需要信号量等同步机制。
+  difficulty: MEDIUM
+  sortOrder: 1
+- sourceKey: quiz:linux-concurrency:05:01
+  chapterSourceKey: linux-concurrency:chapter:05
+  type: SINGLE
+  stem: 信号量中的 P 操作通常表示什么？
+  options:
+  - label: A
+    content: 申请/等待资源，可能使计数减一
+    isCorrect: true
+  - label: B
+    content: 释放资源，计数加一
+  - label: C
+    content: 创建新进程
+  - label: D
+    content: 关闭文件描述符
+  analysis: P 操作用于申请资源，如果资源不可用则可能阻塞；V 操作用于释放资源。
+  difficulty: EASY
+  sortOrder: 1
+- sourceKey: quiz:linux-concurrency:06:01
+  chapterSourceKey: linux-concurrency:chapter:06
+  type: SINGLE
+  stem: pthread_join 的主要作用是什么？
+  options:
+  - label: A
+    content: 等待指定线程结束并回收其资源
+    isCorrect: true
+  - label: B
+    content: 创建一个新线程
+  - label: C
+    content: 加锁互斥量
+  - label: D
+    content: 发送信号给进程
+  analysis: pthread_join 用于等待一个可 join 的线程结束，并获取线程返回值。
+  difficulty: EASY
+  sortOrder: 1
+- sourceKey: quiz:linux-concurrency:07:01
+  chapterSourceKey: linux-concurrency:chapter:07
+  type: SINGLE
+  stem: 分析 fork 题时，最可靠的方法是什么？
+  options:
+  - label: A
+    content: 画进程树并区分父子进程执行路径
+    isCorrect: true
+  - label: B
+    content: 只数源代码行数
+  - label: C
+    content: 只看 main 函数参数
+  - label: D
+    content: 忽略短路表达式
+  analysis: fork 题的关键是跟踪每次 fork 后父子进程的返回值和继续执行路径；遇到 &&、|| 还要考虑短路求值。
+  difficulty: MEDIUM
+  sortOrder: 1

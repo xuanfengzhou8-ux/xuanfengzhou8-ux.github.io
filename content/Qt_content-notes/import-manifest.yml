@@ -1,0 +1,43 @@
+schemaVersion: 1
+packageId: legacy-course-6
+version: 1.0.0
+title: Qt应用编程课程内容包
+encoding: UTF-8
+target:
+  learningPath:
+    sourceKey: path:gui-application
+    slug: gui-application
+    name: 嵌入式 GUI 与应用项目路径
+    description: 使用 LVGL、C++、Qt 和 OpenCV 构建有界面的应用。
+    sortOrder: 3
+  course:
+    sourceKey: course:legacy:6
+    title: Qt应用编程
+    description: 桌面与嵌入式 Qt 应用。
+    level: INTERMEDIATE
+    sortOrder: 2
+    archiveUnmanagedContent: true
+defaults:
+  status: 1
+  keywords:
+    - Qt应用编程
+  includeReferencedAssets: true
+content:
+  - sourceKey: legacy:6:article:11
+    file: 笔记/01-Qt信号与槽.md
+    chapterTitle: Qt信号与槽
+    articleSlug: qt-signal-slot
+    summary: 理解 Qt 的对象通信机制。
+    keywords:
+      - Qt
+      - 信号槽
+    sortOrder: 1
+  - sourceKey: legacy:6:article:12
+    file: 笔记/02-Qt串口编程.md
+    chapterTitle: Qt串口编程
+    articleSlug: qt-serial
+    summary: 正确处理串口分包和异步读取。
+    keywords:
+      - Qt
+      - 串口
+    sortOrder: 2

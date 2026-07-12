@@ -1,0 +1,46 @@
+1-5  DBCDC
+6-10 AAACC
+11-15 BDCBD
+16-20 DAAAD
+21-25 CCBDB
+26-30 BBBAB
+31-35 CDDAB
+36-40 DACBA
+41-45 CCBAC
+46-47 AB
+填空题：
+1	x>=0  x<amin
+2	-1
+3	11
+4       0
+5	无
+6	0918273645
+7	d=1.0 k++ k<=n
+8	15 16
+9	x/2  x%i==0
+10	i=5 j=4 k=6
+11	0
+
+
+循环结构：
+DBCDC
+AAACC
+BDCBD
+AAADC
+CBBBB
+ABCDA
+BDACB
+BCCBA
+CAB
+1. x >= 0   x<amin
+2.-1
+3.11
+4.0
+5.死循环，无打印
+6.0918273645
+7.k++  k<=n
+8.15 16
+9.x/2  x%i==0
+10.i = 5 j=4 k=6
+11.0
+

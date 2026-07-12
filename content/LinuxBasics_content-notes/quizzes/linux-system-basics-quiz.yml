@@ -1,0 +1,89 @@
+schemaVersion: 1
+packageId: linux-system-basics
+version: 1.0.0
+quizzes:
+- sourceKey: quiz:linux-basics:01:01
+  chapterSourceKey: linux-basics:chapter:01
+  type: SINGLE
+  stem: 在 Ubuntu/Debian 系统中，刷新软件包索引通常使用哪个命令？
+  options:
+  - label: A
+    content: sudo apt-get update
+    isCorrect: true
+  - label: B
+    content: sudo apt-get remove
+  - label: C
+    content: chmod +x
+  - label: D
+    content: pwd
+  analysis: apt-get update 用于从软件源同步软件包索引，安装软件前通常先执行它。
+  difficulty: EASY
+  sortOrder: 1
+- sourceKey: quiz:linux-basics:02:01
+  chapterSourceKey: linux-basics:chapter:02
+  type: SINGLE
+  stem: find 命令中，按文件名查找通常使用哪个条件？
+  options:
+  - label: A
+    content: -name
+    isCorrect: true
+  - label: B
+    content: -type
+  - label: C
+    content: -mtime
+  - label: D
+    content: -exec
+  analysis: -name 用于按文件名模式匹配；-type 按文件类型，-mtime 按修改时间，-exec 用于对结果执行命令。
+  difficulty: EASY
+  sortOrder: 1
+- sourceKey: quiz:linux-basics:03:01
+  chapterSourceKey: linux-basics:chapter:03
+  type: SINGLE
+  stem: grep -n 的作用是什么？
+  options:
+  - label: A
+    content: 显示匹配行的行号
+    isCorrect: true
+  - label: B
+    content: 忽略大小写
+  - label: C
+    content: 递归搜索目录
+  - label: D
+    content: 只显示文件名
+  analysis: grep -n 会在输出中显示匹配行所在的行号，便于定位日志或源码。
+  difficulty: EASY
+  sortOrder: 1
+- sourceKey: quiz:linux-basics:04:01
+  chapterSourceKey: linux-basics:chapter:04
+  type: SINGLE
+  stem: 正则表达式中，^ 通常表示什么？
+  options:
+  - label: A
+    content: 行首锚点
+    isCorrect: true
+  - label: B
+    content: 任意字符
+  - label: C
+    content: 重复一次或多次
+  - label: D
+    content: 字符转义
+  analysis: ^ 在常见正则语法中表示行首锚点；$ 表示行尾锚点。
+  difficulty: EASY
+  sortOrder: 1
+- sourceKey: quiz:linux-basics:05:01
+  chapterSourceKey: linux-basics:chapter:05
+  type: SINGLE
+  stem: Shell 脚本中，$? 表示什么？
+  options:
+  - label: A
+    content: 上一条命令的退出状态码
+    isCorrect: true
+  - label: B
+    content: 当前脚本文件名
+  - label: C
+    content: 所有参数个数
+  - label: D
+    content: 当前用户主目录
+  analysis: $? 保存上一条命令的退出状态码，常用于判断命令是否执行成功。
+  difficulty: EASY
+  sortOrder: 1

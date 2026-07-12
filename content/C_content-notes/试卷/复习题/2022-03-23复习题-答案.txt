@@ -1,0 +1,75 @@
+脱敏文本版：2022-03-23复习题-答案.doc
+原始 Word/PDF 附件已移除，避免公开仓库保留学校、公司、个人或文档作者元数据。
+
+2022-03-23复习题答案
+1、以下错误的语句是
+A.char str[5]= "apple!";
+B.char *str[] = {"apple!"};
+C.char str[ ]= "apple!";
+D.char *str = "apple!";
+E.char str[5]={'a'，'p'，'p'，'l','e'};
+
+答案：A
+
+2、有以下代码：
+void sub(int x, int y, int *z)
+{
+   *z = y–x;
+}
+int main(void)
+{
+   int a, b, c;
+   sub(10, 5, &a);
+   sub(7, a, &b);
+   sub(a, b, &c);
+   printf(“%4d,%4d,%4d\n”,a,b,c);
+}
+则其执行结果是
+A.5,2,3	 B.-5,-10,-7  C.-5,-12,-7
+D.-5,-12,-17	E.5,-2,-7
+
+答案：C
+
+n个人围成一圈，编号从1到n，从编号为1的人开始报数，报到m的人离队，下面的人接着从1开始报数，依次下去，写程序求最后剩下的一个人编号是几？
+参考答案：
+void left_num(int* a,int n,int m)
+{
+//out为出去的人数，count为报数，i为目前报到第几个人
+int out = 0,count = 0,i = 0;
+       int *p = a;
+       int num = 0;
+      for(num = 0;num < n;num++)
+{
+*(a+num) = num+1;
+}   //为n个人编号1-n
+
+       while (out < n-1)
+{
+        if (*(p+i) != 0)
+{
+            count ++;   //不等于0才报数+1
+        }
+        if (count == m)
+{
+            count = 0;
+            *(p+i) = 0;
+            out++;  //报道m那么，出列人数out+1，且内容置0，报数置0
+        }
+        i++;
+        if (i == n)
+{
+            i = 0;  //到队尾重头开始
+        }
+    }
+    //输出剩下的人
+    for (num = 0; num < n; num++) {
+        if (*(a+num) != 0) {
+            printf("left num:%d\n",*(a+num));
+        }
+    }
+}
+
+
+
+
+题目不在多，而在于你需要有计划的复习

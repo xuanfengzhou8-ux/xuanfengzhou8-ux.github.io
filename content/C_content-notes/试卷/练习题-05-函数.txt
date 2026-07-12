@@ -1,0 +1,424 @@
+脱敏文本版：练习题-05-函数.doc
+原始 Word/PDF 附件已移除，避免公开仓库保留学校、公司、个人或文档作者元数据。
+
+C语言函数练习题
+姓名:__________	                  分数（总分100）:__________
+选择题答题处(请答完题后把答案写到答题卡)(25*2=50)：
+1~1011~2021~25多项选择题答题处(请答完题后把答案写到答题卡)(5*6=30)：
+1
+2
+3
+4
+5
+
+
+
+
+
+
+
+
+一、选择题
+1. 一个完整的C源程序是【  】。
+　　A）要由一个主函数或一个以上的非主函数构成
+　　B）由一个且仅由一个主函数和零个以上的非主函数构成
+　　C）要由一个主函数和一个以上的非主函数构成
+　　D）由一个且只有一个主函数或多个非主函数构成
+
+2. 以下关于函数的叙述中正确的是【 】。
+　　A）C语言程序将从源程序中第一个函数开始执行
+　　B）可以在程序中由用户指定任意一个函数作为主函数，程序将从此开始执行
+　　C）C语言规定必须用main作为主函数名，程序将从此开始执行，在此结束
+　　D）main可作为用户标识符，用以定义任意一个函数
+
+3. 以下关于函数的叙述中不正确的是【 】。
+　　A）C程序是函数的集合，包括标准库函数和用户自定义函数
+　　B）在C语言程序中，被调用的函数必须在main函数中定义
+　　C）在C语言程序中，函数的定义不能嵌套
+　　D）在C语言程序中，函数的调用可以嵌套
+
+4. 在一个C程序中,【 】。
+
+
+　　A）main函数必须出现在所有函数之前
+　　B）main函数可以在任何地方出现
+　　C）main函数必须出现在所有函数之后
+D）main函数必须出现在固定位置
+
+5. 若在C语言中未说明函数的类型，则系统默认该函数的数据类型是【 】
+　　A）float	 B）long
+C）int   D）double
+
+6. 以下关于函数叙述中，错误的是【 】。
+　　A）函数未被调用时，系统将不为形参分配内存单元
+　　B）实参与形参的个数应相等，且实参与形参的类型必须对应一致
+　　C）当形参是变量时，实参可以是常量、变量或表达式
+　　D）形参可以是常量、变量或表达式
+
+7. C程序中各函数之间可以通过多种方式传递数据，下列不能用于实现数据传递的方式是【 】。
+　　A）参数的形实结合
+　　B）函数返回值
+　　C）全局变量
+　　D）同名的局部变量
+
+8. 若函数调用时参数为基本数据类型的变量，以下叙述正确的是【 】。
+　　A）实参与其对应的形参共占存储单元
+　　B）只有当实参与其对应的形参同名时才共占存储单元
+　　C）实参与对应的形参分别占用不同的存储单元
+　　D）实参将数据传递给形参后，立即释放原先占用的存储单元
+
+9. 函数调用时,当实参和形参都是简单变量时，他们之间数据传递的过程是【 】。
+　　A）实参将其地址传递给形参，并释放原先占用的存储单元
+　　B）实参将其地址传递给形参，调用结束时形参再将其地址回传给实参
+　　C）实参将其值传递给形参，调用结束时形参再将其值回传给实参
+　　D）实参将其值传递给形参，调用结束时形参并不将其值回传给实参
+
+10. 若函数调用时的实参为变量时，以下关于函数形参和实参的叙述中正确的是【 】。
+　　A）函数的实参和其对应的形参共占同一存储单元
+　　B）形参只是形式上的存在,不占用具体存储单元
+　　C）同名的实参和形参占同一存储单元
+　　D）函数的形参和实参分别占用不同的存储单元
+
+11. 若用数组名作为函数调用的实参，则传递给形参的是 【 】。
+　  A) 数组的首地址
+ B) 数组的第一个元素的值
+　  C) 数组中全部元素的值
+D) 数组元素的个数
+
+12. 若函数调用时,用数组名作为函数的参数，以下叙述中正确的是【 】。
+　　A）实参与其对应的形参共用同一段存储空间
+　　B）实参与其对应的形参占用相同的存储空间
+　　C）实参将其地址传递给形参，同时形参也会将该地址传递给实参
+　　D）实参将其地址传递给形参，等同实现了参数之间的双向值的传递
+
+13. 如果一个函数位于C程序文件的上部，在该函数体内说明语句后的复合语句中定义了一个变量，则该变量【 】。
+　　A）为全局变量，在本程序文件范围内有效
+　　B）为局部变量，只在该函数内有效
+　　C）为局部变量，只在该复合语句中有效
+　　D）定义无效，为非法变量
+
+14. C语言中函数返回值的类型是由【 】决定。
+　　A）return语句中的表达式类型
+　　B）调用函数的主调函数类型
+　　C）调用函数时临时
+　　D）定义函数时所指定的函数类型
+
+15. 若在一个C源程序文件中定义了一个允许其他源文件引用的实型外部变量a,则在另一文件中可使用的引用说明是【 】。
+　　A）extern static float a;
+B）float a;
+　　C）extern auto float a;
+D）extern float a;
+
+16. 定义一个void型函数意味着调用该函数时，函数【 】
+　　A）通过return返回一个用户所希望的函数值
+　　B）返回一个系统默认值
+　　C）没有返回值
+　　D）返回一个不确定的值
+
+17. 若定义函数float *fun( ),则函数fun的返回值为【 】。
+　　A）一个实数
+B）一个指向实型变量的指针
+　　C）一个指向实型函数的指针
+D）一个实型函数的入口地址
+
+18.　C语言规定，程序中各函数之间【 】。
+　　A）既允许直接递归调用也允许间接递归调用
+　　B）不允许直接递归调用也不允许间接递归调用
+　　C）允许直接递归调用不允许间接递归调用
+　　D）不允许直接递归调用允许间接递归调用
+
+19. 若程序中定义函数
+float myadd(float a, float b)
+{ return a+b;}
+　　并将其放在调用语句之后，则在调用之前应对该函数进行说明。以下说明中错误的是【 】。
+　　A）float myadd( float a,b);
+　　B）float myadd(float b, float a);
+　　C）float myadd(float, float);
+　　D）float myadd(float a, float b);
+
+20. 关于以下fun函数的功能叙述中，正确的是【 】。
+int fun(char *s)
+{
+  char *t=s;
+  while(*t++) ;
+  t--;
+  return(t-s);
+}
+　　A) 求字符串s的长度
+B) 比较两个串的大小
+　　C) 将串s复制到串t
+D) 求字符串s所占字节数
+
+21. 下面程序段运行后的输出结果是【 】 （假设程序运行时输入5，3回车）
+int a, b;
+void swap( )
+{
+  int t;
+  t=a; a=b; b=t;
+}
+main()
+{
+  scanf("%d,%d", &a, &b);
+  swap( );
+  printf ("a=%d,b=%d\n",a,b);
+}
+　　A) a=5,b=3	B) a=3,b=5
+C)5,3     	D)3,5
+
+22. 以下程序运行后的输出结果是【 】。
+fun(int a, int b)
+{
+  if(a>b) 	return a;
+  else		return b;
+}
+main()
+{
+  int x=3,y=8,z=6,r;
+  r=fun(fun(x,y),2*z);
+  printf("%d\n",r);
+}
+A)  3	B) 6	 C)8  D)12
+
+23. 以下程序的运行结果是【 】。
+void f(int a, int b)
+{
+  int t;
+  t=a; a=b; b=t;
+}
+main()
+{
+  int x=1, y=3, z=2;
+  if(x>y) f(x,y);
+  else if(y>z) f(x,z);
+      else f(x,z);
+  printf("%d,%d,%d\n",x,y,z);
+}
+A)	1,2,3		B) 3,1,2
+C) 1,3,2		    D) 2,3,1
+
+24. 以下程序运行后的输出结果为【 】。
+int *f(int *x, int *y)
+{
+  if(*x<*y)	return x;
+  else 	return y;
+}
+
+main()
+{
+  int a=7,b=8,*p,*q,*r;
+  p=&a, q=&b;
+  r=f(p,q);
+  printf("%d,%d,%d\n",*p,*q,*r);
+}
+A)	7,8,8  B)7,8,7
+C) 8,7,7	  D) 8,7,8
+
+25. 以下程序的正确运行结果是【 】。
+#inclued<stdio.h>
+main()
+{
+  int k=4,m=1,p;
+  p=func(k,m);
+  printf(“%d”,p);
+  p=func(k,m);
+  printf(“%d\n”,p);
+}
+func(int a,int b)
+{
+  static int m=0,i=2;
+  i+=m+1;
+  m=i+a+b;
+  return (m);
+}
+
+
+　　A）8,17 B）8,16 C）8,20 	D）8,8
+
+多项选择题（5*6=30两空的三分一空 三空的两分一空）
+1.有以下程序
+int fun(int n)
+{
+  if(n==1)  return 1;
+  else return(n+fun(n-1));
+}
+main()
+{
+  int x;
+  scanf("%d",&x);
+  x=fun(x);
+  printf("%d\n",x);
+}
+　　程序执行时,若输入10,程序的输出结果是【 】。
+　　A）55 B）54 C）65 D）45
+
+2. 以下程序的功能是计算函数F(x,y,z)=(x+z)/(y-z)+(y+2×z)/(x-2×z)的值，请将程序补充完整。
+#include<stdio.h>
+float f(float x,float y)
+{
+  float value;
+  value= 【1】;
+  return value;
+}
+main()
+{
+  float x,y,z,sum;
+  scanf("%f%f%f",&x,&y,&z);
+  sum=f(x+z,y-z)+f(【2】);
+  printf("sum=%f\n",sum);
+}
+
+　　【1】	A） x/y			B） x/z
+C) (x+z)/(y-z) 	D） x+z/y-z
+　  【2】  A)y+2z,x-2z     B）y+z,x-z
+ C） x+z,y-z	   D）y+2*z,x-2*z
+
+3. 以下程序的功能是根据输入的字母，在屏幕上显示出字符数组中首字符与其相同的字符串，若不存在，则显示“No find,good bye!”，请将程序补充完整。
+#include<stdio.h>
+char PriStr(char ch1)
+{
+  int i=0,j=0;
+  static char *ch2[]={"how are you", "glad to meet you","anything new",    "everything is fine","very well,thank you","see you tomorrow"};
+  while(i++<6)
+    if(ch1==【1】 )
+    {
+      puts(【2】);
+      j=1;
+    }
+  return j;
+}
+main()
+{
+  char ch;
+  printf("\nPleae enter a char:");
+  ch=getchar();
+  ch=PriStr(ch);
+  if(ch==【3】)
+    puts("No find, good bye! ");
+}
+【1】	A）ch2[i][0]		B）ch2[i-1][0]
+  C）*ch2[i]		D） *ch2[i-1][0]
+【2】	A）ch2[i]	    B）*ch2[i]
+  C）*ch2[i-1]		D） ch2[i-1]
+【3】	A）’0’ B）’48’ C）0 D） 30
+4. 以下程序是将输入的一个整数反序打印出来，例如输入1234，则输出4321，输入-1234，则输出-4321。请将程序补充完整。
+void printopp(long int n)
+{
+  int i=0;
+  if(n==0)
+    return ;
+  else
+    while(n)
+    {
+      if(【1】) printf("%ld",n%10);
+    else	 printf("%ld",-n%10);
+    i++;
+    【2】;
+  }
+}
+main()
+{
+  long int n;
+  scanf("%ld",&n);
+  printopp(n);
+  printf("\n");
+}
+　　【1】A）n<0&&i==0		B）n<0||i==0
+C）n>0&&i==0		D）n>0||i==0
+　　【2】A）n%=10		B）n%=(-10)
+ C）n/=10		D）n/=)-10)
+5. 下面的程序用递归定义的方法实现求菲波拉契数列1、1、2、3、5、8、13、21……第7项的值fib(7)，菲波拉契数列第1项和第2项的值都是1。请将程序补充完整。
+#include<stdio.h>
+long fib(【1】)
+{
+  switch(g)
+  {
+    case 0: return 0;
+    case 1:
+    case 2: return 1;
+  }
+  return (【2】);
+}
+main()
+{
+  long k;
+  k=fib(7);
+  printf("k=%d\n",k);
+}
+　　【1】 A）g				B）k
+C）long int g		D）int k
+　　【2】A）fib(7)			B）fib(g)
+     C）fib(k)	 		D)fib(g-1)+fib(g-2)
+
+三、填空题（每空4分 5*4=20）
+1.  以下程序实现了计算x的n次方，请将程序填写完整。
+float power(float x,int n)
+ {	int i;
+      float t=1;
+      for(i=1;i<=n;i++)
+        t=t*x;
+            ;
+ }
+main( )
+{ 	float x,y;
+    int n;
+    scanf("%f,%d",&x,&n);
+    y=power(x,n);
+    printf("%8.2f\n",y) ;
+}
+
+2.  以下程序实现了求两个数的最大公约数，请将程序填写完整。
+int divisor(int a,int b)
+{ int r;
+r=a%b;
+while(                  )
+  { a=b;b=r;r=a%b;}
+  return b;
+}
+void main()
+{ int a,b,d,t;
+scanf("%d %d",&a,&b);
+if (a<b)
+      { t=a; a=b; b=t; }
+  d=divisor(a,b);
+printf("\n gcd=%d",d);
+}
+
+3.  以下函数my_cmp( )的功能是比较字符串s和t的大小，当s等于t时返回0，否则返回s和t的第一个不同字符的ASCII码差值，即s>t时返回正值，s<t时返回负值。请将函数填写完整。
+my_cmp(char *s,char *t)
+{
+  while(*s == *t)
+  {
+    if (        )  return 0;
+    ++s; ++t;
+  }
+  return *s-*t;
+}
+
+
+
+
+
+
+4.  以下程序的功能是:删去一维数组中所有相同的数,使之只剩一个。数组中的数已按由小到大的顺序排列,函数返回删除后数组中数据的个数。请将程序填写完整。
+例如,若一维数组中的数据是:　　2 2 2 3 4 4 5 6 6 6 6 7 7 8 9 9 10 10 10
+删除后,数组中的内容应该是:　　2 3 4 5 6 7 8 9 10。
+#include <stdio.h>
+#define N 80
+int fun(int a[], int n)
+{ 	int i,j=1;
+　　for(i=1;i<n;i++)
+　　if(a[j-1]       a[i])
+　　	  a[j++]=a[i];
+　　return          ;
+}
+main( )
+{
+  int a[N]={2,2,2,3,4,4,5,6,6,6,6,7,7,8,9,9,10,10,10},i,n=19;
+　printf("The original data:\n");
+　for(i=0;i<n;i++)
+     printf(“%d ”,a[i]);
+　n=fun(a,n);
+　printf("\nThe data after deleted: \n");
+　for(i=0; i<n;i++)
+     printf(“%d ”,a[i]);
+}

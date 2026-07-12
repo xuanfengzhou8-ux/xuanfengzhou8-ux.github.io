@@ -1,0 +1,105 @@
+schemaVersion: 1
+packageId: c-language-foundation
+version: 2.0.0
+title: C 语言基础课程内容包
+encoding: UTF-8
+
+target:
+  learningPath:
+    sourceKey: path:embedded-foundation
+    slug: embedded-foundation
+    name: 嵌入式入门路径
+  course:
+    sourceKey: course:c-language-foundation
+    title: C语言基础
+    description: 面向嵌入式开发的 C 语言核心能力。
+    level: BEGINNER
+    sortOrder: 1
+    archiveUnmanagedContent: true
+
+defaults:
+  status: 1
+  keywords:
+    - C语言
+    - 嵌入式基础
+  includeReferencedAssets: true
+
+content:
+  - sourceKey: c:chapter:01
+    file: 笔记/01-C语言入门与开发环境.md
+    chapterTitle: C语言入门与开发环境
+    articleSlug: c-01-getting-started
+    sortOrder: 1
+  - sourceKey: c:chapter:02
+    file: 笔记/02-计算机基础与数据表示.md
+    chapterTitle: 计算机基础与数据表示
+    articleSlug: c-02-data-representation
+    sortOrder: 2
+  - sourceKey: c:chapter:03
+    file: 笔记/03-数据类型与类型转换.md
+    chapterTitle: 数据类型与类型转换
+    articleSlug: c-03-data-types
+    sortOrder: 3
+  - sourceKey: c:chapter:04
+    file: 笔记/04-运算符与表达式.md
+    chapterTitle: 运算符与表达式
+    articleSlug: c-04-operators
+    sortOrder: 4
+  - sourceKey: c:chapter:05
+    file: 笔记/05-分支结构.md
+    chapterTitle: 分支结构
+    articleSlug: c-05-branches
+    sortOrder: 5
+  - sourceKey: c:chapter:06
+    file: 笔记/06-循环结构.md
+    chapterTitle: 循环结构
+    articleSlug: c-06-loops
+    sortOrder: 6
+  - sourceKey: c:chapter:07
+    file: 笔记/07-数组与排序查找.md
+    chapterTitle: 数组与排序查找
+    articleSlug: c-07-arrays-sorting-searching
+    sortOrder: 7
+  - sourceKey: c:chapter:08
+    file: 笔记/08-函数.md
+    chapterTitle: 函数
+    articleSlug: c-08-functions
+    sortOrder: 8
+  - sourceKey: c:chapter:09
+    file: 笔记/09-递归.md
+    chapterTitle: 递归
+    articleSlug: c-09-recursion
+    sortOrder: 9
+  - sourceKey: c:chapter:10
+    file: 笔记/10-作用域与多文件编程.md
+    chapterTitle: 作用域与多文件编程
+    articleSlug: c-10-scope-multifile
+    sortOrder: 10
+  - sourceKey: c:chapter:11
+    file: 笔记/11-指针基础.md
+    chapterTitle: 指针基础
+    articleSlug: c-11-pointer-basics
+    sortOrder: 11
+  - sourceKey: c:chapter:12
+    file: 笔记/12-指针进阶.md
+    chapterTitle: 指针进阶
+    articleSlug: c-12-advanced-pointers
+    sortOrder: 12
+  - sourceKey: c:chapter:13
+    file: 笔记/13-字符串与内存操作.md
+    chapterTitle: 字符串与内存操作
+    articleSlug: c-13-strings-memory
+    sortOrder: 13
+  - sourceKey: c:chapter:14
+    file: 笔记/14-结构体联合体与文件操作.md
+    chapterTitle: 结构体、联合体与文件操作
+    articleSlug: c-14-struct-union-file-io
+    sortOrder: 14
+
+excludedFromThisImport:
+  - glob: 试卷/**
+    reason: 当前系统尚无题库数据模型；留待题库功能阶段结构化导入。
+  - glob: 代码/**
+    reason: 代码已经整理进课程 Markdown；原始课堂代码作为源资料保留。
+  - glob: 图片/**
+    reason: 仅导入被 Markdown 相对路径实际引用的图片。

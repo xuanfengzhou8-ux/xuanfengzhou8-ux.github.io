@@ -1,0 +1,89 @@
+schemaVersion: 1
+packageId: linux-network-programming
+version: 1.0.0
+quizzes:
+- sourceKey: quiz:linux-net:01:01
+  chapterSourceKey: linux-net:chapter:01
+  type: SINGLE
+  stem: TCP/IP 模型中，TCP 和 UDP 位于哪一层？
+  options:
+  - label: A
+    content: 传输层
+    isCorrect: true
+  - label: B
+    content: 应用层
+  - label: C
+    content: 网络层
+  - label: D
+    content: 物理层
+  analysis: TCP 和 UDP 负责端到端传输，属于传输层协议。
+  difficulty: EASY
+  sortOrder: 1
+- sourceKey: quiz:linux-net:02:01
+  chapterSourceKey: linux-net:chapter:02
+  type: SINGLE
+  stem: TCP 服务端调用 listen 之后，通常用哪个函数接收客户端连接？
+  options:
+  - label: A
+    content: accept
+    isCorrect: true
+  - label: B
+    content: connect
+  - label: C
+    content: sendto
+  - label: D
+    content: inet_addr
+  analysis: listen 让套接字进入监听状态，accept 从监听队列中取出一个连接并返回连接套接字。
+  difficulty: EASY
+  sortOrder: 1
+- sourceKey: quiz:linux-net:03:01
+  chapterSourceKey: linux-net:chapter:03
+  type: SINGLE
+  stem: UDP socket 通常使用哪种 socket 类型？
+  options:
+  - label: A
+    content: SOCK_DGRAM
+    isCorrect: true
+  - label: B
+    content: SOCK_STREAM
+  - label: C
+    content: SOCK_RAW
+  - label: D
+    content: SOCK_FILE
+  analysis: UDP 面向数据报，通常使用 SOCK_DGRAM；TCP 通常使用 SOCK_STREAM。
+  difficulty: EASY
+  sortOrder: 1
+- sourceKey: quiz:linux-net:04:01
+  chapterSourceKey: linux-net:chapter:04
+  type: SINGLE
+  stem: Unix 域 socket 常用于什么场景？
+  options:
+  - label: A
+    content: 同一台主机内的进程间通信
+    isCorrect: true
+  - label: B
+    content: 跨公网主机通信
+  - label: C
+    content: 直接访问显存
+  - label: D
+    content: 修改文件权限
+  analysis: Unix 域 socket 不经过 IP 网络，常用于同一台主机内进程通信。
+  difficulty: MEDIUM
+  sortOrder: 1
+- sourceKey: quiz:linux-net:05:01
+  chapterSourceKey: linux-net:chapter:05
+  type: SINGLE
+  stem: select 的第一个参数 nfds 通常应该填什么？
+  options:
+  - label: A
+    content: 监听集合中最大文件描述符加 1
+    isCorrect: true
+  - label: B
+    content: 当前进程 PID
+  - label: C
+    content: 端口号
+  - label: D
+    content: 缓冲区大小
+  analysis: select 需要知道检查文件描述符的范围，nfds 通常设置为最大 fd 加 1。
+  difficulty: MEDIUM
+  sortOrder: 1

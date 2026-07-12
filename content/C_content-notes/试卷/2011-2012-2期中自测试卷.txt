@@ -1,0 +1,425 @@
+脱敏文本版：2011-2012-2期中自测试卷.doc
+原始 Word/PDF 附件已移除，避免公开仓库保留学校、公司、个人或文档作者元数据。
+
+试题一、单项选择题(每小题 2 分，共 40 分)
+1. 已定义ch为字符型变量，以下赋值语句中错误的是______   .
+　　A、ch='\0';   B、ch=32+3;   C、ch=”a”;   D、ch='\xaa';
+
+2. 表达式 !x 等价于_____。
+A、x==0       B、x==1         C、x != 0       D、x != 1
+
+
+3.下列语句定义pf为指向float类型变量f的指针，正确的是______   .
+A、float  f, *pf = f;    B、float  f, *pf = &f;
+C、float  *pf = &f, f;   D、float  f, pf = f;
+
+4. C语言中，形参的缺省的存储类型说明是______.
+A、 auto          B、static       C、 register            D、extern
+
+5. 若已定义的函数有返回值，则以下关于该函数调用的叙述中错误的是______   .
+ 　A、函数调用可以作为独立的语句存在   B、函数调用可以作为一个函数的实参
+ 　C、函数调用可以出现在表达式中       D、函数调用可以作为一个函数的形参
+
+6. 若k为整型，以下while循环____次。
+    int k=10;
+while (k) k=k-1;
+
+　　A、 10次                     B、 无限循环
+    C、 一次也不执行                D、 执行一次
+
+7．将程序prog.c编译后运行：prog  –nla  hello  world 则 *(*(argv+2)) 是______。
+A、'p'          B、'-'          C、'h'           D、'w'
+8. 输入c2470f?<回车>后，下列程序的输出结果是_______。
+
+#include "stdio.h"
+int main( )
+{
+    char ch;
+    long number=0;
+    while((ch=getchar())<'0'||ch>'6') ;
+    while(ch!='?'&&ch>='0'&&ch<='6')
+    {
+        number=number*7+ch-'0';
+        printf("%ld\t",number);
+        ch=getchar();
+    }
+}
+
+A、7	14       B、2	18		C、6	24           D、7   24
+
+9. 下列程序的输出结果是 _____.
+
+#include <stdio.h>
+int f()
+{
+    static int k;
+    return ++k;
+}
+void main( )
+{
+    int k;
+    for(k=0;k<3;k++)
+        printf("%d\t", f());
+}
+A、1	2	3   4          B、1		2	3
+C、0	1	2	3	       D、2		3	4
+
+10. 下列赋值或赋初值的方式不正确的是______。
+    A、char str[]="string"；
+    B、char str[7]={‘s’, ‘t’, ‘r’, ‘i’, ‘n’, ‘g’}；
+C、char str[10]；str="string"；
+D、char str[7]={‘s’, ‘t’, ‘r’, ‘i’, ‘n’, ‘g’, ‘\0’}；
+
+11. 下列代码段将打印出 ______.
+#define MA(x, y) (x)*(y)
+int i = 2;
+i = 3/MA(i, i+2)+5;
+printf(“%d\n”, i);
+
+A、5  B、8  C、9  D、11
+12. 下列程序的输出结果是_____。
+#include "stdio.h"
+void main( )
+{
+    int j, k, a[2][2];
+    for(k=1; k<3; k++)
+        for(j=1; j<3; j++)
+            a[k-1][j-1]=(k/j)*(j/k);
+        for(k=0; k<2; k++)
+            for(j=0; j<2; j++)
+                printf("%d,", a[k][j]);
+}
+A、1,2,3,4,        B、0,1,2,3,        C、1,0,0,1,       D、0,1,2,2,
+
+13.下列程序的输出结果是_____。
+#include "stdio.h"
+void main()
+{
+    int  k;
+    char *s = "ABC";
+    for( k=10; k!=0; k--);
+    printf ("%d", k);
+    while(*s++)  putchar(*s);
+}
+A、1ABC        B、1AB        C、1BC       D、0BC
+
+14. 下列代码执行完毕后，s的值是 ______.
+int i=5, s=0;
+do
+ if (i%2) continue;
+else s+=i;
+while (--i);
+
+A、15  B、9   C、6   D、5
+
+15. 下列程序的输出结果是______   .
+
+#include "stdio.h"
+void fun(int k)
+{
+    static int a;
+    printf("%d,", a);
+    a += k;
+}
+main()
+{    int k;
+for (k=1; k<=3; k++)
+fun(k);
+}
+A、0,1,2,       B、1,2,3,        C、0,1,3,       D、2,3,4,
+16. 有以下程序
+
+#include "stdio.h"
+int main()
+{
+    int s=0,a=1,n;
+    　　scanf("%d",&n);
+    　　do
+    {
+        s+=1;
+        a=a-2;
+    }
+    　　while(a!=n);
+    　　printf("%d\n",s);
+    return 0;
+}
+
+若要使上述程序的输出值为3，则应该从键盘给n输入的值是______
+　	A、-1    B、-3    C、-5     D、0
+
+17. 以下程序的输出结果是______
+
+#include "stdio.h"
+int main()
+{
+    int num= 0;
+    while(num<3)
+    {
+        num++;
+        printf("%d  ",num);
+    }
+    return 0;
+}
+    A、 1 2 3 4  		 B、 1 2 3 		 C、1 2  		 D、 l
+
+18. 下列程序运行完毕后，s的结果是______
+
+#include <stdio.h>
+main()
+{
+    int i, s=0;
+    for(i=1;i<10;i++)
+    {
+        s+=i*i;
+        if(s>10) break;
+    }
+    printf("i=%d, s=%d\n", i, s);
+}
+
+A、 5   	B、 6   	C、14    	D、 30
+
+19、下列程序运行完毕后，s的结果是______
+
+#include <stdio.h>
+main()
+{
+    int i, s=0, n=0;
+    for(i=1; i<10; i++)
+    {
+        if(i%2==0||i%3==0)
+            continue;
+        n++;
+        s+=i;
+    }
+}
+A、 15   B、 55   C、13    D、 45
+
+
+20、以下程序的输出结果是______
+
+#include <stdio.h>
+main()
+{
+    int i, s=0, t=0;
+    for(i=1; i<10; i++)
+        switch(i<6)
+    {
+case 0:
+    t+=i;
+    break;
+case 1:
+    s+=i;
+       break;
+    }
+    printf("t=%d, s=%d\n", t, s);
+}
+A、t=30,s=15  B、t=6,s=25 A、t=30,s=25  A、t=10,s=15
+
+试题二、填空题(每空2分，共30分)
+1. 下述程序中的函数sort 的功能是使用冒泡法将一维整型数组中各元素按值从大到小排序，请将该程序补充完整。
+
+   void sort( int a[ ], int n)
+   {  int k, j, t;
+      for(k=1; k<n; k++)
+        for(j=0; j < n-k; j++)
+            if(     (1)      )       (2)
+     }
+2.下面程序运行的结果是____(3)________。
+#include <stdio.h>
+int fun(int a, int b)
+{
+    if(a>b)
+        return(a);
+    else return(b);
+}
+int main()
+{
+    int x=3, y=8, z=6, r;
+    r=fun(z,fun(x,y));
+    printf("%d\n", r);
+    return 0;
+}
+
+3．以下程序的输出结果是____(4)________。
+#include <stdio.h>
+#define  f(x,y)    x*y
+int main( )
+{
+    int i;
+    i=f(2+2,8);
+    printf("%d\n",i);
+    return 0;
+}
+
+4. 下列程序的输出结果是____(5)________
+#include <stdio.h>
+int x, y, z;
+void p(int *x, int y)
+{
+    --*x;
+    y++;
+    z = *x+y;
+    printf("%d,%d,", *x,y);
+}
+
+void main()
+{
+    x=5; y=2; z=0;
+    p(&x, y);
+    printf("%d,%d,%d-->", x, y, z);
+    p(&y, x);
+    printf("%d,%d,%d\n", x, y, z);
+}
+5 下面程序运行的正确结果是____(6)________。
+#include <stdio.h>
+void f(int *x,int *y)
+{
+    int *p;
+    p=x;
+    x=y;
+    y=p;
+}
+void main()
+{
+    int x=1, y=2;
+    f(&y, &x);
+    printf("%d, %d", x, y);
+}
+
+6. 写出下列程序的输出结果____(7)________。
+#include <stdio.h>
+long fib(int g)
+{
+       switch(g)
+       {
+       case 0: return(0);
+       case 1:
+       case 2: return(2);
+       }
+       printf("g=%d,", g);
+       return ( fib(g-1) + fib(g-2) );
+}
+
+main()
+{
+    long k;
+    k = fib(4);
+    printf("k=%ld\n", k);
+}
+
+7. 写出下列程序的输出结果____(8)________
+
+#include <stdio.h>
+int main (void)
+{
+    int x,y,m,*p;
+    int a[3][3]={{1,3,12},{14,9,1},{9,0,4}};
+    m=a[0][0];
+    x=0; y=0;
+    for(p=a[0];p<a[0]+3;p++)
+        if(m<*p)
+            m=*p;
+        printf("%5d",*p);
+        return 0;
+}
+
+8、以下程序的功能是打印如下图形，请将程序补充完整。
+
+0  1  2  3
+1  2  3  0
+2  3  0  1
+3  0  1  2
+
+main()
+{  int i, j;
+for(i=0;    (9)     ; i++)
+   {  for(j=0; j<4; j++)
+         printf(“%d\t”,    (10)       );
+         printf(“\n “);
+   }
+}
+
+
+9、下列程序的功能是将输入的 n 个字符串连接成1个字符串 , 然后输出该字符串，请将该程序补充完整。
+
+#include <stdio.h>
+#include <string.h>
+void main()
+{
+    char str[10][20], string[200];
+    int k, n;
+    scanf("%d", &n);
+    for (k=0; k<n; k++)
+        gets(str[k]);
+         (11)
+    for (k=1; k<n; k++)
+         (12)
+    puts(string);
+}
+
+
+10. 下列程序的功能是输入10个浮点数，调用函数f(x)计算并输出相应的函数值。
+   f(x)的功能是计算分段函数：
+      x2+2x+1  x<0
+y=    0        x=0
+      3        x>0
+源程序如下，请将该程序补充完整。
+#include <stdio.h>
+     (13)
+{
+if (x<0)      (14)       ;
+   else      (15)      ;
+   else return 3;
+}
+
+void main( )
+{
+ int k;
+    float x;
+for(k=1; k<=10; k++)
+{
+       scanf("%f", &x);
+       printf("y=%f\n", f(x));
+    }
+}
+
+试题三、简答题（每题5分，共10分）
+1. 二维字符数组与一维字符指针数组处理多个字符串时有何区别？
+2. 指向函数的指针与返回指针值的函数有何区别？
+
+试题四、程序设计题(共 20 分)
+1.(5分) 编写一个函数  my_strlin(char *s)，用以计算并返回字符串 s中小写英文字母的个数。
+
+2. (5分)编写一个程序计算下述两个矩阵相乘：
+ EMBED Equation.3   EMBED Equation.3      计算公式： EMBED Equation.3
+分别输入矩阵（一维数组）a和b，按上述计算公式计算并输出c的值。
+Sample input:
+1 2 3
+4 5 6
+
+Output:
+32
+
+3. (10分)请编写一个C程序，输入一个正整数，判断该数是否是一个素数，若是，则输出Yes，否则输出No。
+
+Sample input:
+121
+
+Output:
+No
+
+
+
+
+
+
+
+
+
+
+
+
+PAGE
+
+
+Page  PAGE 1 of  NUMPAGES 9

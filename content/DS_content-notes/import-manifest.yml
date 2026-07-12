@@ -1,0 +1,69 @@
+schemaVersion: 1
+packageId: data-structures-foundation
+version: 2.0.0
+title: 数据结构基础课程内容包（含面试练习题）
+encoding: UTF-8
+target:
+  learningPath:
+    sourceKey: path:embedded-foundation
+    slug: embedded-foundation
+    name: 嵌入式入门路径
+  course:
+    sourceKey: course:data-structures
+    title: 数据结构基础
+    description: 面向嵌入式开发的数据结构核心知识，涵盖链表、栈、队列、树、二叉树、AVL 树和图。
+    level: BEGINNER
+    sortOrder: 3
+    archiveUnmanagedContent: true
+defaults:
+  status: 1
+  keywords:
+  - 数据结构
+  - 链表
+  - 栈
+  - 队列
+  - 二叉树
+  - 图
+  - 嵌入式基础
+  includeReferencedAssets: true
+content:
+- sourceKey: ds:chapter:01
+  file: 笔记/01-数据结构概述.md
+  chapterTitle: 数据结构概述
+  articleSlug: ds-01-overview
+  sortOrder: 1
+- sourceKey: ds:chapter:02
+  file: 笔记/02-单链表.md
+  chapterTitle: 单链表
+  articleSlug: ds-02-singly-linked-list
+  sortOrder: 2
+- sourceKey: ds:chapter:03
+  file: 笔记/03-带头结点的单链表.md
+  chapterTitle: 带头结点的单链表
+  articleSlug: ds-03-headed-singly-linked-list
+  sortOrder: 3
+- sourceKey: ds:chapter:04
+  file: 笔记/04-双向链表.md
+  chapterTitle: 双向链表
+  articleSlug: ds-04-doubly-linked-list
+  sortOrder: 4
+- sourceKey: ds:chapter:05
+  file: 笔记/05-栈和队列.md
+  chapterTitle: 栈和队列
+  articleSlug: ds-05-stack-and-queue
+  sortOrder: 5
+- sourceKey: ds:chapter:06
+  file: 笔记/06-树和二叉树.md
+  chapterTitle: 树和二叉树
+  articleSlug: ds-06-tree-and-binary-tree
+  sortOrder: 6
+- sourceKey: ds:chapter:07
+  file: 笔记/07-图.md
+  chapterTitle: 图
+  articleSlug: ds-07-graph
+  sortOrder: 7
+excludedFromThisImport:
+- glob: 代码/**
+  reason: 代码已整理进课程 Markdown；原始课堂代码作为源资料保留。
+- glob: 图片/**
+  reason: 仅导入被 Markdown 相对路径实际引用的图片。

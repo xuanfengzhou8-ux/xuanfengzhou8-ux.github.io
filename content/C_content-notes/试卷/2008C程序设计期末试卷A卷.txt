@@ -1,0 +1,258 @@
+脱敏文本版：2008C程序设计期末试卷A卷.doc
+原始 Word/PDF 附件已移除，避免公开仓库保留学校、公司、个人或文档作者元数据。
+
+试题一、判断题 (共10分)
+不同类型的变量在内存中占用存储空间的大小可以不一样。
+switch语句中必须含有defualt语句和break语句。
+指针变量是把另一个变量的地址作为其值的变量。
+表达式 625%2.5 是合法的C语言表达式。
+若指针变量指向一维数组的第一个元素，将指针变量加整数3，即指针后移3个元素。
+数组名仅仅是一个数组的名字符号，除此之外没有其它任何含义。
+C语言任何类型的数据在计算机内部都是以二进制形式存储的。
+格式符“%o”是按16进制输出整数。
+如果s1、s2是两个字符，C语言程序中可以用s1==s2比较这两个字符是否相等。
+结构体类型中各成员项的数据类型可以不同。
+
+试题二、单选题，根据题目从A、B、C、D中选择一个正确的选项（共10分）
+1. 有定义double x=1,y;表达式y=x+3/2的值是（    ）。
+A、 1		B、 2		C、2.0		D、2.5
+2. 数组定义为 int a[3][2]={1,2,4,5,6}，下列表述中正确的是（  ）。
+   A、a[3][2]的值为6         B、a[1][1]+1的值为6
+   C、a[2][1]的值不确定       D、a[0][0]的值为0
+3. 定义char  s[ ]={"Boy"},t; 执行下面语句段后输出结果是（    ）。
+s[0]=s[2];
+s[2]=s[0];
+s[1]=s[3];
+s[3]=s[1];
+printf("%c,%s \n", s[0], s);
+A、B,Boy   B、y,y    C、y,yoy  D、y,yoB
+4. 若有float a=2.5,b=6.3, *pa=&a;  执行语句“ *pa*=3; pa=&b ”以后; 则正确的是（    ）。
+       A、pa的值是2.5 ;    B、*pa的值是6.3
+  C、*pa的值是7.5     D、 pa的值是6.3;
+5. 下列语句中与语句 while(1){if(i>=100)break;s+=i;i++;} 功能相同的是（    ）。
+    A、for(;i<100;i++) s=s+i;          B、for(;i<100;i++;s=s+i);
+       C、for(;i<=100;i++) s+=i;          D、for(;i>=100;i++;s=s+i);
+
+6. 若有 char  c1, c2, s = 'b' ; 连续执行下面语句后，c1,c2和s的输出值是（  ）。
+c1 = s++ ; c2=++s ; printf("%c,%c,%c",c1,c2,s);
+A、 b,c,d    B、 b,d,d   C、 d,e,f    D、 b,d,b
+7. 在C语言中，当复合语句多于一条时，要用括号括起来，使用的是（    ）
+     A、方括号     B、圆括号     C、花括号     D、尖括号
+8.下面程序段中循环体执行多少次（    ）。
+i=0; k=10;  while( i=8 )  i=k--;
+A、8次			B、	10次
+C、2次		    D、	无数次
+9．能对一维数组正确初始化的语句是（    ）。
+A、int a[6]={6*1};	B、	int a[6]={1,,,3};
+C、int a[6]={};	D、	int a[6]=(0,0,0);
+10．若有定义：struct person { char name[9];  int age; };
+struct person st[3]={"john",17,"Mary",19,"Paul",18};
+能输出学生Paul名字的语句是（    ）。
+A、printf("%s",st[2].name[0]);  B、printf("%s",st[2].name);
+C、printf("%s",st[3].name);     D、printf("%s",st[3].name[0]);
+
+试题三、程序阅读（共24分）
+1. 阅读下列程序，并写出程序执行结果。
+#include<stdio.h>
+void main()
+{   int x,d,s=0,k=0;
+    scanf("%d",&x);   //输入5782
+    do{  d=x%10;
+         k=k*10+d;
+         s+=d;
+         x/=10;
+       }while(x!=0);
+     printf("k=%d,s=%d\n",k,s);
+        }
+
+2．阅读下列程序，并写出程序执行结果。
+#include <stdio.h>
+        void main()
+        { int a[6]={3,2,8,5,6,9};
+int i,j,k,m;
+           for(i=5;i>=0;i--){
+               k=a[5];
+               for(j=4;j>=0;j--)
+                  a[j+1]=a[j];
+                  a[0]=k;
+第 1页  共 5页(A)
+
+for(m=0;m<6;m++)
+       printf("%2d",a[m]);
+putchar('\n');
+}
+}
+
+3．阅读下列程序并回答下面的问题。
+#include <stdio.h>
+void main()
+{  void fun(int *x,int y);
+    int k,a,b;
+    scanf("%d,%d",&a,&b);     //输入358，751
+    fun(&a,b);
+    printf("a=%d,b=%d",a,b);
+}
+void fun(int *x,int y)
+{   *x=*x/10*10+y%10;     //第10行
+     y=*x;                 //第11行
+}
+
+问题1：写出程序运行结果。
+问题2：若将第10、11行语句分别改为: y=y/10*10+*x%10; *x=y;写出程序运行结果。
+
+4．阅读下列程序并回答问题。
+#include <stdio.h>
+void main()
+{   int data1, data2, res;
+    char op;
+    scanf("%d", &data1);
+       op = getchar();
+while(op!= '='){
+        scanf("%d", &data2);
+        switch(op){
+            case '+': res = data1+data2; break;
+            case '-': res = data1-data2; break;
+            case '*': res = data1*data2; break;
+            case '/': res = data1/data2; break;
+            default: res = 0;
+           }
+
+
+data1 = res;
+        op = getchar();
+    }
+    printf("%d\n", res);
+}
+
+问题1：程序运行时，输入5*2= 则输出结果？
+问题2：程序运行时，输入1-2*10-10/2= 则输出结果？
+
+试题四、程序填空题。按程序功能，在划线部分填写适当的内容。 (共26分，每空2分)
+1．程序功能： 输入2个整数lower和 upper，输出一张华氏－摄氏温度转换表，华氏温度的取值范围是[lower,upper]，每次增加2°F。计算公式是c=5*(f-32)/9其中：c表示摄氏温度，f表示华氏温度。
+程序运行示例：
+输入 lower: 30
+输入 upper: 35
+fahr  celsius
+30   -1.1
+32    0.0
+34    1.1
+【程序】
+#include <stdio.h>
+void main( )
+{  int fahr, lower, upper;
+   double celsius;
+   printf("输入 lower:");
+   scanf("%d", &lower);
+   printf("输出 upper:");
+   scanf("%d", &upper);
+   printf("fahr  celsius\n");
+   for (fahr = lower;        (1)     ;     (2)    ){
+      celsius = 5*(fahr-32)/9    ;
+      printf("%d     (3)    \n", fahr, celsius);
+   }
+}
+
+2.程序功能：输入10个整数，以2种方式输出这10个数。第1次输出这10个数是将第3到第8个数按从小到大排序其余数据位置不变的方式输出，第2次输出是将这10个数按从小到大排序输出。
+第2页  共5页(A)
+
+程序运行示例：
+输入10个数：45 23 0 -13 49 18 7 13 43 -23
+45 23 -13 0 7 13 18 49 43 -23
+-23 -13 0 7 13 18 23 43 45 49
+【程序】
+#include <stdio.h>
+#define N 10
+void sort(int a[ ], int n);
+void main( )
+{   int i, a[N];
+    printf("输入10个数：");
+    for(i = 0; i < N; i++)
+        scanf("%d", &a[i]);
+        (1)    ;
+    for(i = 0; i < N; i++)
+        printf("%d ", a[i]);
+    printf("\n");
+    sort(a,N);
+    for(i = 0; i < N; i++)
+        printf("%d ", a[i]);
+}
+void sort( int a[],int n  )
+{  int i, j, k, t;
+   for(i = 0; i < n-1; i++){
+             (2)
+        for(j = i + 1; j < n; j++)
+            if(     (3)      )  k = j;
+        t = a[k]; a[k] = a[i]; a[i] = t;
+   }
+}
+
+3．程序功能：输入一个字符串（少于80个字符），将字符串中的所有英文字母转换为大写字母，同时删除其中除英文字母外的其它字符，输出新字符串，然后再判断新字符串是否对称。（字符串对称是指：字符串从左到右读与从右到左读都一样）
+程序运行示例1：
+输入一个字符串: Madam I'm Adam
+MADAMIMADAM
+Yes
+
+
+程序运行示例2：
+输入一个字符串: elephant
+ELEPHANT
+No
+【程序】
+#include <stdio.h>
+ #include <ctype.h>
+  void main( )
+  { int flag, i, k, j;
+    char str[80];
+   printf("输入一个字符串: ");
+   gets(str);
+   i =k =0;
+   while(str[i] != '\0'){
+     if (isalpha(str[i])){          // 注：isalpha判断字母函数
+        if(str[i]>='a'&&str[i]<='z')
+                (1)     ;
+        else str[k]=str[i];
+            (2)
+      }
+          (3)     ;
+    }
+str[k]='\0';
+puts(str);
+    flag = 1;
+    for(j= k-1,k = 0; k <j; k++,   (4)     )
+        if(str[k] != str[j]){
+            flag=0;
+            break;
+        }
+    if( flag   )  printf("Yes\n");
+    else  printf("No\n");
+}
+
+4. 程序功能：输入10个范围在[1，20]内的整数，按输入数据的顺序输出这10个数中不重复的数。
+程序运行示例：
+输入10个整数：12 5 18 5 12 18 9 16 17 18
+12 5 18 9 16 17
+
+第3页  共5页(A)
+第4页  共5页(A)
+
+【程序】
+#include <stdio.h>
+void main( )
+{  int a[21],x,k,i;
+   for(i=1;i<=20;i++)
+       a[i]=0;
+   printf("输入10个整数: ");
+   k=0;
+   while(k<10){
+       scanf("%d",&x);
+           (1)   ;
+       if (a[x]==1)
+          printf(     (2)    );
+           (3)   ;
+   }
+}
+
+试题五、编程序 (共30分)
+1．输入一个实数，输出其绝对值。（8分）
+2．编写程序，统计范围在 [100，999]内的所有水仙花数的个数及它们的和。其中要求定义和调用函数isflower(m)来判断m是否水仙花数。水仙花数是指一个三位数，其各位数字的立方和等于其本身。（10分）
+3．从键盘上输入一批学生成绩遇到0或负数输入结束，要求统计并在屏幕上输出优秀（大于85）、通过（60～84）和不及格（小于60）的学生人数，同时将输出的数据写到c:\temp\score.txt文件中存储。（12分）

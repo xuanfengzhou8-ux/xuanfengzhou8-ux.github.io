@@ -1,0 +1,85 @@
+脱敏文本版：2022-03-22复习题-答案.doc
+原始 Word/PDF 附件已移除，避免公开仓库保留学校、公司、个人或文档作者元数据。
+
+2022-03-22复习题
+1、有如下语句：
+ int i=-1;
+ if(i<=0)
+    printf("**** ");i=2;
+ else
+    printf("i=%d", i);
+ 其执行效果是
+A.****		B.i=2		C.**** i=2
+D.####		E.编译出错
+
+答案：E    解析：编译出现的错误：error: ‘else’ without a previous ‘if’
+因if和else中间有多行语句，所以else找不到对应的if。
+
+
+2、在32位平台下，结构体data定义如下：
+ struct data
+ {
+     char a;
+     int b;
+     short c;
+ };
+ 则其大小为
+A.8		B.10	C.12	D.14	E.16
+
+答案：C
+解析：在Linux中结构体中的元素需要遵循字节对齐的原则，而32位的平台下是以四个字节对齐的。故在本题中char 本身占一个字节，剩余3个字节；但是int b占4个字节，a后面剩余的3个字节放不下，所以另起四个字节。short c本身占2个字节，多余的2个字节不能被其他变量占用。所以总共占12个字节。
+
+3、写一个冒泡排序的函数
+参考代码：
+#include <stdio.h>
+
+#define N 10
+
+int main()
+{
+    int a[N];
+    int i;
+    int t;
+
+    for (i = 0; i < N; i++)
+    {
+        scanf("%d", &a[i]);
+    }
+
+    int times ;
+
+    for (times = 0; times < N-1 ; times++)
+    {
+        for (i = 0; i< N- 1 -times;i++)
+        {
+            if (a[i] > a[i+1])
+            {
+                t = a[i];
+                a[i] = a[i+1];
+                a[i+1] = t;
+            }
+        }
+    }
+
+    for (i = 0; i < N; i++)
+    {
+        printf("%d ", a[i]);
+    }
+    printf("\n");
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+题目不在多，而在于你需要有计划的复习

@@ -1,0 +1,30 @@
+schemaVersion: 1
+packageId: cross-development-libs
+version: 1.0.0
+title: 交叉开发与库链接课程内容包
+encoding: UTF-8
+
+target:
+  learningPath:
+    sourceKey: path:embedded-linux
+    slug: embedded-linux
+    name: 嵌入式 Linux 应用开发路径
+  course:
+    sourceKey: course:cross-development-libs
+    title: 交叉开发与库链接
+    description: 围绕交叉编译场景理解静态库、动态库、链接选项和运行时库路径。
+    level: INTERMEDIATE
+    sortOrder: 3
+    archiveUnmanagedContent: true
+
+defaults:
+  status: 1
+  keywords: [交叉编译, 静态库, 动态库, 链接, 嵌入式Linux]
+  includeReferencedAssets: true
+
+content:
+  - sourceKey: cross-dev:chapter:01
+    file: 笔记/01-动态库与静态库.md
+    chapterTitle: 动态库与静态库
+    articleSlug: cross-dev-01-static-dynamic-library
+    sortOrder: 1

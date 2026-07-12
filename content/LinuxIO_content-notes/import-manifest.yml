@@ -1,0 +1,55 @@
+schemaVersion: 1
+packageId: linux-io-programming
+version: 1.0.0
+title: Linux I/O 编程课程内容包
+encoding: UTF-8
+
+target:
+  learningPath:
+    sourceKey: path:embedded-linux
+    slug: embedded-linux
+    name: 嵌入式 Linux 应用开发路径
+  course:
+    sourceKey: course:linux-io-programming
+    title: Linux I/O编程
+    description: 面向嵌入式应用开发的 Linux 文件 I/O、目录操作、标准 I/O、缓冲机制和帧缓冲项目实践。
+    level: INTERMEDIATE
+    sortOrder: 2
+    archiveUnmanagedContent: true
+
+defaults:
+  status: 1
+  keywords: [Linux, I/O, 文件描述符, 标准IO, 目录操作, mmap, 帧缓冲]
+  includeReferencedAssets: true
+
+content:
+  - sourceKey: linux-io:chapter:01
+    file: 笔记/01-Linux系统IO基础.md
+    chapterTitle: Linux 系统 I/O 基础
+    articleSlug: linux-io-01-system-io-basics
+    sortOrder: 1
+  - sourceKey: linux-io:chapter:02
+    file: 笔记/02-文件属性与路径操作.md
+    chapterTitle: 文件属性与路径操作
+    articleSlug: linux-io-02-file-attributes-paths
+    sortOrder: 2
+  - sourceKey: linux-io:chapter:03
+    file: 笔记/03-目录遍历与递归统计.md
+    chapterTitle: 目录遍历与递归统计
+    articleSlug: linux-io-03-directory-traversal
+    sortOrder: 3
+  - sourceKey: linux-io:chapter:04
+    file: 笔记/04-标准IO与缓冲机制.md
+    chapterTitle: 标准 I/O 与缓冲机制
+    articleSlug: linux-io-04-stdio-buffering
+    sortOrder: 4
+  - sourceKey: linux-io:chapter:05
+    file: 笔记/05-setvbuf缓冲控制.md
+    chapterTitle: setvbuf 缓冲控制
+    articleSlug: linux-io-05-setvbuf
+    sortOrder: 5
+  - sourceKey: linux-io:chapter:06
+    file: 笔记/06-文件IO项目电子相册.md
+    chapterTitle: 文件 I/O 项目：电子相册
+    articleSlug: linux-io-06-photo-album-project
+    sortOrder: 6

@@ -1,0 +1,50 @@
+schemaVersion: 1
+packageId: linux-system-basics
+version: 1.0.0
+title: Linux系统基础入门课程内容包
+encoding: UTF-8
+
+target:
+  learningPath:
+    sourceKey: path:embedded-foundation
+    slug: embedded-foundation
+    name: 嵌入式入门路径
+  course:
+    sourceKey: course:linux-system-basics
+    title: Linux系统基础入门
+    description: 面向嵌入式开发的 Linux 命令行、文件检索、正则表达式和 Shell 脚本基础。
+    level: BEGINNER
+    sortOrder: 2
+    archiveUnmanagedContent: true
+
+defaults:
+  status: 1
+  keywords: [Linux, Shell, 命令行, 正则表达式, 嵌入式基础]
+  includeReferencedAssets: true
+
+content:
+  - sourceKey: linux-basics:chapter:01
+    file: 笔记/01-Linux基本命令.md
+    chapterTitle: Linux 基本命令
+    articleSlug: linux-basics-01-basic-commands
+    sortOrder: 1
+  - sourceKey: linux-basics:chapter:02
+    file: 笔记/02-find文件查找命令.md
+    chapterTitle: find 文件查找命令
+    articleSlug: linux-basics-02-find-command
+    sortOrder: 2
+  - sourceKey: linux-basics:chapter:03
+    file: 笔记/03-grep文本检索命令.md
+    chapterTitle: grep 文本检索命令
+    articleSlug: linux-basics-03-grep-command
+    sortOrder: 3
+  - sourceKey: linux-basics:chapter:04
+    file: 笔记/04-正则表达式基础.md
+    chapterTitle: 正则表达式基础
+    articleSlug: linux-basics-04-regular-expression
+    sortOrder: 4
+  - sourceKey: linux-basics:chapter:05
+    file: 笔记/05-Shell脚本基础.md
+    chapterTitle: Shell 脚本基础
+    articleSlug: linux-basics-05-shell-script
+    sortOrder: 5

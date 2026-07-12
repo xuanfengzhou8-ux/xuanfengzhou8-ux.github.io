@@ -1,0 +1,75 @@
+脱敏文本版：2020-05-29复习题-答案.doc
+原始 Word/PDF 附件已移除，避免公开仓库保留学校、公司、个人或文档作者元数据。
+
+2020-05-29复习题--答案
+请问运行test函数会有什么结果？为什么？
+（1）void getmemory( char *p )
+{
+        P=(char*)malloc( 100 );
+}
+    void test( void )
+{
+        Char *str = null;
+        getmemory(str);
+    strcpy( str, “hello world” );
+    Printf( str );
+}
+
+参考答案：
+1，调用GetMemory( str )后， str并未产生变化，依然是NULL.只是改变的str的一个拷贝的内存的变化
+
+ 	2，strcpy( str, "hello world" );程序运行到这将产生错误。
+
+ 	3，malloc的时候有可能内存出错，应该在*p = (char *) malloc( num ); 后判断内存是否申请成功，应加上：
+     if ( *p == NULL )
+   {
+　    ...//进行申请内存失败处理
+   }
+动态创建的内存没释
+
+（2）char *getmemory( void )
+{
+        char p[] = “hello world”;
+        return p;
+}
+    void test( void)
+{
+        char *str = null;
+        str = getmemory();
+        printf( str );
+}
+输出不确定，应为P在getmemory函数结束时，就被销毁了，所以str指向的内容不确定，野指针
+（3）void getmemory( char **p, int num )
+{
+        *p =（char*）malloc( num );
+}
+Void test( void )
+{
+        Char* str = null;
+        getmemory( &str, 100 );
+        Strcpy( str, “hello” );
+        Printf( str );
+}
+
+参考答案：
+能输出结果：hello，存在内存泄漏
+
+用一句语句实现x是否是2的若干次幂的判断？
+参考答案：If(x%2==0)
+
+3、不使用库函数，编写函数 int strcmp(char *source, char *dest)相等返回0， 不等返回-1；
+参考代码：
+Int strcmp(char *source,char*dest)
+{
+    While(*source==*dest&&*source!=’\0’&&*dest!=’\0’)
+    {
+        Source++;dest++;
+}
+If(*source==’\0’&&*dest==’\0’)
+Return 0;
+Else
+
+Return -1;
+}
+
+题目不在多，而在于你需要有计划的复习

@@ -1,0 +1,197 @@
+脱敏文本版：2022-2023学年-C及C++程序设计-B卷.doc
+原始 Word/PDF 附件已移除，避免公开仓库保留学校、公司、个人或文档作者元数据。
+
+《C++程序设计》课程考试试卷（ B 卷）
+
+题 号一二三四五六总分分 值4010102020100得 分
+一、单项选择题 (每小题2分，共40分)
+1. C程序的执行总是从(    )开始。
+A、 HYPERLINK "javascript:void(0)" 第1个函数
+B、 HYPERLINK "javascript:void(0)" main函数
+C、 HYPERLINK "javascript:void(0)" 最后一个函数
+D、 HYPERLINK "javascript:void(0)" 中间函数
+2.以下叙述错误的是（  ）。
+A、C语言的标识符中，大小写字母代表不同标识         B、C语言的标识符允许使用关键字
+ C、C语言的标识符必须以字母或下划线开头            D、C语言的标识符应尽量做到见名知意
+3. 若有如下定义，则b的值是（ ）int a[10]={1,2,3,4,5,6,7,8,9,10},*p=&a[3],b=p[5];
+A、5              B、6                   C、8              D、9
+4. 设float a=2, b=4, c=3；，以下C语言 HYPERLINK "https://so.csdn.net/so/search?q=%E8%A1%A8%E8%BE%BE%E5%BC%8F&spm=1001.2101.3001.7020" \t "_blank" 表达式与代数式 (a+b)+c计算结果不一致的是(    )
+A.(a+b)*c/2        B.(1/2)*(a+b)*c         C.(a+b)*c*1/2       D.c/2*(a+b)
+5. 下列程序段运行后， x 的值是(    )
+a=1;b=2;x=0;
+if(!( -- a))x -- ;
+if(!b)x=7;else ++x;
+A.0                        B.3                  C.6                  D.7
+6. 算术运算符，赋值运算符和关系运算符的运算优先级按从高到低依次为(   )
+A.算术运算、赋值运算、关系运算       B.算术运算、关系运算、赋值运算
+C.关系运算、赋值运算、算术运算       D.关系运算、算术运算、赋值运算
+7.以下程序执行后的输出结果是（  ）
+#include<string.h>
+void main(){
+char *p[10]={“abc”,”aabdfg”,”dcdbe”,”abbd”,”cd”};
+printf(“%d\n”,strlen(p[4]));}
+A.2                        B.3                         C.4                    D.5
+8.已知int i=10;表达式"20-0<=i<=9"的值是(  )
+A、0                   B、1                    C、19              D、20
+9. 若int n; float f=13.8; 则执行n=(int)f%3后，n的值是（    ）
+A、1                 B、4                  C、4.333333        D、4.6
+10.在C语言中，表示静态存储类别的关键字是(   )。
+A、auto         B、register         C、static           D、extern
+11.有以下说明和定义语句：
+Struct  student{
+Int age;
+Char num[8];};
+Struct student stu[3]={{20,”200401”},{21,”200402”},{19,”200403”}};
+Struct student *p=stu;
+以下选项中引用结构变量成员的表达式错误的是（  ）
+A.(p++)->num      B.p->num     C.(*p).num   D.stu[3].age
+12.若有定义：int aa[8];,则不能代表数组元素aa[1]地址的是 （ ）
+A、&aa[0]+1      B、&aa[1]     C、&aa[0]++     D aa+1
+13.访问数组int arr[2][4]中的元素，下列选项中正确的是（）
+A、arr[0][3]           B、arr[0][4]              C、arr[2][4]        D、arr[-2][2+1]
+14. 已知字母a的ASCII码为97，若变量ch为char型，以下能正确判断出ch的值为小写字母的表达式是 （    ）。
+A、ch >='a' || ch <= 'z'                          B、!( ch >='a' || ch <='z' )
+   C、(ch+32)>='A' && ( ch+32)<='Z'               D、(ch-32)>='A' && ( ch-32)<='Z'
+15. 24.当文件被正常关闭时，fclose()函数的返回值是（  ）
+A．true               B.0                   C.-1             D.1
+16. 若执行以下程序时从键盘上输入9,则输出结果是（     ）。
+int main()
+{   int n;
+           scanf("%d",&n);
+           if(n++<10)
+              printf("%d\n",n);
+ else
+ printf("%d\n",n--);
+            return 0;}
+A、11                     B、10                  C、9            D、8
+17. 有如下程序：
+int main(){
+int x=1,a=0,b=0;
+ switch(x){
+case 0:b++;
+        case 1:a++;
+        case 2:a++;b++;  }
+     printf(“a=%d,b=%d\n”,a,b);
+  return 0;}
+该程序的输出结果是（     ）。
+A、a=2,b=1              B、a=1,b=1            C、a=1,b=0      D、a=2,b=2
+18. 下面的程序段中共出现了几处语法错误（     ）。
+int a,b;
+scanf("%d",a);
+b=2a;
+if(b>0)
+ printf("%b",b);
+A、1                      B、2                      C、3               D、4
+19. 执行"x=-1; do { x=x*x; } while (!x);"循环时，下列说法正确的是：（   ）
+A、循环体将执行一次   B、循环体将执行两次
+C、循环体将执行无限次
+D、系统将提示有语法错误
+20.凡是函数中未指定存储类别的局部变量，其隐含的存储类别为(   )
+A、自动(auto)      B、静态(static)      C、外部(extern)    D、寄存器(register)
+二、多项选择题（每小题2分，共10分）
+1.关于一维数组的定义，下列初始化正确的是（ ）
+A、int arr[3]={1,2,6};              B、char str[2]={a,b,c};
+C、float ff[]={1.2,9.0,78.4};         D、double dd[4]={1.3,9.08,3.14,2.56,1.09};
+2.关于函数调用，下列说法中错误的是（ ）
+A、函数调用完毕后，形参占用的内存会被释放。         B、函数不能作为单独的语句调用。
+C、函数可以作为另一个函数的实参进行调用。           D、函数最多只能进行3层嵌套调用。
+3.以下不正确的描述是（  ）
+A、C语言的预处理功能是指完成宏替换和包含文件的调用
+B、预处理命令只能位于C源程序文件的首部
+C、凡是C源程序中行首以“#”标识的控制行都是预处理命令
+D、C语言的编译预处理就是对源程序进行初步的语法检查
+4.下列选项中，哪个函数可以将数据格式化写/读入文件（ ）
+A、fwrite()         B、fprintf()         C、fsacnf()          D、fput()
+5.有以下程序：
+#include<stdio.h>
+Int main(){
+Char a=4;
+Printf(“%d\n”,a=a<<1);
+Return 0;}
+程序的运行结果是（）
+A、40            B、16         C、8           D、4
+三、填空题（每空1分，共10分）
+1.程序设计语言的发展经历了几个阶段，          、          和            。
+2.若有以下定义和语句：
+Struct { int day;char month; int year;}a, *b; b=&a;则sizeof(a)的值是           ，sizeof(b)的值是            。
+3.按照数据的存储形式，文件可以分为            和                    。
+4.定义变量int a=8.1,b=5,c;则执行语句c=a/b+0.4的结果是          。
+5.当一个函数返回一个整数时，该函数的返回值类型为            。
+6.如果一个表达式的运算结果是指针，这个表达式称为                    。
+
+四、程序补充或结果填写（每题5分，共20分）
+1．请分析程序1如下：补充下列代码，输出乘法口诀表，。
+#include <stdio.h>
+int main(){
+    int i，j;
+{       （1）
+    { （2）
+        printf(“%d*%d=%d\t”,j,i,j*i);
+printf(“\n”);
+return 0;
+    }
+
+}
+2．请分析程序2如下，并写出其结果。
+#include<stdio.h>
+int main(){
+int i,n=1;
+for (i = 1; i< =100 ; i++)
+{   if(i%7!=0)
+       continue;
+printf(“%4d”,i);
+if(n++%5==0)printf(“\n”);
+}
+return 0;
+}
+
+结果：
+3．请分析程序3如下，并写出其结果。
+#include<stdio.h>
+void main(){
+int a,*pa=&a,**ppa=&pa;
+**pa=10;
+Printf(“**pa=%d,*pa=%d,a=%d\n”,**ppa,*pa,a);
+}
+**pa=10,*pa=10,a=10
+结果：
+4．请分析程序4如下，并写出其结果。
+struct Country{
+int num;
+char name[10];
+};
+int main(){
+struct Country countrys[5] = { 1,"China",2,"USA",3,"France",4,"England",5,"Spanish" };
+struct Country* p;
+p = countrys + 2;
+printf("%d,%c", p->num, (*p).name[2]);
+return 0;
+}
+结果：
+
+五、编程题（第一题10分，第二题10分，共20分）
+1.编写程序：在已知的整型数组a[10]={12,6,18,57,61,62,89,33,78,15}中，求同时满足以下条件的数以及这些数的和（要求用循环实现）(10分)。
+条件如下：（1）数组元素下标为奇数  （2）数组元素的值为偶数
+
+2.编写程序：从键盘输入两个正整数，输出最大公约数和最小公倍数。(共10分)
+
+
+
+
+
+ SHAPE \* MERGEFORMAT
+
+ SHAPE \* MERGEFORMAT
+
+
+
+
+
+
+封
+
+第  PAGE  \* MERGEFORMAT 2 页     共  NUMPAGES  \* MERGEFORMAT 3 页
+
+线
+
+第  PAGE  \* MERGEFORMAT 3 页    共  NUMPAGES  \* MERGEFORMAT 3 页

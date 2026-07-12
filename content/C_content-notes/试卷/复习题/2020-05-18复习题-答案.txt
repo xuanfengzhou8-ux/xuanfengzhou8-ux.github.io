@@ -1,0 +1,109 @@
+脱敏文本版：2020-05-18复习题-答案.doc
+原始 Word/PDF 附件已移除，避免公开仓库保留学校、公司、个人或文档作者元数据。
+
+2020-05-18复习题
+设有6个结点的无向图，该图至少应有（）条边才能确保是一个连通图。
+A、5		B、6		C、7		D、8
+
+答案是A。
+无向图：任意两顶点之间的边都是无向边，则该图为无向图。
+连通图：若无向图中任意两个不同的顶点都连通(即有路径)，则为连通图。
+如果一个无向图是连通的，那么边的数目大于等于顶点的数目减一：|E|>=|V|-1，而反之不成立。
+没有回路的无向图是连通的当且仅当它是树，即等价于：|E|=|V|-1。
+因此最少为顶点的数目减一，即为5。
+
+2、假定x=65530，下面函数的返回值是多少？（ ）
+        int func(x)
+        {
+            int countx=0;
+            while(x)
+            {
+                countx++;
+                x=x&(x-1);
+            }
+            return countx;
+        }
+
+A.100			B.14				C.20				D.16
+
+答案：B
+        参考解析：
+        此函数的作用是为了计算二进制数中的1的个数。65535 = 2的16 -1；
+        65530 = 0000 0000 0000 0000 1111 1111 1111 1010 有14个1 是如何计算的呢?
+        用一个小点的数来计算：1010 当进入while循环，此时的countx = 1 ；
+         x = 1010 & 1001 = 1000 此时的x = 8 第二次进入while循环时 countx = 2
+         x = 1000 & 0111 = 0000 此时的x = 0 退出循环，此时输出countx = 2;
+
+
+3、请完成以下4问：
+a 建立一个结构体科目subject和学生结构体student，其中学生结构体包含subject结构体数组。
+b 用一个函数对学生的三门科目成绩进行输入。
+c 用一个函数求出每个学生的平均成绩，并使其降序排列。
+d主函数再调用上述两个函数，对成绩进行输出。
+参考代码：
+#include<stdio.h>
+typedef struct
+{
+   int subid;
+   char subname[20];
+   double subscore;
+
+}subject;
+
+typedef struct
+{
+    int sid;
+    char sname[10];
+    subject s[3];
+    double aver;
+
+}student;
+void input(student *s,int n)
+{
+    int i;
+    student *p=s;
+    for(;s<p+n;s++)
+    for(i=0;i<3;i++)
+    scanf("%lf",&(s->s[i].subscore));
+}
+void aver_scores(student *s,int n)
+{
+
+    int i,j;
+    double sum=0;
+    student *p=s;
+    student temp;
+    for(;s<p+n;s++)
+    {
+        for(i=0;i<3;i++)
+        sum+=s->s[i].subscore;
+        s->aver=sum/3.0;
+        sum=0;
+    }
+    for(i=0;i<n-1;i++)
+    for(j=0;j<n-i-1;j++)
+    {
+        if(p[j].aver<p[j+1].aver)
+        {
+            temp=p[j];
+            p[j]=p[j+1];
+            p[j+1]=temp;
+        }
+    }
+
+
+}
+int main()
+{
+    student s[4];
+    int i;
+    input(s,4);
+    aver_scores(s,4);
+    for(i=0;i<4;i++)
+    printf("%f\n",s[i].aver);
+    return 0;
+
+}
+
+
+题目不在多，而在于你需要有计划的复习

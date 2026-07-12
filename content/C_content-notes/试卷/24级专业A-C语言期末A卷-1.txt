@@ -1,0 +1,311 @@
+脱敏文本版：24级专业A-C语言期末A卷-1.doc
+原始 Word/PDF 附件已移除，避免公开仓库保留学校、公司、个人或文档作者元数据。
+
+《C/C++程序设计》课程  期末 考试试卷（A卷）
+考试班级  专业A24201-24203          考试形式  闭卷     考试时间  120  分钟
+考试学期  2024-2025学年第1学期    考试类型  考试     命题教师   虚拟教师甲
+
+题 号一二三四五六总分分 值4010102020100
+一、单项选择题 (每小题1分，共40分)
+1、以下关于 C 语言的说法错误的是（ ）
+A. C 语言简洁、紧凑，使用方便、灵活
+B. C 语言可以直接对硬件进行操作
+C. C 语言是面向对象的编程语言
+D. C 语言的可移植性好
+2、C 语言程序的基本单位是（ ）
+A. 函数		B. 语句		C. 字符		D. 程序行
+3、算法的时间复杂度是指（ ）
+A. 执行算法程序所需要的时间				B. 算法程序的长度
+C. 算法执行过程中所需要的基本运算次数		D. 算法程序中的指令条数
+4、下面关于算法描述正确的是（ ）
+A. 算法只能用自然语言来描述			B. 算法必须有输入但可以没有输出
+C. 算法的每一步骤必须有确切的定	D. 同一问题的算法不同，结果必然不同
+5、以下不能正确表示整型数据的是（ ）
+A. 058		B. -0x12		C. 12L		D. 12U
+6、若有定义：float x = 3.5; int y; 则表达式 y = (int) x 的值是（ ）
+A. 3			B. 3.5		C. 4			D. 不确定
+7、设 int a = 2, b = 3, c = 4; 则表达式 a + b > c && b == c 的值是（ ）
+A. 0			B. 1			C. 2			D. -1
+8、若有定义 int x = 5, y = 3; 则表达式 x /y * (double) y 的值是（ ）
+A. 5.0		B. 3.0		C. 5			D. 3
+9、若有定义 int a; 要从键盘给变量 a 输入数据，正确的语句是（ ）
+A. scanf ("% d", a);	 		B. scanf ("% d", &a);
+C. input ("% d", a);	    	D. input ("% d", &a);
+10、若有 int a=3;printf(“%d%d”,a++,a++);输出结果是（ ）
+A. 33		B. 43		C. 44		D. 34
+11、以下 if 语句正确的是（ ）
+A. if (x> 0) then printf ("x is positive");		B. if x > 0 {printf ("x is positive");}
+C. if (x > 0) printf ("x is positive");		D. if x > 0 then {printf ("x is positive");}
+12、以下对一维数组 a 的初始化正确的是（ ）
+A. int a [5] = {1, 2, 3, 4, 5, 6};		B. int a [] = {1, 2, 3, 4, 5};
+C. int a [5] = {1, 2};				D. int a [5]; a = {1, 2, 3, 4, 5};
+13、若有数组定义 int a [10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}; 则 a [5] 的值是（ ）
+A. 5		B. 6		C. 7		D. 8
+14、若有定义 int a = 5, *p = &a; 则 *p 的值是（ ）
+A. a 的地址 	B. 5		C. 不确定		D. 无意义
+15、以下关于指针数组的说法正确的是（ ）
+A. 指针数组是指向数组的指针			B. 指针数组的每个元素都是指针变量
+C. 指针数组的元素只能指向整型数据	D. 指针数组的定义格式为 int (*p)[n];
+16、有结构体变量定义 struct point p1 = {1, 2}; 则访问 p1 的 y 成员的正确方式是（ ）
+A. p1->y		B. (*p1).y		C. p1.y		D. &p1.y
+17、设 char a = 0x65; 则 a << 2 的值是（ ）
+A. 0x194		B. 0x65		C. 0xcc		D. 0x260
+18、以下位运算表达式的值为 1 的是（ ）
+A. 3 & 5		B. 3 | 5		C. 3 ^ 5		D. ~3
+19、以下关于宏定义的说法错误的是（ ）
+A. 宏定义只是简单的文本替换		B. 宏定义可以带参数
+C. 宏定义中的参数没有类型		D. 宏定义在程序运行时进行替换
+20、若有宏定义 #define SQUARE (x) x * x ，则 SQUARE (3 + 1) 的值是（ ）
+A. 16		B. 7		C. 9			D. 10
+21、若要以只读方式打开一个文本文件 test.txt，正确的语句是（ ）
+A. FILE *fp = fopen ("test.txt", "w");		B. FILE *fp = fopen ("test.txt", "r");
+C. FILE *fp = fopen ("test.txt", "a");		D. FILE *fp = fopen ("test.txt", "rb");
+22、以下关于文件操作函数 fread 的说法错误的是（ ）
+A. fread 用于从文件中读取数据
+B. 它的参数包括存储数据的缓冲区、每个数据单元的大小、要读取的数据单元数量和文件指针
+C. 它返回实际读取的数据单元数量
+D. 它只能读取文本文件
+23、若有函数 int max(int a, int b) { return (a > b)? a : b; }，以下表达式的值为 5 的是（ ）
+A. max(3, 5)		B. max(4, 3)		C. max(2, 3)		D. max(3, 2)*2
+24、下列属于C语言关键字的是（）。
+A、bool		B、and		C、or		D、break
+25、关于计算机中的流，下列说法中错误的是（）
+A、C语言将这种通过不同输入/输出设备（键盘、内存、显示器、网络等）之间的数据传输抽象表述为“流”。
+B、流实际上就是一个字符序列。
+C、文本流中的数据可以被修改。
+D、二进制流中的数据不能以任何方式修改。
+26、有数组定义int arr[6]={12,45,9,0};则arr[3]的值为（）
+A、12		B、45		C、9		D、0
+27、关于数组，下列说法中错误的是（）
+A、数组中的元素可以是不同类型
+B、数组索引从0开始
+C、数组可以根据维数不同分为一维数组、二维数组等
+D、数组可以批量管理数据
+28、下列选项中，可以在字符串查找某个字符第1次出现位置的函数是（）
+A、strchr()			B、strrchr()		C、strstr()			D、strrstr()
+29、下列数组的初始化正确的是（）
+A、int arr[]=1,2,3;	B、int arr[3]=0;	  C、int arr[3]={};	D、int arr[3]={0};
+30、以下程序的输出结果是（ ）
+#include <stdio.h>
+void fun(int **p) {
+    int a = 5;
+    *p = &a;
+}
+int main() {
+    int *q, b = 10;
+    q = &b;
+    fun(&q);
+    printf("%d\n", **q);
+    return 0;
+}
+A. 5			B. 10			C. 不确定			D. 编译错误
+31、设有如下定义：int a = 2, *pa = &a, **ppa = &pa;则表达式 **ppa 的值是（ ）
+A. 变量 a 的地址		B. 变量 pa 的地址		C. 2		D. 无意义
+32、以下函数的功能是（ ）
+int fun(int *a, int n) {
+    int i, j, t;
+    for (i = 0; i < n - 1; i++) {
+        for (j = i + 1; j < n; j++) {
+            if (a[i] > a[j]) {
+                t = a[i];
+                a[i] = a[j];
+                a[j] = t;
+            }
+        }
+    }
+    return a[0];
+}
+A. 求数组 a 中的最大值					B. 求数组 a 中的最小值
+C. 对数组 a 进行升序排序并返回第一个元素
+D. 对数组 a 进行降序排序并返回第一个元素
+33、若有函数声明 int fun(int (*p)[3], int n);，则以下定义正确的数组作为实参传递给 fun 函数的是（ ）
+A. int a[3][3];		B. int a[][];		C. int a[3];		D. int *a[3];
+34、以下程序的输出结果是（ ）
+#include <stdio.h>
+int f(int n) {
+    static int r = 1;
+    r = r * n;
+    return r;
+}
+int main() {
+    int i;
+    for (i = 1; i <= 5; i++) {
+        printf("%d ", f(i));
+    }
+    return 0;
+}
+A. 1 2 6 24 120		B. 1 2 3 4 5		C. 1 1 1 1 1		D. 5 4 3 2 1
+35、有如下函数调用语句 fun(a, (x, y), fun(n, k));，则此函数调用语句中实参的个数是（ ）
+A. 3			B. 4			C. 5		D. 6
+36、以下函数的返回值类型是（ ）
+fun(int x) {
+    if (x > 0)
+        return x;
+    else
+        return -x;
+}
+A. void		B. int			C. 不确定		D. 无返回值
+37、若有函数定义 int sum(int a[], int n) {...}，以下对该函数的调用正确的是（ ）
+A. sum(10, a);	B. sum(a[10], 10);	C. sum(a, 10);	D. sum(&a, 10);
+38、以下程序运行后的输出结果是（ ）
+#include <stdio.h>
+int g(int x) {
+    return x * 2;
+}
+int f(int x) {
+    return g(x) + 1;
+}
+int main() {
+    int a = 3;
+    printf("%d\n", f(f(a)));
+    return 0;
+}
+A. 13			B. 14			C. 15			D. 16
+39、已知函数 int func(int a, int b) { return a + b; }，则以下函数指针的定义和使用正确的是（ ）
+A. int (*p)(int, int); p = &func; int result = p(3, 5);
+B. int *p(int, int); p = func; int result = p(3, 5);
+C. int (*p)(int, int); p = func; int result = (*p)(3, 5);
+D. int *p(int, int); p = &func; int result = (*p)(3, 5);
+40、以下程序的输出结果是（ ）
+#include <stdio.h>
+void fun(int *x, int *y) {
+    int t;
+    t = *x;
+    *x = *y;
+    *y = t;
+}
+int main() {
+    int a = 3, b = 5;
+    fun(&a, &b);
+    printf("%d %d\n", a, b);
+    return 0;
+}
+A. 3 5		B. 5 3		C. 3 3		D. 5 5
+二、判断题（每小题1分，共10分）
+1、在 C 语言中，int *p;和int p[];是完全等价的。（）
+2、在for循环中，循环控制变量在循环结束后就不能再被访问。（）
+3、一个 C 语言函数可以返回多个值，只要这些值的数据类型相同。（）
+4、如果定义了int arr[10];，那么数组arr的所有元素在内存中一定是连续存储的，并且这个数组的大小是固定的，不能动态改变。（）
+5、当以"w"模式打开一个已经存在的文件时，文件中的原有内容会被追加到新写入内容之后。（）
+6、两个指向不同数组的指针相减是合法的操作，其结果是两个指针所指向元素的下标差值。（）
+7、所有的递归函数都可以用非递归的方式实现，并且非递归方式通常比递归方式更高效。（）
+8、在 C 语言中，使用char *str = "Hello";定义的字符串是可以被修改的。（）
+9、结构体的大小一定等于其所有成员变量大小之和。（）
+10、宏定义在预处理阶段进行文本替换，所以宏定义中的参数和函数参数一样有类型检查。（）
+
+三、填空题（每空1分，共10分）
+1、在 C 语言中，函数的默认存储类别是__________。
+2、若有定义int a[5] = {1, 2, 3};，则a[3]的值为__________。
+3、对于int *p;，要动态分配一个包含 10 个int类型元素的内存空间，并让p指向它，应使用的语句是p = __________;。
+4、设int a = 1, b = 2, c = 3;，执行语句c = (a > b)? a : b;后，c的值是__________。
+5、C 语言中，sizeof(int)的值在 32 位系统下通常是___字节。
+6、若有函数int fun(int a[], int n)，其中a是一个数组，在函数内部，a实际上是一个__________。
+7、定义一个指向函数的指针，该函数接受两个int类型参数并返回一个int类型的值，定义语句为int (*p)(__________) = NULL;。
+8、在 C 语言中，#ifndef的作用是__________。
+9、若要在程序中使用strcpy函数，需要包含的头文件是__________。
+10、对于int a[3][4];，a + 1指向的是__________。
+四、程序阅读题（每题5分，共20分）
+1．程序输出结果是什么？此程序实现的是什么算法思想?
+#include <stdio.h>
+int mystery(int n) {
+    if (n <= 1) {
+        return n;
+    } else {
+        return mystery(n - 1) + mystery(n - 2);
+    }
+}
+int main() {
+    int num = 6;
+    printf("%d\n", mystery(num));
+    return 0;
+}
+答：
+2．程序输出结果是什么？sort 函数采用了什么排序算法？
+#include <stdio.h>
+void sort(int arr[], int n) {
+    int i, j, min_idx;
+    for (i = 0; i < n - 1; i++) {
+        min_idx = i;
+        for (j = i + 1; j < n; j++) {
+            if (arr[j] < arr[min_idx]) {
+                min_idx = j;
+            }
+        }
+        if (min_idx!= i) {
+            int temp = arr[i];
+            arr[i] = arr[min_idx];
+            arr[min_idx] = temp;
+        }
+    }
+}
+int main() {
+    int a[] = {64, 25, 12, 22, 11};
+    int n = sizeof(a) / sizeof(a[0]);
+    sort(a, n);
+    for (int i = 0; i < n; i++) {
+        printf("%d ", a[i]);
+    }
+    return 0;
+}答：
+3．程序输出结果是什么？gcd 函数实现的是什么算法来计算什么值？
+#include <stdio.h>
+int gcd(int a, int b) {
+    if (b == 0) {
+        return a;
+    } else {
+        return gcd(b, a % b);
+    }
+}
+int main() {
+    int num1 = 48, num2 = 18;
+    printf("%d\n", gcd(num1, num2));
+    return 0;
+}
+答：
+4．程序输出结果是什么？binarySearch 函数实现的是什么算法？
+#include <stdio.h>
+int binarySearch(int arr[], int l, int r, int x) {
+    if (r >= l) {
+        int mid = l + (r - l) / 2;
+        if (arr[mid] == x) {
+            return mid;
+        } else if (arr[mid] > x) {
+            return binarySearch(arr, l, mid - 1, x);
+        } else {
+            return binarySearch(arr, mid + 1, r, x);
+        }
+    }
+    return -1;
+}
+int main() {
+    int a[] = {2, 5, 8, 12, 16, 23, 38, 56, 72, 91};
+    int n = sizeof(a) / sizeof(a[0]);
+    int target = 16;
+    printf("%d\n", binarySearch(a, 0, n - 1, target));
+    return 0;
+}
+答：
+五、编程题（共20分）
+1.编程：输入若干个整数，建立一个单链表，再输入一个正整数m，删除链表中值为m的所有结点（20分）。
+
+
+
+
+
+
+ SHAPE \* MERGEFORMAT
+
+ SHAPE \* MERGEFORMAT
+
+
+
+
+
+
+封
+
+第  PAGE  \* MERGEFORMAT 2 页     共  NUMPAGES  \* MERGEFORMAT 3 页
+
+线
+
+第  PAGE  \* MERGEFORMAT 3 页    共  NUMPAGES  \* MERGEFORMAT 3 页

@@ -1,0 +1,60 @@
+schemaVersion: 1
+packageId: linux-concurrency-programming
+version: 1.0.0
+title: Linux并发编程课程内容包
+encoding: UTF-8
+
+target:
+  learningPath:
+    sourceKey: path:embedded-linux
+    slug: embedded-linux
+    name: 嵌入式 Linux 应用开发路径
+  course:
+    sourceKey: course:linux-concurrency-programming
+    title: Linux并发编程
+    description: 从进程、IPC 到 POSIX 线程，建立 Linux 应用并发设计和同步互斥基础。
+    level: INTERMEDIATE
+    sortOrder: 4
+    archiveUnmanagedContent: true
+
+defaults:
+  status: 1
+  keywords: [Linux, 进程, 线程, IPC, 信号量, 共享内存]
+  includeReferencedAssets: true
+
+content:
+  - sourceKey: linux-concurrency:chapter:01
+    file: 笔记/01-进程基础.md
+    chapterTitle: 进程基础
+    articleSlug: linux-concurrency-01-process
+    sortOrder: 1
+  - sourceKey: linux-concurrency:chapter:02
+    file: 笔记/02-IPC管道与FIFO.md
+    chapterTitle: IPC：管道与 FIFO
+    articleSlug: linux-concurrency-02-pipe-fifo
+    sortOrder: 2
+  - sourceKey: linux-concurrency:chapter:03
+    file: 笔记/03-IPC信号.md
+    chapterTitle: IPC：信号
+    articleSlug: linux-concurrency-03-signal
+    sortOrder: 3
+  - sourceKey: linux-concurrency:chapter:04
+    file: 笔记/04-IPC共享内存.md
+    chapterTitle: IPC：共享内存
+    articleSlug: linux-concurrency-04-shared-memory
+    sortOrder: 4
+  - sourceKey: linux-concurrency:chapter:05
+    file: 笔记/05-IPC信号量.md
+    chapterTitle: IPC：信号量
+    articleSlug: linux-concurrency-05-semaphore
+    sortOrder: 5
+  - sourceKey: linux-concurrency:chapter:06
+    file: 笔记/06-POSIX线程.md
+    chapterTitle: POSIX 线程
+    articleSlug: linux-concurrency-06-pthread
+    sortOrder: 6
+  - sourceKey: linux-concurrency:chapter:07
+    file: 笔记/07-fork笔试题与练习.md
+    chapterTitle: fork 笔试题与练习
+    articleSlug: linux-concurrency-07-fork-exercises
+    sortOrder: 7

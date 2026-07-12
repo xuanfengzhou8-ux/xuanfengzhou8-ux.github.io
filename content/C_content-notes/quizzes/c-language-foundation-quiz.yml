@@ -1,0 +1,2018 @@
+schemaVersion: 1
+packageId: c-language-foundation
+version: 2.0.0
+quizzes:
+- sourceKey: quiz:c:01:01
+  chapterSourceKey: c:chapter:01
+  type: SINGLE
+  stem: C语言中，以下哪个不是合法的变量名？
+  options:
+  - label: A
+    content: _count
+  - label: B
+    content: 2value
+    isCorrect: true
+  - label: C
+    content: myVar
+  - label: D
+    content: total_sum
+  analysis: 变量名不能以数字开头。2value以数字开头，是不合法的标识符。选项A以下划线开头、选项C以字母开头、选项D以下划线分隔，均符合C语言标识符命名规则。C语言标识符由字母、数字和下划线组成，不能以数字开头，且不能与关键字重名。
+  difficulty: EASY
+  sortOrder: 1
+- sourceKey: quiz:c:01:02
+  chapterSourceKey: c:chapter:01
+  type: SINGLE
+  stem: 以下哪个关键字用于定义只读变量？
+  options:
+  - label: A
+    content: const
+    isCorrect: true
+  - label: B
+    content: static
+  - label: C
+    content: extern
+  - label: D
+    content: volatile
+  analysis: const关键字用于声明只读变量，表示该变量的值在初始化后不能被直接修改。注意C语言中的const是只读变量（read-only），并非编译期常量（compile-time constant）。static用于声明静态变量或函数，extern用于声明外部变量或函数，volatile提示编译器该变量可能被意外修改（如硬件寄存器）。
+  difficulty: EASY
+  sortOrder: 2
+- sourceKey: quiz:c:01:03
+  chapterSourceKey: c:chapter:01
+  type: MULTI
+  stem: 以下关于C语言特点的描述，哪些是正确的？（多选）
+  options:
+  - label: A
+    content: C语言是一种高级语言，同时具有底层操作能力
+    isCorrect: true
+  - label: B
+    content: C语言是面向对象的程序设计语言
+  - label: C
+    content: C语言程序遵循标准规范时具有良好的可移植性
+    isCorrect: true
+  - label: D
+    content: C语言代码无需编译即可直接执行
+  analysis: C语言兼具高级语言的结构化特性和低级语言的底层操作能力（如指针、位运算），因此选项A正确。C语言是面向过程的语言，不是面向对象的语言，选项B错误。遵循ANSI/ISO C标准的程序可在不同平台上重新编译后运行，具有可移植性，选项C正确。C语言是编译型语言，需要经过预处理、编译、汇编和链接才能生成可执行文件，选项D错误。
+  difficulty: MEDIUM
+  sortOrder: 3
+- sourceKey: quiz:c:01:04
+  chapterSourceKey: c:chapter:01
+  type: TRUE_FALSE
+  stem: C语言程序中，main函数是程序的入口，且一个程序中只能有一个main函数。
+  isCorrect: true
+  analysis: 正确。C程序从main函数开始执行，main函数是程序的唯一入口点。一个C程序有且仅有一个main函数，存在多个main函数会导致链接阶段出现重复定义（multiple definition）错误。
+  difficulty: EASY
+  sortOrder: 4
+- sourceKey: quiz:c:01:05
+  chapterSourceKey: c:chapter:01
+  type: SINGLE
+  stem: C语言中，单行注释使用的符号是？
+  options:
+  - label: A
+    content: //
+    isCorrect: true
+  - label: B
+    content: '#'
+  - label: C
+    content: /*
+  - label: D
+    content: --
+  analysis: //是C99标准引入的单行注释符号。选项B的#是预处理指令引导符，选项C的/*是多行注释的开始符号（需与*/配对使用），选项D的--是自减运算符。
+  difficulty: EASY
+  sortOrder: 5
+- sourceKey: quiz:c:01:06
+  chapterSourceKey: c:chapter:01
+  type: SINGLE
+  stem: 使用#include <stdio.h>和#include "stdio.h"的主要区别是什么？
+  options:
+  - label: A
+    content: 前者在系统标准路径搜索头文件，后者先在当前目录搜索
+    isCorrect: true
+  - label: B
+    content: 前者只能包含一次，后者可以多次包含
+  - label: C
+    content: 前者是C语言语法，后者是C++语法
+  - label: D
+    content: 两者没有任何区别
+  analysis: 使用< >包含头文件时，预处理器在编译器设置的系统标准路径下搜索。使用" "包含头文件时，预处理器先在当前源文件所在目录搜索，未找到再到系统标准路径搜索。因此< >通常用于标准库头文件，" "用于用户自定义头文件。
+  difficulty: MEDIUM
+  sortOrder: 6
+- sourceKey: quiz:c:01:07
+  chapterSourceKey: c:chapter:01
+  type: SHORT_ANSWER
+  stem: 简述C语言从源代码到可执行文件需要经过哪几个主要步骤？每个步骤的作用是什么？
+  analysis: C语言从源代码到可执行文件经过四个主要步骤：(1)预处理——处理#include、#define、条件编译等预处理指令，删除注释，生成纯C代码（.i文件）；(2)编译——将C代码翻译为汇编代码，进行词法分析、语法分析、语义分析和优化（.s文件）；(3)汇编——将汇编代码转换为目标机器码，生成可重定位目标文件（.o或.obj文件）；(4)链接——将多个目标文件和库文件合并，解析外部符号引用，分配最终地址，生成可执行文件。使用GCC工具链时，可通过gcc -E（预处理）、gcc -S（编译到汇编）、gcc -c（编译汇编到目标文件）、gcc -o（链接）等选项分别控制各步骤。
+  difficulty: MEDIUM
+  sortOrder: 7
+- sourceKey: quiz:c:01:08
+  chapterSourceKey: c:chapter:01
+  type: MULTI
+  stem: 下列哪些是C语言的关键字（保留字），不能用作标识符？（多选）
+  options:
+  - label: A
+    content: int
+    isCorrect: true
+  - label: B
+    content: define
+  - label: C
+    content: return
+    isCorrect: true
+  - label: D
+    content: sizeof
+    isCorrect: true
+  analysis: int（基本数据类型关键字）、return（流程控制关键字）、sizeof（运算符关键字）都是C语言标准关键字，不能用作标识符。define是预处理指令，不属于C语言关键字，从语法上讲可用作标识符（但实践上强烈不推荐，会造成代码混淆）。C11标准共有44个关键字。
+  difficulty: HARD
+  sortOrder: 8
+- sourceKey: quiz:c:01:09
+  chapterSourceKey: c:chapter:01
+  type: SINGLE
+  stem: 以下关于printf的说法，正确的是？
+  options:
+  - label: A
+    content: 'printf的格式化字符串中可以包含转义序列如
+
+      '
+    isCorrect: true
+  - label: B
+    content: printf不需要包含头文件即可使用
+  - label: C
+    content: printf只能输出字符串，不能输出数字
+  - label: D
+    content: printf的返回值是void
+  analysis: "选项A正确：printf的格式化字符串中可以包含转义序列，如\n（换行）、\t（制表符）等。选项B错误：printf在stdio.h中声明，使用时需要#include <stdio.h>。选项C错误：printf通过格式说明符（如%d、%f）可以输出各种类型的数据。选项D错误：printf返回成功输出的字符数（int类型），出错时返回负数。"
+  difficulty: EASY
+  sortOrder: 9
+- sourceKey: quiz:c:01:10
+  chapterSourceKey: c:chapter:01
+  type: TRUE_FALSE
+  stem: C语言中，所有标识符必须先声明或定义后才能使用。
+  isCorrect: true
+  analysis: 正确。C语言遵循先声明后使用的原则。变量、函数、类型等所有标识符都必须先声明或定义，然后才能出现在代码中。如果在使用前未声明，编译器会报错（C99标准之前，隐式函数声明规则允许未声明的函数被调用，但C99之后已废除）。
+  difficulty: MEDIUM
+  sortOrder: 10
+- sourceKey: quiz:c:02:01
+  chapterSourceKey: c:chapter:02
+  type: SINGLE
+  stem: 在C语言标准中，应通过哪个宏获知一个字节包含多少个二进制位？
+  options:
+  - label: A
+    content: CHAR_BIT
+    isCorrect: true
+  - label: B
+    content: INT_MAX
+  - label: C
+    content: sizeof
+  - label: D
+    content: BYTE_SIZE
+  analysis: CHAR_BIT定义在limits.h中，表示一个C字节包含的位数。它至少为8，现代通用平台通常为8，但C标准不保证永远等于8。sizeof(char)始终为1，表示一个C字节，而不是固定8位。
+  difficulty: EASY
+  sortOrder: 1
+- sourceKey: quiz:c:02:02
+  chapterSourceKey: c:chapter:02
+  type: SINGLE
+  stem: 十进制数255用十六进制表示为？
+  options:
+  - label: A
+    content: '0xFF'
+    isCorrect: true
+  - label: B
+    content: '0xEF'
+  - label: C
+    content: '0xFE'
+  - label: D
+    content: '0xF0'
+  analysis: 255 = 16*15 + 15 = 0xFF。十六进制中F表示15，因此0xFF = 15*16 + 15 = 255。选项B的0xEF = 239，选项C的0xFE = 254，选项D的0xF0 = 240。C语言中十六进制常量以0x或0X开头。
+  difficulty: EASY
+  sortOrder: 2
+- sourceKey: quiz:c:02:03
+  chapterSourceKey: c:chapter:02
+  type: TRUE_FALSE
+  stem: 计算机内部使用补码（two's complement）来表示有符号整数。
+  isCorrect: true
+  analysis: 正确。绝大多数现代计算机使用补码表示有符号整数。补码的优点包括：(1)0的表示唯一（不像原码有+0和-0）；(2)加减法运算统一，无需单独处理符号位；(3)负数范围比正数多一个（如8位补码范围为-128~127）。
+  difficulty: MEDIUM
+  sortOrder: 3
+- sourceKey: quiz:c:02:04
+  chapterSourceKey: c:chapter:02
+  type: SINGLE
+  stem: 表达式 0x0F & 0xF0 的结果是多少？
+  options:
+  - label: A
+    content: '0xFF'
+  - label: B
+    content: '0x00'
+    isCorrect: true
+  - label: C
+    content: '0x0F'
+  - label: D
+    content: '0xF0'
+  analysis: 按位与运算(&)：0x0F = 0000 1111，0xF0 = 1111 0000，逐位与运算后结果为0000 0000 = 0x00。因为每一位上两个数至少有一个为0，所以全部为0。
+  difficulty: EASY
+  sortOrder: 4
+- sourceKey: quiz:c:02:05
+  chapterSourceKey: c:chapter:02
+  type: SINGLE
+  stem: 字符'A'的ASCII码值是？
+  options:
+  - label: A
+    content: '65'
+    isCorrect: true
+  - label: B
+    content: '97'
+  - label: C
+    content: '48'
+  - label: D
+    content: '0'
+  analysis: "大写字母'A'的ASCII码值为65。选项B的97是小写字母'a'的ASCII码，选项C的48是数字字符'0'的ASCII码，选项D的0是空字符'\0'的ASCII码。记住这些常用ASCII码值对调试很有帮助。"
+  difficulty: EASY
+  sortOrder: 5
+- sourceKey: quiz:c:02:06
+  chapterSourceKey: c:chapter:02
+  type: TRUE_FALSE
+  stem: 在小端（little-endian）系统中，int类型值0x12345678在内存中的低地址字节是0x12。
+  isCorrect: false
+  analysis: 错误。在小端系统中，低位字节存储在低地址，因此0x12345678的最低有效字节0x78存储在最低地址，最高有效字节0x12存储在最高地址。大端（big-endian）系统则相反，高位字节存储在低地址，即0x12在低地址。x86架构使用小端序，网络协议通常使用大端序。
+  difficulty: EASY
+  sortOrder: 6
+- sourceKey: quiz:c:02:07
+  chapterSourceKey: c:chapter:02
+  type: MULTI
+  stem: 以下关于数据表示的描述，哪些是正确的？（多选）
+  options:
+  - label: A
+    content: 1 KiB = 1024字节
+    isCorrect: true
+  - label: B
+    content: 如果uint32_t存在，它恰好具有32个值位且无填充位
+    isCorrect: true
+  - label: C
+    content: 八进制数以0开头，如0123
+    isCorrect: true
+  - label: D
+    content: 所有CPU都采用相同的大小端序
+  analysis: A正确：KiB是二进制前缀，明确等于1024字节；KB在不同语境可能表示1000或1024，应避免混用。B正确：精确宽度类型若被实现提供，就满足对应位宽且没有填充位。C正确：C整数常量以0开头时采用八进制语法。D错误：字节序取决于体系结构和运行模式，协议还可能规定独立的网络字节序。
+  difficulty: MEDIUM
+  sortOrder: 7
+- sourceKey: quiz:c:02:08
+  chapterSourceKey: c:chapter:02
+  type: MULTI
+  stem: 以下关于位运算的说法，哪些是正确的？（多选）
+  options:
+  - label: A
+    content: ~运算符对整数的每一位取反（按位非）
+    isCorrect: true
+  - label: B
+    content: x << 1 等价于 x * 2（不考虑溢出）
+    isCorrect: true
+  - label: C
+    content: x >> 1 等价于 x / 2（无符号数或有符号正数）
+    isCorrect: true
+  - label: D
+    content: ^是按位异或运算符，相同为0不同为1
+    isCorrect: true
+  analysis: 所有选项均正确。A：~是按位取反，将0变1、1变0。B：左移1位相当于乘以2（在无溢出时）。C：右移1位相当于除以2并向下取整（针对无符号数或有符号正数）；对于有符号负数，右移行为由实现定义。D：异或（XOR）相同位得0，不同位得1。
+  difficulty: MEDIUM
+  sortOrder: 8
+- sourceKey: quiz:c:02:09
+  chapterSourceKey: c:chapter:02
+  type: SHORT_ANSWER
+  stem: 简述IEEE 754标准中单精度浮点数（float）的基本存储格式。
+  analysis: IEEE 754单精度浮点数（32位）的存储格式为三部分：(1)1位符号位（sign），0为正、1为负；(2)8位阶码（exponent），采用偏移127（bias）表示法，实际指数 = 阶码值 - 127；(3)23位尾数（mantissa/significand），隐含最高位1（规格化数），实际有效位为24位。例如十进制3.0在IEEE 754单精度下表示为：符号位0，阶码128（10000000），尾数1.100...，即0x40400000。需要注意：C标准并不强制要求遵循IEEE 754，但大多数现代平台都支持。
+  difficulty: MEDIUM
+  sortOrder: 9
+- sourceKey: quiz:c:02:10
+  chapterSourceKey: c:chapter:02
+  type: SINGLE
+  stem: ~0x55（假设为8位操作）的结果是？
+  options:
+  - label: A
+    content: '0xAA'
+    isCorrect: true
+  - label: B
+    content: '0x55'
+  - label: C
+    content: '0xFF'
+  - label: D
+    content: '0x00'
+  analysis: 按位取反运算(~)：0x55的二进制为0101 0101，逐位取反后为1010 1010 = 0xAA。注意在实际32位int中，~0x55 = ~(0x00000055) = 0xFFFFFFAA。题目限定8位视角时简化为0xAA。按位取反在嵌入式寄存器操作中非常实用，例如将特定位清零时常用&与~的组合。
+  difficulty: MEDIUM
+  sortOrder: 10
+- sourceKey: quiz:c:03:01
+  chapterSourceKey: c:chapter:03
+  type: SINGLE
+  stem: 关于C语言中int类型的大小，以下哪项是标准能够保证的严谨说法？
+  options:
+  - label: A
+    content: '2'
+  - label: B
+    content: 永远是4字节
+  - label: C
+    content: '8'
+  - label: D
+    content: 由具体C实现决定，但标准规定了最低表示范围
+    isCorrect: true
+  analysis: D正确。C标准没有规定int固定占几个字节，只规定它至少能表示-32767到32767。许多桌面平台的int为4字节，一些16位MCU上可能为2字节，因此不能把常见实现当成标准保证。
+  difficulty: EASY
+  sortOrder: 1
+- sourceKey: quiz:c:03:02
+  chapterSourceKey: c:chapter:03
+  type: SINGLE
+  stem: C语言中，char类型本质上属于什么类型？
+  options:
+  - label: A
+    content: 字符类型，与整数类型无关
+  - label: B
+    content: 整数类型的一种
+    isCorrect: true
+  - label: C
+    content: 浮点类型
+  - label: D
+    content: 字符串类型
+  analysis: 在C语言中，char本质上是一个小范围的整数类型，它存储的是字符对应的编码值（如ASCII码）。char可以参与整数运算，例如'A' + 1计算得到66（即字符'B'的ASCII码）。char既可以看作字符类型，也是整数类型的一种。
+  difficulty: EASY
+  sortOrder: 2
+- sourceKey: quiz:c:03:03
+  chapterSourceKey: c:chapter:03
+  type: MULTI
+  stem: 以下关于整数类型的描述，哪些是正确的？（多选）
+  options:
+  - label: A
+    content: short int至少满足16位有符号整数的表示范围
+    isCorrect: true
+  - label: B
+    content: long int至少满足32位有符号整数的表示范围
+    isCorrect: true
+  - label: C
+    content: unsigned int不能表示负数
+    isCorrect: true
+  - label: D
+    content: long long int至少满足64位有符号整数的表示范围
+    isCorrect: true
+  analysis: A、B、C、D均正确。C标准规定的是最低表示范围，而不是固定字节数。由于CHAR_BIT可能大于8，不能把最低位宽无条件换算成2、4、8个C字节。unsigned int不表示负数，其最大值由具体位宽决定。
+  difficulty: MEDIUM
+  sortOrder: 3
+- sourceKey: quiz:c:03:04
+  chapterSourceKey: c:chapter:03
+  type: SINGLE
+  stem: 若定义int a = 5; double b = 2.5; 则表达式a + b的结果类型是？
+  options:
+  - label: A
+    content: int
+  - label: B
+    content: double
+    isCorrect: true
+  - label: C
+    content: float
+  - label: D
+    content: long
+  analysis: C语言中不同类型的数据进行运算时，编译器会进行隐式类型转换（usual arithmetic conversions）。按照类型转换层级，int与double运算时，int会被提升为double，因此结果为double类型。转换规则：long double > double > float > 整数类型（整数类型内部还有更细的层级）。
+  difficulty: EASY
+  sortOrder: 4
+- sourceKey: quiz:c:03:05
+  chapterSourceKey: c:chapter:03
+  type: TRUE_FALSE
+  stem: 在C语言中，const int n = 10; 定义了一个编译期常量，可用于声明数组长度。
+  isCorrect: false
+  analysis: 错误。C语言中的const对象不是整数常量表达式。const int n=10; int arr[n]; 在支持VLA的C99/C11实现的块作用域中可以形成VLA，但不能据此把n称作编译期常量。文件作用域数组长度必须是整数常量表达式。C++中由常量表达式初始化且满足规则的整数const才可以作为常量表达式使用。
+  difficulty: HARD
+  sortOrder: 5
+- sourceKey: quiz:c:03:06
+  chapterSourceKey: c:chapter:03
+  type: SINGLE
+  stem: stdint.h头文件中，表示32位有符号整数的类型是？
+  options:
+  - label: A
+    content: int32_t
+    isCorrect: true
+  - label: B
+    content: uint32_t
+  - label: C
+    content: int32
+  - label: D
+    content: signed32
+  analysis: 如果实现提供int32_t，它就是无填充位、恰好32位的有符号整数类型；uint32_t是对应的无符号类型。精确宽度类型是可选的：无法提供恰好32位整数类型的实现可以不定义int32_t。跨平台输出还应配合inttypes.h中的格式宏。
+  difficulty: EASY
+  sortOrder: 6
+- sourceKey: quiz:c:03:07
+  chapterSourceKey: c:chapter:03
+  type: MULTI
+  stem: 以下关于typedef的说法，哪些是正确的？（多选）
+  options:
+  - label: A
+    content: typedef用于为已有类型创建别名
+    isCorrect: true
+  - label: B
+    content: typedef是在编译阶段处理的
+    isCorrect: true
+  - label: C
+    content: typedef定义的别名遵循作用域规则
+    isCorrect: true
+  - label: D
+    content: typedef与#define完全等价，都是文本替换
+  analysis: 选项A正确：typedef为已有类型创建别名，提高可读性和可维护性。选项B正确：typedef在编译阶段处理，编译器知道其类型含义。选项C正确：typedef遵循块作用域规则，在不同作用域中可以有不同含义。选项D错误：typedef与#define有本质区别，typedef是编译时类型处理，#define是预处理阶段文本替换，不进行类型检查。
+  difficulty: MEDIUM
+  sortOrder: 7
+- sourceKey: quiz:c:03:08
+  chapterSourceKey: c:chapter:03
+  type: SINGLE
+  stem: 整数提升（integer promotion）规则中，以下哪个说法正确？
+  options:
+  - label: A
+    content: char和short在表达式中会自动提升为int
+    isCorrect: true
+  - label: B
+    content: 所有整数类型都不会被提升
+  - label: C
+    content: 提升规则只适用于unsigned类型
+  - label: D
+    content: float会被提升为double
+  analysis: 选项A正确：在C语言中，当char、short等类型参与表达式运算时，会被自动提升为int（如果int能表示原类型的所有值）或unsigned int。这是整数提升（integer promotion）规则。选项D中float被提升为double属于usual arithmetic conversions的范畴，不是整数提升。整数提升会影响运算结果的类型和溢出行为。
+  difficulty: MEDIUM
+  sortOrder: 8
+- sourceKey: quiz:c:03:09
+  chapterSourceKey: c:chapter:03
+  type: SHORT_ANSWER
+  stem: volatile关键字的作用是什么？在嵌入式开发中有哪些典型应用场景？
+  analysis: volatile表示对象访问具有易变语义，编译器必须按C抽象机规则保留这些可观察访问。典型场景包括内存映射硬件寄存器，以及与信号处理函数共享的volatile sig_atomic_t标志。它不提供原子性、线程同步、缓存一致性或内存屏障；多线程或多任务共享数据应使用_Atomic或操作系统同步原语，不能只加volatile。
+  difficulty: HARD
+  sortOrder: 9
+- sourceKey: quiz:c:03:10
+  chapterSourceKey: c:chapter:03
+  type: TRUE_FALSE
+  stem: 枚举（enum）类型中，如果某个枚举常量没有指定值，其值等于前一个枚举常量的值加1。
+  isCorrect: true
+  analysis: 正确。默认情况下，第一个枚举常量的值为0，后续未指定值的枚举常量在前一个值的基础上加1。例如enum Color { RED=5, GREEN, BLUE }; 中GREEN=6，BLUE=7。枚举常量是int类型的编译期常量，可以用于switch-case标签和数组大小声明。
+  difficulty: EASY
+  sortOrder: 10
+- sourceKey: quiz:c:04:01
+  chapterSourceKey: c:chapter:04
+  type: SINGLE
+  stem: 表达式5 / 2的结果是多少？
+  options:
+  - label: A
+    content: '2.5'
+  - label: B
+    content: '2'
+    isCorrect: true
+  - label: C
+    content: '2.0'
+  - label: D
+    content: '3'
+  analysis: 两个整数相除，结果仍为整数（截断小数部分，向零取整）。5/2=2。若希望得到浮点结果，需将至少一个操作数转为浮点类型，如5/2.0=2.5或5.0/2=2.5。
+  difficulty: EASY
+  sortOrder: 1
+- sourceKey: quiz:c:04:02
+  chapterSourceKey: c:chapter:04
+  type: SINGLE
+  stem: 若有int a = 5, b; b = ++a * 2; 则执行后a和b的值分别是？
+  options:
+  - label: A
+    content: a=5, b=10
+  - label: B
+    content: a=6, b=12
+    isCorrect: true
+  - label: C
+    content: a=6, b=10
+  - label: D
+    content: a=5, b=12
+  analysis: ++a是前置自增，先将a加1变为6，再将a的新值用于表达式中计算。因此b = 6 * 2 = 12。若为后置自增a++，则a先参与运算再自增，结果会是a=6, b=10。前置和后置自增自减的区别是C语言面试中的常见考点。
+  difficulty: EASY
+  sortOrder: 2
+- sourceKey: quiz:c:04:03
+  chapterSourceKey: c:chapter:04
+  type: SINGLE
+  stem: 表达式!0在C语言中的值是多少？
+  options:
+  - label: A
+    content: '0'
+  - label: B
+    content: '1'
+    isCorrect: true
+  - label: C
+    content: '-1'
+  - label: D
+    content: 不确定
+  analysis: 在C语言中，逻辑非运算符!对操作数取反：操作数为0（假）则结果为1（真），操作数非0（真）则结果为0（假）。0为假，!0为真，结果为1。C语言中逻辑运算的结果为0或1的整数值。
+  difficulty: EASY
+  sortOrder: 3
+- sourceKey: quiz:c:04:04
+  chapterSourceKey: c:chapter:04
+  type: MULTI
+  stem: 以下关于位运算符的描述，哪些是正确的？（多选）
+  options:
+  - label: A
+    content: '&是按位与运算符'
+    isCorrect: true
+  - label: B
+    content: '|是按位或运算符'
+    isCorrect: true
+  - label: C
+    content: <<是左移运算符，左移1位在不溢出时相当于乘以2
+    isCorrect: true
+  - label: D
+    content: ~是逻辑非运算符，用于布尔值取反
+  analysis: 选项A正确：&是按位与。选项B正确：|是按位或。选项C正确：<<是左移运算符，在不溢出的情况下左移1位相当于乘以2。选项D错误：~是按位取反（按位非），用于对整数的每一位取反；逻辑非是!运算符，用于布尔值取反。
+  difficulty: MEDIUM
+  sortOrder: 4
+- sourceKey: quiz:c:04:05
+  chapterSourceKey: c:chapter:04
+  type: SINGLE
+  stem: 表达式5 & 3的值是多少？
+  options:
+  - label: A
+    content: '7'
+  - label: B
+    content: '1'
+    isCorrect: true
+  - label: C
+    content: '6'
+  - label: D
+    content: '0'
+  analysis: 按位与运算(&)对两个整数的每一位进行与操作：5的二进制为0101，3的二进制为0011，逐位与运算后为0001，即十进制的1。选项A是5|3的结果，选项C是5|2的结果，选项D没有对应运算。
+  difficulty: EASY
+  sortOrder: 5
+- sourceKey: quiz:c:04:06
+  chapterSourceKey: c:chapter:04
+  type: SINGLE
+  stem: 设有int x = 1, y = 2, z; z = (x++, y++, x + y); 则z的值是？
+  options:
+  - label: A
+    content: '3'
+  - label: B
+    content: '5'
+    isCorrect: true
+  - label: C
+    content: '4'
+  - label: D
+    content: '2'
+  analysis: 逗号表达式依次执行各子表达式，整个表达式的值为最后一个子表达式的值。先执行x++（x变为2），再执行y++（y变为3），最后计算x+y=2+3=5，所以z=5。注意x++是后置自增，先使用x原值参与表达式（但这里x++是独立语句，不影响结果）。
+  difficulty: MEDIUM
+  sortOrder: 6
+- sourceKey: quiz:c:04:07
+  chapterSourceKey: c:chapter:04
+  type: SINGLE
+  stem: '条件表达式(a > b) ? a : b的含义是？'
+  options:
+  - label: A
+    content: 如果a>b则表达式值为a，否则为b
+    isCorrect: true
+  - label: B
+    content: 如果a>b则表达式值为b，否则为a
+  - label: C
+    content: 将a和b中较大的值赋给a
+  - label: D
+    content: 比较a和b是否相等
+  analysis: '条件运算符（三目运算符）格式为''表达式1 ? 表达式2 : 表达式3''。先计算表达式1，若为真（非0）则执行表达式2并返回其值，否则执行表达式3并返回其值。所以(a>b)?a:b返回a和b中较大的那个值。'
+  difficulty: EASY
+  sortOrder: 7
+- sourceKey: quiz:c:04:08
+  chapterSourceKey: c:chapter:04
+  type: MULTI
+  stem: 以下关于运算符优先级和结合性的描述，哪些是正确的？（多选）
+  options:
+  - label: A
+    content: 算术运算符的优先级高于赋值运算符
+    isCorrect: true
+  - label: B
+    content: 逻辑与(&&)的优先级高于逻辑或(||)
+    isCorrect: true
+  - label: C
+    content: 逗号运算符的优先级最高
+  - label: D
+    content: 关系运算符的优先级高于算术运算符
+  analysis: 选项A正确：算术运算符的优先级高于赋值运算符。选项B正确：&&优先级高于||，因此a||b&&c等价于a||(b&&c)。选项C错误：逗号运算符的优先级最低。选项D错误：算术运算符优先级高于关系运算符。
+  difficulty: HARD
+  sortOrder: 8
+- sourceKey: quiz:c:04:09
+  chapterSourceKey: c:chapter:04
+  type: SHORT_ANSWER
+  stem: 什么是C语言中的短路求值（short-circuit evaluation）？请举例说明其在嵌入式编程中的作用。
+  analysis: 短路求值是指逻辑运算符&&和||在求值过程中，当左侧操作数已经能确定整个表达式的值时，右侧操作数将不会被计算。例如表达式(a != 0) && (b / a > 5)中，如果a为0，则左侧为假，整个&&表达式已确定为假，右侧b/a不会被执行，避免了除零错误。又如常见写法p && p->next中，如果p为NULL（假），右侧p->next不会被访问，防止了对空指针解引用。在嵌入式编程中，这是重要的安全编程技巧，常用于检查硬件状态寄存器前先验证指针有效性。
+  difficulty: MEDIUM
+  sortOrder: 9
+- sourceKey: quiz:c:04:10
+  chapterSourceKey: c:chapter:04
+  type: TRUE_FALSE
+  stem: C语言中，有符号整数（signed int）溢出是未定义行为（undefined behavior）。
+  isCorrect: true
+  analysis: 正确。C语言标准明确规定，有符号整数的溢出是未定义行为（undefined behavior），编译器可以做出任何处理，包括产生错误结果、崩溃或看似正常执行。因此依赖有符号整数溢出的代码是不可移植的。与之对比，无符号整数的溢出有明确定义——按模2^N自动回绕（wrapping）。
+  difficulty: HARD
+  sortOrder: 10
+- sourceKey: quiz:c:05:01
+  chapterSourceKey: c:chapter:05
+  type: SINGLE
+  stem: 以下关于if语句的描述，哪个是正确的？
+  options:
+  - label: A
+    content: if后面必须有else
+  - label: B
+    content: if条件表达式必须用括号括起来
+    isCorrect: true
+  - label: C
+    content: if语句不能嵌套使用
+  - label: D
+    content: if只能比较整数
+  analysis: C语言的if语句条件表达式必须用圆括号()括起来。else是可选的，不是必须的。if可以嵌套使用。if可以比较任何标量类型的表达式（整数、浮点数、指针等），不限于整数。
+  difficulty: EASY
+  sortOrder: 1
+- sourceKey: quiz:c:05:02
+  chapterSourceKey: c:chapter:05
+  type: SINGLE
+  stem: "以下代码的输出是什么？\n\nint a = 0;\nif (a)\n    printf(\"真\");\nelse\n    printf(\"假\");"
+  options:
+  - label: A
+    content: 真
+  - label: B
+    content: 假
+    isCorrect: true
+  - label: C
+    content: 编译错误
+  - label: D
+    content: 运行时错误
+  analysis: 在C语言中，if条件判断中任何非0值视为真，0值视为假。a=0为假，因此执行else分支，输出'假'。需要注意的是，if语句默认只控制其后的一条语句，如果需要执行多条语句必须使用花括号{}。
+  difficulty: EASY
+  sortOrder: 2
+- sourceKey: quiz:c:05:03
+  chapterSourceKey: c:chapter:05
+  type: SINGLE
+  stem: switch语句的表达式类型不能是以下哪种？
+  options:
+  - label: A
+    content: int
+  - label: B
+    content: char
+  - label: C
+    content: float
+    isCorrect: true
+  - label: D
+    content: enum
+  analysis: C语言中switch表达式的类型必须是整数类型（包括char和enum），不能是浮点类型（float/double）。case标签也必须是整数常量表达式。这一点与C++不同，也与if语句不同（if可以使用浮点表达式）。
+  difficulty: MEDIUM
+  sortOrder: 3
+- sourceKey: quiz:c:05:04
+  chapterSourceKey: c:chapter:05
+  type: MULTI
+  stem: 以下关于switch语句的说法，哪些是正确的？（多选）
+  options:
+  - label: A
+    content: case后面的值必须是常量表达式
+    isCorrect: true
+  - label: B
+    content: 每个case分支末尾都必须有break语句
+  - label: C
+    content: default分支可以放在switch语句块的任意位置
+    isCorrect: true
+  - label: D
+    content: 多个case可以共用一个执行体
+    isCorrect: true
+  analysis: '选项A正确：case标签必须是整数常量表达式，不能是变量。选项B错误：break不是必须的，不加break会发生''穿透''（fall-through），执行下一个case分支的代码，这有时是故意利用的特性。选项C正确：default可以放在switch块的任意位置，习惯放在最后。选项D正确：可以写case 1: case 2: printf("1或2"); 让多个case共享同一段代码。'
+  difficulty: MEDIUM
+  sortOrder: 4
+- sourceKey: quiz:c:05:05
+  chapterSourceKey: c:chapter:05
+  type: SINGLE
+  stem: "以下代码的输出是什么？\n\nint a = 1, b = 2, c = 3;\nif (a > b)\n    if (b > c)\n        printf(\"A\");\nelse\n    printf(\"B\");"
+  options:
+  - label: A
+    content: A
+  - label: B
+    content: B
+  - label: C
+    content: 无输出
+    isCorrect: true
+  - label: D
+    content: 编译错误
+  analysis: 这是一个经典的悬垂else（dangling else）匹配问题。C语言规定else总是与最近的尚未匹配的if结合。虽然缩进暗示else属于外层if，但实际上else与内层if(b>c)配对。内层if(b>c)为假（2>3为假），而内层if没有else分支，所以什么都不执行。外层if(a>b)为假（1>2为假），也不会执行其分支内的代码。最终无输出。避免方法：始终使用花括号{}明确代码块的边界。
+  difficulty: HARD
+  sortOrder: 5
+- sourceKey: quiz:c:05:06
+  chapterSourceKey: c:chapter:05
+  type: TRUE_FALSE
+  stem: 在C语言中，if (x = 5)是一个合法的条件判断，等价于if (x == 5)。
+  isCorrect: false
+  analysis: 错误。if (x = 5)是合法的（会通过编译），但功能与if(x==5)完全不同。x = 5是赋值表达式，其值为被赋的值（5），5为非零值，因此条件永远为真。这是C语言中非常常见的笔误，编译器通常会给出警告。良好的编程风格是将常量写在左边：if (5 == x)，这样误写为if (5 = x)时编译器会报错。
+  difficulty: MEDIUM
+  sortOrder: 6
+- sourceKey: quiz:c:05:07
+  chapterSourceKey: c:chapter:05
+  type: SHORT_ANSWER
+  stem: C语言的switch语句中break的作用是什么？什么是case穿透（fall-through）？
+  analysis: break在switch中用于跳出当前的switch语句块，执行switch之后的代码。如果不加break，会发生case穿透（fall-through），即执行完当前case分支的代码后，会继续执行下一个case分支的代码，而不会再检查case条件。在某些场景下穿透是有意利用的特性（如多个case映射到同一段处理逻辑，或Duff's device等特殊技巧），但更多的通常是编程错误。良好的习惯是在每个case分支末尾都添加break，除非是明确需要穿透。
+  difficulty: MEDIUM
+  sortOrder: 7
+- sourceKey: quiz:c:05:08
+  chapterSourceKey: c:chapter:05
+  type: TRUE_FALSE
+  stem: C语言中，任何非零值在条件判断中都被视为真。
+  isCorrect: true
+  analysis: 正确。C语言的条件判断中，0代表假（false），任何非零值（包括负数）都被视为真（true）。例如if(-1)为真，if(100)为真。这也意味着在C语言中可以直接用if(ptr)检查指针是否非空，用if(n)检查整数n是否非零。
+  difficulty: EASY
+  sortOrder: 8
+- sourceKey: quiz:c:05:09
+  chapterSourceKey: c:chapter:05
+  type: MULTI
+  stem: 以下关于if-else if-else链的描述，哪些是正确的？（多选）
+  options:
+  - label: A
+    content: 一旦某个条件为真，执行对应分支后跳过后续所有分支
+    isCorrect: true
+  - label: B
+    content: 所有条件都会被逐一检查
+  - label: C
+    content: 最后的else用于处理所有前面的条件都不满足的情况
+    isCorrect: true
+  - label: D
+    content: if-else if链中可以有多个条件同时为真
+  analysis: 选项A正确：if-else if链中一旦找到为真的条件，执行对应分支后直接跳过整个链。选项B错误：只要找到一个为真的条件，后续条件就不会被检查。选项C正确：最后的else作为兜底分支，处理所有前面条件都不满足的情况。选项D正确：虽然可能有多个条件同时为真，但只有第一个为真的条件对应的分支会被执行。
+  difficulty: MEDIUM
+  sortOrder: 9
+- sourceKey: quiz:c:06:01
+  chapterSourceKey: c:chapter:06
+  type: SINGLE
+  stem: for循环的初始化部分在什么时候执行？
+  options:
+  - label: A
+    content: 每次循环前
+  - label: B
+    content: 只在第一次循环前
+    isCorrect: true
+  - label: C
+    content: 每次循环后
+  - label: D
+    content: 循环结束时
+  analysis: for循环的初始化语句只在循环开始前执行一次。循环的执行流程是：初始化(1次)→条件判断→循环体→更新表达式→条件判断→...
+  difficulty: EASY
+  sortOrder: 1
+- sourceKey: quiz:c:06:02
+  chapterSourceKey: c:chapter:06
+  type: SINGLE
+  stem: break语句在循环中的作用是？
+  options:
+  - label: A
+    content: 跳过本次循环的剩余语句，进入下一次迭代
+  - label: B
+    content: 立即终止当前循环
+    isCorrect: true
+  - label: C
+    content: 终止整个程序
+  - label: D
+    content: 跳转到循环的起始位置
+  analysis: break用于立即终止当前所在的循环（for、while、do-while），程序继续执行循环之后的代码。选项A描述的是continue的功能，选项C是exit()函数的功能。break只会跳出最内层的一层循环（不适用于嵌套循环的外层退出）。
+  difficulty: EASY
+  sortOrder: 2
+- sourceKey: quiz:c:06:03
+  chapterSourceKey: c:chapter:06
+  type: MULTI
+  stem: 以下关于while和do-while循环的说法，哪些是正确的？（多选）
+  options:
+  - label: A
+    content: while循环先判断条件再执行循环体
+    isCorrect: true
+  - label: B
+    content: do-while循环至少执行一次循环体
+    isCorrect: true
+  - label: C
+    content: do-while循环的末尾需要分号
+    isCorrect: true
+  - label: D
+    content: while循环的条件为假时，循环体也会执行一次
+  analysis: 选项A正确：while循环先判断条件，条件为真才执行循环体。选项B正确：do-while先执行一次循环体再判断条件，因此至少执行一次。选项C正确：do-while的语法是do{...}while(条件);，末尾必须有分号。选项D错误：while条件为假时循环体根本不执行。
+  difficulty: MEDIUM
+  sortOrder: 3
+- sourceKey: quiz:c:06:04
+  chapterSourceKey: c:chapter:06
+  type: TRUE_FALSE
+  stem: for(;;)是一个合法的无限循环。
+  isCorrect: true
+  analysis: 正确。for(;;)中三个表达式都为空。初始化（空）只执行一次；条件判断为空时恒为真（C语言标准规定条件表达式省略时默认为真）；更新表达式也为空。因此这是一个经典的无限循环写法，通常配合内部的break或return退出。在嵌入式系统中常用于主循环（super loop）结构。
+  difficulty: EASY
+  sortOrder: 4
+- sourceKey: quiz:c:06:05
+  chapterSourceKey: c:chapter:06
+  type: SINGLE
+  stem: "以下代码的输出是什么？\n\nfor (int i = 0; i < 3; i++) {\n    for (int j = 0; j < 2; j++) {\n        printf(\"*\");\n    }\n}"
+  options:
+  - label: A
+    content: '***'
+  - label: B
+    content: '******'
+    isCorrect: true
+  - label: C
+    content: '**'
+  - label: D
+    content: '****'
+  analysis: 外层循环执行3次（i=0,1,2），每次外层循环中内层循环执行2次（j=0,1）。因此总共执行3*2=6次printf("*")，输出6个星号，即"******"。嵌套循环的总迭代次数等于各层循环次数的乘积。
+  difficulty: EASY
+  sortOrder: 5
+- sourceKey: quiz:c:06:06
+  chapterSourceKey: c:chapter:06
+  type: SINGLE
+  stem: "以下代码的输出是什么？\n\nint i;\nfor (i = 0; i < 5; i++);\n    printf(\"%d\", i);"
+  options:
+  - label: A
+    content: '01234'
+  - label: B
+    content: '5'
+    isCorrect: true
+  - label: C
+    content: '4'
+  - label: D
+    content: '012345'
+  analysis: for循环后立即跟了一个分号，形成空循环体。for循环执行5次（i从0递增到5），每次只递增i不做其他操作。循环结束时i=5（因为i<5不成立才退出）。然后执行printf("%d", i)输出5。注意分号的位置是关键考点，不当心多加的分号会改变程序逻辑。
+  difficulty: MEDIUM
+  sortOrder: 6
+- sourceKey: quiz:c:06:07
+  chapterSourceKey: c:chapter:06
+  type: TRUE_FALSE
+  stem: continue语句会立即终止整个循环，程序继续执行循环之后的代码。
+  isCorrect: false
+  analysis: 错误。continue的作用是跳过当前循环迭代中剩余的语句，立即进入下一次迭代的条件判断，而不是终止整个循环。终止整个循环的是break语句。在for循环中，continue后会执行更新表达式部分再进行条件判断。在while循环中，continue后直接跳转到条件判断。
+  difficulty: MEDIUM
+  sortOrder: 7
+- sourceKey: quiz:c:06:08
+  chapterSourceKey: c:chapter:06
+  type: SHORT_ANSWER
+  stem: 在嵌入式编程中，为什么需要谨慎使用goto语句？在哪些场景下goto仍有其合理用途？
+  analysis: goto语句的主要问题是破坏程序的结构化流程，使代码难以阅读、调试和维护（产生所谓的'面条代码'）。在嵌入式编程中保持良好的代码结构尤为重要。然而，在以下场景中goto仍有其价值：(1)在多层嵌套循环中一次性跳出所有层次（break只能跳出一层）；(2)在错误处理中集中释放资源（如Linux内核中使用goto进行统一的错误处理和资源清理）；(3)在中断服务程序中跳转到特定处理流程。使用时应遵循规范：只在函数内部向下跳转，避免向上跳转形成循环。
+  difficulty: MEDIUM
+  sortOrder: 8
+- sourceKey: quiz:c:06:09
+  chapterSourceKey: c:chapter:06
+  type: MULTI
+  stem: 以下关于循环中break和continue的说法，哪些是正确的？（多选）
+  options:
+  - label: A
+    content: break可以用于跳出switch语句
+    isCorrect: true
+  - label: B
+    content: continue可以用于跳出switch语句
+  - label: C
+    content: 在嵌套循环中，break只跳出最内层循环
+    isCorrect: true
+  - label: D
+    content: continue跳过本次循环剩余代码，进入下一次迭代
+    isCorrect: true
+  analysis: 选项A正确：break既可用于循环也可用于switch。选项B错误：continue仅用于循环语句（for、while、do-while），不能用于switch。选项C正确：break只跳出直接包含它的最内层循环或switch。选项D正确：continue跳过当前迭代中剩余的语句，进入下一次迭代的条件判断。
+  difficulty: MEDIUM
+  sortOrder: 9
+- sourceKey: quiz:c:07:01
+  chapterSourceKey: c:chapter:07
+  type: SINGLE
+  stem: 以下数组声明中，哪个是正确的？
+  options:
+  - label: A
+    content: int arr[10];
+    isCorrect: true
+  - label: B
+    content: int arr[];
+  - label: C
+    content: int[10] arr;
+  - label: D
+    content: array int[10];
+  analysis: C语言数组声明的正确语法是：类型 数组名[大小]。选项A符合语法。选项B缺少数组大小，如果在函数内部声明时必须指定大小（除非有初始化列表）。选项C和D的语法在C语言中是非法的。
+  difficulty: EASY
+  sortOrder: 1
+- sourceKey: quiz:c:07:02
+  chapterSourceKey: c:chapter:07
+  type: SINGLE
+  stem: int a[5] = {1, 2, 3}; 后，数组元素a[3]和a[4]的值分别是？
+  options:
+  - label: A
+    content: 3和0
+  - label: B
+    content: 0和0
+    isCorrect: true
+  - label: C
+    content: 不确定（未初始化）
+  - label: D
+    content: 随机值
+  analysis: 在C语言中，如果数组初始化列表提供的值少于数组元素个数，剩余元素会被自动初始化为0（静态初始化）。因此a[3]=0, a[4]=0。这一规则适用于所有基本类型（整型初始化为0，浮点型初始化为0.0，指针初始化为NULL）。
+  difficulty: EASY
+  sortOrder: 2
+- sourceKey: quiz:c:07:03
+  chapterSourceKey: c:chapter:07
+  type: TRUE_FALSE
+  stem: C语言在运行时会对数组下标进行越界检查。
+  isCorrect: false
+  analysis: 错误。C语言不会对数组下标进行运行时越界检查。访问a[n]时，编译器直接计算地址偏移并访问该内存位置。如果n超出数组范围，将访问数组之外的内存，可能导致数据损坏、段错误（segmentation fault）或安全漏洞（如缓冲区溢出攻击）。程序员有责任确保下标在有效范围内。
+  difficulty: MEDIUM
+  sortOrder: 3
+- sourceKey: quiz:c:07:04
+  chapterSourceKey: c:chapter:07
+  type: SINGLE
+  stem: 若有int a[3][4]; 则以下哪个是对a[1][2]的正确访问？
+  options:
+  - label: A
+    content: a[1,2]
+  - label: B
+    content: a[1][2]
+    isCorrect: true
+  - label: C
+    content: a(1)(2)
+  - label: D
+    content: a(1,2)
+  analysis: 二维数组使用a[行][列]的形式访问元素。a[1][2]表示第2行（行号从0开始）的第3列元素。a[1,2]在C语言中是逗号表达式，等价于a[2]（只访问第二行的一维数组），不是正确的二维访问方式。
+  difficulty: EASY
+  sortOrder: 4
+- sourceKey: quiz:c:07:05
+  chapterSourceKey: c:chapter:07
+  type: MULTI
+  stem: 以下关于数组名的说法，哪些是正确的？（多选）
+  options:
+  - label: A
+    content: 数组名代表数组首元素的地址
+    isCorrect: true
+  - label: B
+    content: 数组名是一个指针变量，可以重新赋值
+  - label: C
+    content: sizeof(数组名)返回整个数组占用的字节数
+    isCorrect: true
+  - label: D
+    content: 数组名在传递给函数时会退化为指向首元素的指针
+    isCorrect: true
+  analysis: 选项A正确：在大多数表达式中，数组名代表首元素的地址。选项B错误：数组名不是指针变量，而是一个地址常量，不能修改（不能执行arr++等操作）。选项C正确：sizeof作用于数组名时返回整个数组的字节数，而不是指针的大小。选项D正确：数组名作为函数参数时会退化为指针，因此函数内用sizeof无法获取数组大小。
+  difficulty: HARD
+  sortOrder: 5
+- sourceKey: quiz:c:07:06
+  chapterSourceKey: c:chapter:07
+  type: SINGLE
+  stem: 数组作为函数参数时，实际传递的是什么？
+  options:
+  - label: A
+    content: 整个数组的副本
+  - label: B
+    content: 数组首元素的地址（指针）
+    isCorrect: true
+  - label: C
+    content: 数组的长度
+  - label: D
+    content: 数组最后一个元素的地址
+  analysis: 数组作为函数参数时，数组名退化为指向首元素的指针，传递的是地址（传址调用）。因此函数内对数组元素的修改会影响原数组。同时，函数内使用sizeof(数组参数)得到的是指针的大小，而不是数组的大小，通常需要额外传递数组长度参数。
+  difficulty: MEDIUM
+  sortOrder: 6
+- sourceKey: quiz:c:07:07
+  chapterSourceKey: c:chapter:07
+  type: SINGLE
+  stem: 冒泡排序（bubble sort）中，如果有n个元素需要排序，最坏情况下需要比较的次数是？
+  options:
+  - label: A
+    content: n
+  - label: B
+    content: n*(n-1)/2
+    isCorrect: true
+  - label: C
+    content: n^2
+  - label: D
+    content: n-1
+  analysis: 冒泡排序在最坏情况下（数组逆序）需要进行n-1趟排序，每趟比较次数为n-1、n-2、...、1，总比较次数为(n-1)+(n-2)+...+1 = n*(n-1)/2。冒泡排序的平均和时间复杂度为O(n^2)，空间复杂度为O(1)。
+  difficulty: EASY
+  sortOrder: 7
+- sourceKey: quiz:c:07:08
+  chapterSourceKey: c:chapter:07
+  type: SINGLE
+  stem: 二分查找（binary search）要求数据必须满足什么条件？
+  options:
+  - label: A
+    content: 数据必须是有序的
+    isCorrect: true
+  - label: B
+    content: 数据量必须为2的幂
+  - label: C
+    content: 数据不能有重复值
+  - label: D
+    content: 数据必须存储在链表中
+  analysis: 二分查找的先决条件是数据已经有序（升序或降序）。它通过每次将搜索区间缩小一半来实现O(log n)的查找效率。其他选项错误：数据量不必是2的幂，可以有重复值，且必须存储在支持随机访问的线性结构中（如数组），不能是链表。
+  difficulty: EASY
+  sortOrder: 8
+- sourceKey: quiz:c:07:09
+  chapterSourceKey: c:chapter:07
+  type: SHORT_ANSWER
+  stem: C语言中，数组名和指针有哪些本质区别？
+  analysis: 数组名和指针有本质区别：(1)数组名是地址常量，不能修改（不能执行arr++或arr=NULL）；指针是变量，可以重新指向其他地址。(2)sizeof(数组名)返回整个数组占用的字节数；sizeof(指针)返回指针本身的大小（64位系统上通常为8字节）。(3)对数组名取地址(&arr)得到的是整个数组的地址（类型为指向数组的指针），与首元素地址值相同但步长不同；对指针取地址(&p)得到的是指针变量自身的地址。它们的联系是：在表达式中数组名会退化为指向首元素的指针，因此可以用指针方式访问数组元素。
+  difficulty: HARD
+  sortOrder: 9
+- sourceKey: quiz:c:07:10
+  chapterSourceKey: c:chapter:07
+  type: TRUE_FALSE
+  stem: C99标准引入了变长数组（VLA），允许在运行时指定数组大小。
+  isCorrect: true
+  analysis: 正确。C99标准引入了变长数组（VLA，Variable Length Arrays），允许数组长度在运行时确定，如void func(int n) { int arr[n]; }。但VLA有以下限制：(1)不能是全局的；(2)不能使用初始化列表初始化；(3)sizeof在运行时求值；(4)C11标准将其列为可选特性。在嵌入式开发中谨慎使用VLA，因为栈空间有限，运行时分配可能导致栈溢出。
+  difficulty: EASY
+  sortOrder: 10
+- sourceKey: quiz:c:08:01
+  chapterSourceKey: c:chapter:08
+  type: SINGLE
+  stem: C语言中函数定义的返回类型可以是什么？
+  options:
+  - label: A
+    content: 只能是int类型
+  - label: B
+    content: 可以是除了数组和函数以外的任何类型
+    isCorrect: true
+  - label: C
+    content: 只能是void类型
+  - label: D
+    content: 不能返回指针
+  analysis: C语言的函数可以返回除了数组和函数以外的任何类型（包括int、float、char、结构体、指针等）。不返回值的函数使用void关键字。函数不能返回数组，但可以返回指向数组的指针。函数不能返回函数，但可以返回函数指针。
+  difficulty: EASY
+  sortOrder: 1
+- sourceKey: quiz:c:08:02
+  chapterSourceKey: c:chapter:08
+  type: TRUE_FALSE
+  stem: 在C语言中，如果函数定义在使用之后，必须先进行函数声明（函数原型），否则会导致编译错误。
+  isCorrect: true
+  analysis: 正确。C语言要求标识符先声明后使用。如果函数定义在使用之后的位置，必须在调用前提供函数原型声明（如int add(int, int);），告诉编译器函数的返回类型和参数类型。C99之前编译器会隐式假设函数返回int，但C99标准之后隐式函数声明已被废除，不提供原型会导致编译错误。
+  difficulty: MEDIUM
+  sortOrder: 2
+- sourceKey: quiz:c:08:03
+  chapterSourceKey: c:chapter:08
+  type: SINGLE
+  stem: 在C语言中，函数参数默认是哪种传递方式？
+  options:
+  - label: A
+    content: 传值调用（pass by value）
+    isCorrect: true
+  - label: B
+    content: 传址调用（pass by reference）
+  - label: C
+    content: 传名调用（pass by name）
+  - label: D
+    content: 取决于参数类型
+  analysis: C语言中所有函数参数都采用传值调用（pass by value），即将实参的值复制一份传递给形参。函数内对形参的修改不会影响实参。如果需要修改实参的值，必须传递实参的地址（指针），实现'传址'的效果，这本质上仍然是传值调用——传递的是地址的值。
+  difficulty: EASY
+  sortOrder: 3
+- sourceKey: quiz:c:08:04
+  chapterSourceKey: c:chapter:08
+  type: SINGLE
+  stem: 函数原型声明中，参数名称是否可以省略？
+  options:
+  - label: A
+    content: 不能省略
+  - label: B
+    content: 可以省略
+    isCorrect: true
+  - label: C
+    content: 部分编译器可以，部分不行
+  - label: D
+    content: 取决于参数类型
+  analysis: 函数原型声明时，参数名称可以省略，只需要提供参数类型即可。例如int func(int, double);是合法的函数原型。参数名称在函数原型中仅起说明作用，编译器只需要知道参数的类型和数量来正确地生成调用代码。但在函数定义中参数名称是必须的，因为需要在函数体内使用参数。
+  difficulty: EASY
+  sortOrder: 4
+- sourceKey: quiz:c:08:05
+  chapterSourceKey: c:chapter:08
+  type: MULTI
+  stem: 以下关于static关键字在函数中使用的说法，哪些是正确的？（多选）
+  options:
+  - label: A
+    content: static修饰函数内的局部变量时，该变量在程序运行期间只初始化一次
+    isCorrect: true
+  - label: B
+    content: static修饰函数内的局部变量后，该变量在函数退出后值保持不变
+    isCorrect: true
+  - label: C
+    content: static修饰的函数只能在当前源文件中被调用
+    isCorrect: true
+  - label: D
+    content: static局部变量的作用域是整个程序
+  analysis: 选项A正确：static局部变量在程序启动时初始化一次，之后的函数调用不再重新初始化。选项B正确：static局部变量存储在静态存储区，程序运行期间一直存在，函数退出后值保留。选项C正确：static函数具有内部链接属性，只在定义它的源文件中可见。选项D错误：static局部变量的作用域仍然是块作用域（在函数内部），只是生命周期延长到整个程序运行期间。
+  difficulty: MEDIUM
+  sortOrder: 5
+- sourceKey: quiz:c:08:06
+  chapterSourceKey: c:chapter:08
+  type: SINGLE
+  stem: 函数的调用栈（call stack）中，每次函数调用会分配什么？
+  options:
+  - label: A
+    content: 堆内存
+  - label: B
+    content: 栈帧（stack frame）
+    isCorrect: true
+  - label: C
+    content: 全局内存
+  - label: D
+    content: 代码段内存
+  analysis: 每次函数调用时，系统会在调用栈上分配一个栈帧（stack frame），用于存储函数的局部变量、参数、返回地址和保存的寄存器状态。函数返回时，其栈帧被回收。递归调用时，每层递归都会创建新的栈帧，递归深度过大可能导致栈溢出（stack overflow）。
+  difficulty: EASY
+  sortOrder: 6
+- sourceKey: quiz:c:08:07
+  chapterSourceKey: c:chapter:08
+  type: TRUE_FALSE
+  stem: C语言中，函数可以返回一个数组。
+  isCorrect: false
+  analysis: 错误。C语言中函数不能直接返回数组类型。但可以通过以下方式间接实现：(1)返回指向数组的指针（如int (*func())[10]）；(2)将数组作为参数传入，在函数内修改它；(3)返回包含数组的结构体（C语言中结构体可以整体返回）。
+  difficulty: MEDIUM
+  sortOrder: 7
+- sourceKey: quiz:c:08:08
+  chapterSourceKey: c:chapter:08
+  type: SINGLE
+  stem: "以下代码有什么问题？\n\nint* func() {\n    int x = 10;\n    return &x;\n}"
+  options:
+  - label: A
+    content: 返回类型不能是指针
+  - label: B
+    content: 返回了局部变量的地址，函数返回后该地址已无效
+    isCorrect: true
+  - label: C
+    content: 局部变量不能赋值
+  - label: D
+    content: 没有语法问题
+  analysis: 函数func返回了局部变量x的地址。x是函数内的自动局部变量，存储在栈上，func返回后其栈空间被释放，x不再有效。使用返回的指针访问x会访问已经释放的内存，导致未定义行为（悬挂指针）。正确的做法是使用static变量、malloc动态分配内存，或通过函数参数传回值。
+  difficulty: HARD
+  sortOrder: 8
+- sourceKey: quiz:c:08:09
+  chapterSourceKey: c:chapter:08
+  type: SHORT_ANSWER
+  stem: C语言中main函数的两种标准原型是什么？argc和argv分别代表什么？
+  analysis: C语言标准规定的两种main函数原型为：(1)int main(void)——不接受命令行参数；(2)int main(int argc, char *argv[])（或int main(int argc, char **argv)）——接受命令行参数。其中argc（argument count）是命令行参数的个数（包括程序名本身），argv（argument vector）是一个字符串数组，每个元素指向一个命令行参数字符串，argv[0]为程序名（或空字符串）。main函数的返回值用于指示程序的退出状态，返回0通常表示成功，非0表示异常。
+  difficulty: MEDIUM
+  sortOrder: 9
+- sourceKey: quiz:c:08:10
+  chapterSourceKey: c:chapter:08
+  type: MULTI
+  stem: 以下关于函数指针的说法，哪些是正确的？（多选）
+  options:
+  - label: A
+    content: 函数指针可以指向不同参数列表的函数
+  - label: B
+    content: 函数名在表达式中会被隐式转换为函数指针
+    isCorrect: true
+  - label: C
+    content: 通过函数指针调用函数的语法可以是(*p)()或p()
+    isCorrect: true
+  - label: D
+    content: 函数指针在嵌入式系统中常用于实现回调机制
+    isCorrect: true
+  analysis: 选项A错误：函数指针的类型由其返回类型和参数列表决定，只能指向具有完全相同签名的函数。选项B正确：函数名在表达式中会自动转换为指向函数的指针（类似数组名的退化）。选项C正确：两种调用语法都合法且等价。选项D正确：函数指针在嵌入式领域广泛用于回调函数、中断向量表、状态机实现等场景。
+  difficulty: HARD
+  sortOrder: 10
+- sourceKey: quiz:c:09:01
+  chapterSourceKey: c:chapter:09
+  type: SINGLE
+  stem: 递归函数必须包含哪两个基本要素？
+  options:
+  - label: A
+    content: 循环和条件判断
+  - label: B
+    content: 基准情况（base case）和递归情况（recursive case）
+    isCorrect: true
+  - label: C
+    content: 全局变量和局部变量
+  - label: D
+    content: 指针和数组
+  analysis: 递归函数必须包含两个要素：(1)基准情况（base case）——不再递归调用，直接返回结果的条件，确保递归能终止；(2)递归情况（recursive case）——将问题规模缩小并调用自身。缺少基准情况会导致无限递归，最终栈溢出。
+  difficulty: EASY
+  sortOrder: 1
+- sourceKey: quiz:c:09:02
+  chapterSourceKey: c:chapter:09
+  type: SINGLE
+  stem: "以下递归函数的功能是什么？\n\nint func(int n) {\n    if (n <= 1) return 1;\n    return n * func(n - 1);\n}"
+  options:
+  - label: A
+    content: 计算斐波那契数列
+  - label: B
+    content: 计算阶乘n!
+    isCorrect: true
+  - label: C
+    content: 计算n的平方
+  - label: D
+    content: 计算n的累加和
+  analysis: 该函数计算n的阶乘（n!）。当n<=1时返回1，否则递归计算n * func(n-1)。例如func(3)=3*func(2)=3*2*func(1)=3*2*1=6。如果计算累加和应是return n + func(n-1)；斐波那契数列是fib(n)=fib(n-1)+fib(n-2)。
+  difficulty: MEDIUM
+  sortOrder: 2
+- sourceKey: quiz:c:09:03
+  chapterSourceKey: c:chapter:09
+  type: TRUE_FALSE
+  stem: 递归调用时，每层递归都会在栈上分配新的栈帧，递归深度过大会导致栈溢出。
+  isCorrect: true
+  analysis: 正确。每次递归调用都会在调用栈上创建新的栈帧，保存局部变量、参数和返回地址。如果递归深度过大，会耗尽栈空间，导致栈溢出（stack overflow）错误。在嵌入式系统中，栈空间通常有限，递归深度需要严格控制。
+  difficulty: MEDIUM
+  sortOrder: 3
+- sourceKey: quiz:c:09:04
+  chapterSourceKey: c:chapter:09
+  type: SINGLE
+  stem: 斐波那契数列的递归实现，若不使用记忆化，其时间复杂度是？
+  options:
+  - label: A
+    content: O(n)
+  - label: B
+    content: O(n^2)
+  - label: C
+    content: O(2^n)
+    isCorrect: true
+  - label: D
+    content: O(log n)
+  analysis: 朴素递归实现斐波那契数列fib(n)=fib(n-1)+fib(n-2)的时间复杂度为O(2^n)（指数级），因为存在大量重复计算。例如计算fib(5)需要计算fib(4)和fib(3)，而fib(4)又需要计算fib(3)和fib(2)，fib(3)被重复计算两次。这种重复计算是递归中常见的低效问题，可以通过记忆化（memoization）或迭代方式优化为O(n)。
+  difficulty: HARD
+  sortOrder: 4
+- sourceKey: quiz:c:09:05
+  chapterSourceKey: c:chapter:09
+  type: MULTI
+  stem: 以下关于尾递归（tail recursion）的说法，哪些是正确的？（多选）
+  options:
+  - label: A
+    content: 尾递归是指递归调用是函数中的最后一个操作
+    isCorrect: true
+  - label: B
+    content: 尾递归通常可以被编译器优化为迭代（尾递归消除）
+    isCorrect: true
+  - label: C
+    content: 尾递归优化后不会增加栈深度
+    isCorrect: true
+  - label: D
+    content: 所有的递归都可以转换为尾递归
+  analysis: 选项A正确：尾递归要求递归调用是函数返回前执行的最后一个操作，结果直接返回。选项B正确：优化后的尾递归不会创建新的栈帧，而是复用当前栈帧。选项C正确：经过尾递归优化后，实际上转换为迭代，栈深度恒为O(1)。选项D错误：不是所有递归都能自然地转换为尾递归形式（如涉及多个递归调用的树形递归）。在嵌入式开发中，优先考虑尾递归或迭代。
+  difficulty: HARD
+  sortOrder: 5
+- sourceKey: quiz:c:09:06
+  chapterSourceKey: c:chapter:09
+  type: SINGLE
+  stem: 汉诺塔（Tower of Hanoi）问题中，将n个盘子从A柱移动到C柱需要的最少移动次数是？
+  options:
+  - label: A
+    content: n
+  - label: B
+    content: 2^n
+  - label: C
+    content: 2^n - 1
+    isCorrect: true
+  - label: D
+    content: n^2
+  analysis: 汉诺塔问题的递归解法是：先将n-1个盘子从A移到B（借助C），再将第n个盘子从A移到C，最后将n-1个盘子从B移到C（借助A）。移动次数的递推公式为T(n)=2T(n-1)+1，T(1)=1，解得T(n)=2^n-1。因此移动次数随n指数增长。
+  difficulty: MEDIUM
+  sortOrder: 6
+- sourceKey: quiz:c:09:07
+  chapterSourceKey: c:chapter:09
+  type: TRUE_FALSE
+  stem: 在嵌入式系统开发中，递归通常应优先于迭代使用。
+  isCorrect: false
+  analysis: 错误。在嵌入式系统开发中，通常应优先使用迭代而非递归。原因：(1)嵌入式系统栈空间有限（可能只有几KB），递归容易导致栈溢出；(2)递归调用的开销（函数调用、栈帧分配）可能影响实时性要求；(3)递归的调试和维护比迭代更困难。递归适合在问题具有自然的递归结构、递归深度可控且栈空间充裕的场景下使用。
+  difficulty: MEDIUM
+  sortOrder: 7
+- sourceKey: quiz:c:09:08
+  chapterSourceKey: c:chapter:09
+  type: SHORT_ANSWER
+  stem: 递归和迭代各自的优缺点是什么？在什么情况下应优先选择递归？
+  analysis: (一)递归优点：代码简洁、逻辑清晰，特别适合具有自相似结构的问题（如树的遍历、汉诺塔、分治算法）。递归缺点：函数调用开销大（参数传递、栈帧分配）、可能导致栈溢出、效率可能低于迭代（尾递归除外）。(二)迭代优点：效率高（无函数调用开销）、节省栈空间、没有栈溢出风险。迭代缺点：有时代码较复杂、可读性较差（如树的遍历需要手动维护栈）。(三)优先选择递归的场景：问题具有天然的递归结构（如目录遍历、语法分析树）、递归深度可预知且可控、代码可读性优先于微性能优化。对于深度未知或嵌入式环境，优先使用迭代。
+  difficulty: MEDIUM
+  sortOrder: 8
+- sourceKey: quiz:c:09:09
+  chapterSourceKey: c:chapter:09
+  type: SINGLE
+  stem: 以下哪种情况下递归不是合适的选择？
+  options:
+  - label: A
+    content: 遍历二叉树的所有节点
+  - label: B
+    content: 在栈空间有限的嵌入式系统中进行深度未知的递归
+    isCorrect: true
+  - label: C
+    content: 计算数学上的阶乘（递归深度小）
+  - label: D
+    content: 汉诺塔问题的求解
+  analysis: 选项B描述的情况不适合使用递归。在嵌入式系统中栈空间通常只有几KB，如果递归深度未知或可能很深，很容易导致栈溢出。选项A（二叉树的遍历）具有天然的递归结构且深度通常可控（平衡二叉树深度为log n）。选项C（计算阶乘）递归深度等于n，若n很小则安全。选项D（汉诺塔）虽然移动次数指数增长，但递归深度等于n，n通常很小。
+  difficulty: HARD
+  sortOrder: 9
+- sourceKey: quiz:c:10:01
+  chapterSourceKey: c:chapter:10
+  type: SINGLE
+  stem: 在C语言中，定义在函数内部的变量默认的作用域是？
+  options:
+  - label: A
+    content: 文件作用域
+  - label: B
+    content: 块作用域（从定义点到所在块的结束）
+    isCorrect: true
+  - label: C
+    content: 函数原型作用域
+  - label: D
+    content: 全局作用域
+  analysis: 定义在函数内部的变量（局部变量）默认具有块作用域（block scope），从定义点开始到所在块的右花括号}为止。如果定义在最内层的复合语句中，作用域就是该复合语句。超出作用域后变量不可访问。
+  difficulty: EASY
+  sortOrder: 1
+- sourceKey: quiz:c:10:02
+  chapterSourceKey: c:chapter:10
+  type: SINGLE
+  stem: static关键字在文件作用域中修饰全局变量时，其作用是什么？
+  options:
+  - label: A
+    content: 将变量的作用域限制在当前源文件中
+    isCorrect: true
+  - label: B
+    content: 将变量变为动态变量
+  - label: C
+    content: 允许其他文件通过extern访问
+  - label: D
+    content: 使变量在函数之间共享
+  analysis: static修饰文件作用域的全局变量时，将该变量的链接属性从外部链接（external linkage）改为内部链接（internal linkage），使其只在当前编译单元（源文件）中可见，其他源文件无法通过extern访问。这有助于实现信息隐藏和模块封装。
+  difficulty: MEDIUM
+  sortOrder: 2
+- sourceKey: quiz:c:10:03
+  chapterSourceKey: c:chapter:10
+  type: TRUE_FALSE
+  stem: 在多个源文件中使用同一个全局变量时，需要在声明该全局变量的源文件中使用extern关键字。
+  isCorrect: false
+  analysis: 错误。extern用于在某个源文件中引用定义在其他源文件中的全局变量，而不是用于定义。全局变量的定义（分配存储空间）通常在一个源文件中完成（不加extern），在其他需要使用的源文件中用extern声明（不分配存储空间，仅声明存在）。如果在定义处加extern则变成了声明而非定义。
+  difficulty: MEDIUM
+  sortOrder: 3
+- sourceKey: quiz:c:10:04
+  chapterSourceKey: c:chapter:10
+  type: MULTI
+  stem: 以下关于头文件（.h）和源文件（.c）的描述，哪些是正确的？（多选）
+  options:
+  - label: A
+    content: 头文件中通常放置函数声明、宏定义、类型定义等
+    isCorrect: true
+  - label: B
+    content: 源文件中通常放置函数定义和全局变量定义
+    isCorrect: true
+  - label: C
+    content: 一个头文件可以被多个源文件包含
+    isCorrect: true
+  - label: D
+    content: 头文件可以不使用include guard，但可能导致重复定义错误
+    isCorrect: true
+  analysis: 所有选项均正确。A：头文件用于放置接口声明。B：源文件用于放置实现。C：头文件的这种共享特性正是其作用所在。D：如果没有include guard，当头文件被多次包含时会导致重复定义错误（如typedef重复、结构体重复定义等），因此应始终使用#ifndef/#define/#endif或#pragma once来保护头文件。
+  difficulty: MEDIUM
+  sortOrder: 4
+- sourceKey: quiz:c:10:05
+  chapterSourceKey: c:chapter:10
+  type: SINGLE
+  stem: 链接阶段出现'undefined reference'错误，最可能的原因是？
+  options:
+  - label: A
+    content: 源文件中存在语法错误
+  - label: B
+    content: 调用的函数或变量只有声明没有定义
+    isCorrect: true
+  - label: C
+    content: 数组越界访问
+  - label: D
+    content: 内存分配失败
+  analysis: undefined reference（未定义引用）是链接错误，表示链接器找不到某个符号（函数或全局变量）的定义。常见原因：(1)只声明了函数但没有提供定义（缺少实现）；(2)没有链接对应的目标文件或库；(3)函数名拼写错误。语法错误和数组越界是编译期或运行时错误，不会导致链接错误。
+  difficulty: MEDIUM
+  sortOrder: 5
+- sourceKey: quiz:c:10:06
+  chapterSourceKey: c:chapter:10
+  type: TRUE_FALSE
+  stem: include guard（头文件保护）的作用是防止头文件被同一个编译单元重复包含。
+  isCorrect: true
+  analysis: '正确。include guard的经典写法是：#ifndef XXX_H
+
+    #define XXX_H
+
+    /* 头文件内容 */
+
+    #endif
+
+    当预处理器第一次处理该头文件时，XXX_H未定义，进入条件块定义宏并包含内容。后续再次遇到#include时，XXX_H已定义，跳过整个文件内容。从而防止在同一个编译单元中重复包含导致的重复定义错误。'
+  difficulty: EASY
+  sortOrder: 6
+- sourceKey: quiz:c:10:07
+  chapterSourceKey: c:chapter:10
+  type: MULTI
+  stem: 以下关于编译单元（compilation unit）的说法，哪些是正确的？（多选）
+  options:
+  - label: A
+    content: 每个编译单元独立编译为目标文件（.o）
+    isCorrect: true
+  - label: B
+    content: 编译单元是一个.c源文件经过预处理后的结果
+    isCorrect: true
+  - label: C
+    content: 链接器将多个编译单元链接为可执行文件
+    isCorrect: true
+  - label: D
+    content: 编译单元之间不能互相访问任何符号
+  analysis: 选项A正确：每个编译单元被编译器独立处理生成目标文件。选项B正确：经过预处理（头文件展开、宏替换）后的代码称为编译单元。选项C正确：链接器负责将各编译单元中的符号引用和定义匹配，生成最终可执行文件。选项D错误：编译单元之间可以通过extern声明的外部链接符号相互访问。
+  difficulty: HARD
+  sortOrder: 7
+- sourceKey: quiz:c:10:08
+  chapterSourceKey: c:chapter:10
+  type: MULTI
+  stem: 以下关于C语言链接属性（linkage）的说法，哪些是正确的？（多选）
+  options:
+  - label: A
+    content: 全局变量默认具有外部链接（external linkage）
+    isCorrect: true
+  - label: B
+    content: static修饰的函数具有内部链接（internal linkage）
+    isCorrect: true
+  - label: C
+    content: 局部变量没有链接属性（no linkage）
+    isCorrect: true
+  - label: D
+    content: const全局变量默认具有内部链接
+  analysis: A、B、C正确，D错误。C语言中文件作用域的非static对象（包括const对象）默认具有外部链接；若要限制在当前编译单元，应显式使用static。C++中文件作用域的非extern、非volatile const对象通常默认内部链接，不能把C++规则套到C语言。
+  difficulty: HARD
+  sortOrder: 8
+- sourceKey: quiz:c:10:09
+  chapterSourceKey: c:chapter:10
+  type: SHORT_ANSWER
+  stem: C语言中static关键字有哪三种不同的用途？分别说明其作用。
+  analysis: static关键字有三种主要用途：(1)修饰函数内的局部变量——延长生命周期到整个程序运行期间（存储在静态存储区），该变量在函数退出后值保持不变，且只在第一次调用时初始化。作用域仍然是块作用域（仅函数内可访问）。(2)修饰文件作用域的函数——将链接属性改为内部链接，使其仅在当前编译单元中可见，其他源文件无法调用。这实现了模块封装和信息隐藏。(3)修饰文件作用域的全局变量——将链接属性改为内部链接，使其只在当前源文件中可见，避免不同编译单元间的命名冲突。这三种用途的核心都是改变存储类别和/或链接属性。
+  difficulty: MEDIUM
+  sortOrder: 9
+- sourceKey: quiz:c:11:01
+  chapterSourceKey: c:chapter:11
+  type: TRUE_FALSE
+  stem: 指针变量存储的是另一个变量的地址。
+  isCorrect: true
+  analysis: 正确。指针是一种特殊的变量，它存储的是内存地址，而不是数据值本身。通过这个地址可以访问和操作该地址上存储的数据。
+  difficulty: EASY
+  sortOrder: 1
+- sourceKey: quiz:c:11:02
+  chapterSourceKey: c:chapter:11
+  type: SINGLE
+  stem: 若有定义int a = 10, *p = &a; 则*p的值是？
+  options:
+  - label: A
+    content: a的地址
+  - label: B
+    content: '10'
+    isCorrect: true
+  - label: C
+    content: p的地址
+  - label: D
+    content: '0'
+  analysis: '*p是解引用操作，取出指针p指向的变量的值。这里p指向a，a=10，所以*p=10。选项A为&a，选项C为&p，均为地址值。'
+  difficulty: EASY
+  sortOrder: 2
+- sourceKey: quiz:c:11:03
+  chapterSourceKey: c:chapter:11
+  type: SINGLE
+  stem: 声明一个指向整型变量的指针的正确方式是？
+  options:
+  - label: A
+    content: int *p;
+    isCorrect: true
+  - label: B
+    content: int p*;
+  - label: C
+    content: pointer int p;
+  - label: D
+    content: int &p;
+  analysis: 声明指针的正确语法是：类型 *变量名。int *p; 声明p是一个指向int类型变量的指针。选项B的语法错误，选项C不是C语言语法，选项D的&是取地址运算符，不能用于声明。注意int* p和int *p在语法上等价，但int* p, q中只有p是指针，q是int。
+  difficulty: EASY
+  sortOrder: 3
+- sourceKey: quiz:c:11:04
+  chapterSourceKey: c:chapter:11
+  type: SINGLE
+  stem: 若int a[5] = {10, 20, 30, 40, 50}; int *p = a; 则*(p + 2)的值是？
+  options:
+  - label: A
+    content: '10'
+  - label: B
+    content: '30'
+    isCorrect: true
+  - label: C
+    content: '20'
+  - label: D
+    content: '40'
+  analysis: 指针p指向数组a的首元素（a[0]）。p+2是指针向后移动2个int位置，指向a[2]。*(p+2)解引用得到a[2]的值30。指针运算中，p+n的地址偏移量为n * sizeof(int)字节。这与a[2]访问的是同一元素。
+  difficulty: MEDIUM
+  sortOrder: 4
+- sourceKey: quiz:c:11:05
+  chapterSourceKey: c:chapter:11
+  type: TRUE_FALSE
+  stem: NULL指针解引用会导致未定义行为，通常造成程序崩溃。
+  isCorrect: true
+  analysis: 正确。对NULL指针进行解引用操作（*p或p->member）是未定义行为，在大多数平台上会导致段错误（segmentation fault）或访问违例（access violation），程序崩溃。良好的编程习惯是在解引用指针前检查是否为NULL。
+  difficulty: EASY
+  sortOrder: 5
+- sourceKey: quiz:c:11:06
+  chapterSourceKey: c:chapter:11
+  type: MULTI
+  stem: 以下关于const与指针的组合，哪些描述是正确的？（多选）
+  options:
+  - label: A
+    content: const int *p; 表示指针p指向的值是常量，不能通过p修改
+    isCorrect: true
+  - label: B
+    content: int * const p; 表示指针p本身是常量，不能指向其他地方
+    isCorrect: true
+  - label: C
+    content: const int * const p; 表示指针和指向的值都不能修改
+    isCorrect: true
+  - label: D
+    content: const int *p; 表示指针p本身是常量
+  analysis: 选项A正确：const int *p是指向常量的指针（pointer to const），不能通过p修改指向的值，但p本身可以指向其他变量。选项B正确：int * const p是常量指针（const pointer），p本身的指向不能变，但可以通过p修改指向的值。选项C正确：二者组合，指针和指向的值都不能修改。选项D错误：混淆了两种const位置的含义，const在*前修饰的是指向的值，不是指针本身。记忆方法：从右向左读，const修饰它左侧的符号。
+  difficulty: HARD
+  sortOrder: 6
+- sourceKey: quiz:c:11:07
+  chapterSourceKey: c:chapter:11
+  type: SINGLE
+  stem: void*类型的指针有什么特点？
+  options:
+  - label: A
+    content: 可以直接解引用而无需类型转换
+  - label: B
+    content: 可以存储任意类型的地址，但不能直接解引用
+    isCorrect: true
+  - label: C
+    content: 只能存储int类型的地址
+  - label: D
+    content: void*指针的大小总是1字节
+  analysis: void*是通用指针类型，可以存储任何类型的地址（指向任何数据对象）。但void*指针不能直接解引用，因为编译器不知道它指向的数据类型（不知道要读取几个字节）。使用void*指针时必须先强制转换为具体类型的指针才能解引用，如*(int*)ptr。void*在C语言中有一个重要特性：malloc返回的void*可以隐式转换为任何对象指针类型，不需要显式强制转换。
+  difficulty: MEDIUM
+  sortOrder: 7
+- sourceKey: quiz:c:11:08
+  chapterSourceKey: c:chapter:11
+  type: SINGLE
+  stem: 两个指向同一数组元素的指针相减（如p - q），结果是什么？
+  options:
+  - label: A
+    content: 两个指针地址值的差（字节数）
+  - label: B
+    content: 两个指针之间元素的个数差
+    isCorrect: true
+  - label: C
+    content: 未定义行为
+  - label: D
+    content: 两个指针地址值的和
+  analysis: 两个指向同一数组元素的指针相减，结果是它们之间的元素个数差（ptrdiff_t类型）。例如p指向a[5]，q指向a[2]，则p-q=3（相差3个元素），而不是字节差。指针相减要求两个指针指向同一数组（或同一数组的末尾之后一位），否则行为未定义。
+  difficulty: EASY
+  sortOrder: 8
+- sourceKey: quiz:c:11:09
+  chapterSourceKey: c:chapter:11
+  type: SHORT_ANSWER
+  stem: 什么是野指针（wild pointer）？如何避免野指针？
+  analysis: 野指针是指针的值不确定（未初始化）或指向已释放/无效内存区域的指针。常见产生原因：(1)指针声明后未初始化（值随机）；(2)返回局部变量的地址（函数返回后局部变量被销毁）；(3)free/delete后未将指针置为NULL，后续仍使用该指针；(4)指针越界访问后继续使用。避免方法：(1)声明指针时立即初始化为NULL或合法地址；(2)free后立即将指针置为NULL，防止悬空访问；(3)不使用已超出作用域的变量的地址。在嵌入式系统中，野指针可能导致严重的内存错误，包括系统崩溃和难以调试的间歇性故障。
+  difficulty: MEDIUM
+  sortOrder: 9
+- sourceKey: quiz:c:11:10
+  chapterSourceKey: c:chapter:11
+  type: MULTI
+  stem: 以下关于指针作为函数参数的场景，哪些是合理的？（多选）
+  options:
+  - label: A
+    content: 需要在函数内部修改外部变量的值
+    isCorrect: true
+  - label: B
+    content: 传递大结构体时避免复制开销
+    isCorrect: true
+  - label: C
+    content: 实现在函数中动态分配内存并返回给调用者
+    isCorrect: true
+  - label: D
+    content: 增加代码的复杂度以展示编程技巧
+  analysis: 选项A、B、C都是指针作为函数参数的合理用途。A：通过指针参数实现类似引用传递的效果，修改调用者的变量。B：传递大结构体的指针只复制地址（4/8字节），避免复制整个结构体（可能数百字节）。C：如int* create_array(int n) { return malloc(n * sizeof(int)); }。选项D不合理，指针使用应遵循最小必要原则，过度使用指针会增加出错风险和代码维护难度。
+  difficulty: MEDIUM
+  sortOrder: 10
+- sourceKey: quiz:c:12:01
+  chapterSourceKey: c:chapter:12
+  type: SINGLE
+  stem: 若有int x = 10, *p = &x, **pp = &p; 则**pp的值是？
+  options:
+  - label: A
+    content: x的地址
+  - label: B
+    content: p的地址
+  - label: C
+    content: '10'
+    isCorrect: true
+  - label: D
+    content: p的值
+  analysis: pp是一个指向指针的指针（二级指针）。pp存储了p的地址，p存储了x的地址。*pp得到p（即x的地址），**pp对p解引用得到x的值10。可以理解为：pp->p->x，需要两次解引用才能访问到x的值。
+  difficulty: MEDIUM
+  sortOrder: 1
+- sourceKey: quiz:c:12:02
+  chapterSourceKey: c:chapter:12
+  type: SINGLE
+  stem: 在C语言中，用于动态分配内存的标准库函数是？
+  options:
+  - label: A
+    content: malloc
+    isCorrect: true
+  - label: B
+    content: new
+  - label: C
+    content: alloc
+  - label: D
+    content: create
+  analysis: malloc（memory allocation）是C语言中动态分配内存的标准函数，在stdlib.h中声明。new是C++中的运算符。alloc不是C标准函数。malloc返回void*类型，指向分配的内存块。注意在C语言中不需要对malloc的返回值进行强制类型转换，void*可以隐式转换为任意对象指针类型。
+  difficulty: EASY
+  sortOrder: 2
+- sourceKey: quiz:c:12:03
+  chapterSourceKey: c:chapter:12
+  type: TRUE_FALSE
+  stem: free释放动态内存后，如果该变量是这块内存唯一的持有指针，将它置为NULL是一种常见的防御性做法。
+  isCorrect: true
+  analysis: 正确。free后原指针值会成为悬挂指针；在变量仍会继续存活且它是唯一持有者时，置NULL有助于避免通过该变量再次使用或重复释放。但这不是充分条件：其他别名指针仍可能悬空，指针即将离开作用域时赋NULL也没有实际收益。任何情况下都不能再解引用已释放对象。
+  difficulty: MEDIUM
+  sortOrder: 3
+- sourceKey: quiz:c:12:04
+  chapterSourceKey: c:chapter:12
+  type: SINGLE
+  stem: calloc和malloc的主要区别是什么？
+  options:
+  - label: A
+    content: calloc把分配区域的所有位清零，而malloc返回的区域内容不确定
+    isCorrect: true
+  - label: B
+    content: calloc分配在栈上，malloc分配在堆上
+  - label: C
+    content: calloc只能分配数组，malloc只能分配单个变量
+  - label: D
+    content: 两者没有区别
+  analysis: A正确。calloc接收元素个数和元素大小，并把分配区域的所有位清零；malloc只接收总字节数，成功时返回内容不确定的区域。全零比特通常适合整数和字节缓冲区，但C标准不保证它对所有指针或浮点类型都等价于语义上的0或空指针。两者都返回动态存储区，性能差异取决于实现，不能笼统断言calloc一定更慢。
+  difficulty: MEDIUM
+  sortOrder: 4
+- sourceKey: quiz:c:12:05
+  chapterSourceKey: c:chapter:12
+  type: MULTI
+  stem: 以下关于realloc函数的说法，哪些是正确的？（多选）
+  options:
+  - label: A
+    content: realloc用于调整已分配内存块的大小
+    isCorrect: true
+  - label: B
+    content: realloc可能会将数据移动到新的内存位置
+    isCorrect: true
+  - label: C
+    content: realloc返回后，原有的指针可能失效
+    isCorrect: true
+  - label: D
+    content: realloc(NULL, size)等价于malloc(size)
+    isCorrect: true
+  analysis: 四个选项都正确。A：realloc可以扩大或缩小已分配的内存块。B：如果原内存块后面没有足够的连续空间，realloc会分配新的更大的内存块并复制原数据。C：如果发生了移动，原指针不再有效，应使用realloc返回的新指针。D：realloc(NULL, size)等价于malloc(size)，这个特性在实现自定义的动态数组时很有用。注意：realloc返回NULL表示失败，此时原内存块不变，因此正确的写法是int *new_ptr = realloc(old_ptr, new_size); if (new_ptr) old_ptr = new_ptr; else /* 处理错误 */。
+  difficulty: MEDIUM
+  sortOrder: 5
+- sourceKey: quiz:c:12:06
+  chapterSourceKey: c:chapter:12
+  type: SINGLE
+  stem: 以下关于内存泄漏的说法，正确的是？
+  options:
+  - label: A
+    content: 内存泄漏是指程序使用内存后没有释放，导致内存无法被重新使用
+    isCorrect: true
+  - label: B
+    content: 程序结束后内存泄漏会自动消失，所以不重要
+  - label: C
+    content: 内存泄漏只会发生在栈上，堆上不会发生
+  - label: D
+    content: free一个空指针会导致内存泄漏
+  analysis: 选项A正确：内存泄漏是指动态分配的内存没有被释放，程序失去对该内存的引用，无法再释放或使用。选项B错误：虽然程序结束操作系统会回收内存，但对于长时间运行的程序（如服务器、嵌入式设备），内存泄漏会逐渐耗尽内存，导致系统崩溃。选项C错误：内存泄漏发生在堆上（动态分配的内存），栈内存由编译器自动管理，不会泄漏。选项D错误：free(NULL)是安全的，C标准保证其不做任何操作。
+  difficulty: MEDIUM
+  sortOrder: 6
+- sourceKey: quiz:c:12:07
+  chapterSourceKey: c:chapter:12
+  type: TRUE_FALSE
+  stem: 对同一块动态内存调用两次free会导致未定义行为。
+  isCorrect: true
+  analysis: 正确。对同一块内存调用两次free（double free）是未定义行为，可能导致程序崩溃、内存管理数据结构损坏，甚至产生安全漏洞。攻击者可能利用double free漏洞进行堆溢出攻击。避免方法：每次free后将指针置为NULL，因为free(NULL)是安全的。
+  difficulty: EASY
+  sortOrder: 7
+- sourceKey: quiz:c:12:08
+  chapterSourceKey: c:chapter:12
+  type: SINGLE
+  stem: 以下哪种方式是正确的动态数组分配？
+  options:
+  - label: A
+    content: int *arr = malloc(10 * sizeof(int));
+    isCorrect: true
+  - label: B
+    content: int arr[10]; arr = malloc(40);
+  - label: C
+    content: int arr[] = malloc(10 * sizeof(int));
+  - label: D
+    content: int *arr = malloc(10);，并假定这一定足够存放10个int
+  analysis: 选项A正确：malloc分配10个int所需的空间（10*sizeof(int)个字节），返回void*可在C中隐式转换为int*。选项B错误：数组名不能重新赋值。选项C语法错误。选项D把元素数误当成字节数，不能可移植地保证空间足够。分配后还必须检查返回值是否为NULL，并在不再使用时free。
+  difficulty: HARD
+  sortOrder: 8
+- sourceKey: quiz:c:12:09
+  chapterSourceKey: c:chapter:12
+  type: SHORT_ANSWER
+  stem: 在嵌入式系统中，频繁使用malloc/free可能导致什么问题？通常采用什么替代方案？
+  analysis: 频繁的malloc/free会导致堆内存碎片化（heap fragmentation）。随着分配和释放的进行，空闲内存被分割成许多小碎片，即使总空闲内存足够，也可能没有连续的足够大的内存块来满足分配请求。在嵌入式系统中，堆空间通常较小，碎片化问题更为严重。此外，malloc的执行时间不确定（可能需要搜索空闲链表），不满足实时系统的确定性要求。替代方案包括：(1)静态分配——使用全局数组或静态数组预分配所有内存；(2)固定大小内存池（memory pool）——预先划分多个固定大小的块，分配和释放时间为O(1)且无碎片；(3)一次性分配——在初始化时一次性分配所需内存，运行期间不再动态分配和释放。
+  difficulty: MEDIUM
+  sortOrder: 9
+- sourceKey: quiz:c:12:10
+  chapterSourceKey: c:chapter:12
+  type: MULTI
+  stem: 以下关于指针数组和数组指针的说法，哪些是正确的？（多选）
+  options:
+  - label: A
+    content: int *p[5]; 是一个指针数组，有5个int*元素
+    isCorrect: true
+  - label: B
+    content: int (*p)[5]; 是一个指向包含5个int元素的数组的指针
+    isCorrect: true
+  - label: C
+    content: int *p[5]; 中p+1向前移动sizeof(int*)字节
+    isCorrect: true
+  - label: D
+    content: int (*p)[5]; 中p+1向前移动5*sizeof(int)字节
+    isCorrect: true
+  analysis: 所有选项均正确。A：[]优先级高于*，因此int *p[5]先作为数组解释，元素类型为int*。B：括号改变了优先级，p先与*结合成为指针，指向int[5]数组。C：指针数组中的指针运算，p+1跳过1个指针元素。D：数组指针的指针运算，p+1跳过整个数组（5个int）。两者是C语言中容易混淆的概念，记忆方法：看*和[]的优先级，[]优先级高，先与变量名结合的是数组，后结合的是指针。
+  difficulty: MEDIUM
+  sortOrder: 10
+- sourceKey: quiz:c:13:01
+  chapterSourceKey: c:chapter:13
+  type: SINGLE
+  stem: '以下代码的输出是什么？
+
+
+    char str[] = "Hello";
+
+    printf("%zu", sizeof(str));'
+  options:
+  - label: A
+    content: '5'
+  - label: B
+    content: '6'
+    isCorrect: true
+  - label: C
+    content: 不确定
+  - label: D
+    content: 指针大小
+  analysis: "char str[] = \"Hello\"; 定义了一个字符数组，用字符串字面量初始化。字符串\"Hello\"包含5个字符，再加上一个结尾的空字符'\0'（字符串结束标志），数组大小为6字节。sizeof(str)返回整个数组的大小，即6。若为char *str = \"Hello\"; 则sizeof(str)返回指针的大小（8或4字节）。"
+  difficulty: MEDIUM
+  sortOrder: 1
+- sourceKey: quiz:c:13:02
+  chapterSourceKey: c:chapter:13
+  type: SINGLE
+  stem: 以下哪段代码能正确判断两个字符串是否相等？
+  options:
+  - label: A
+    content: if (str1 == str2)
+  - label: B
+    content: if (strcmp(str1, str2) == 0)
+    isCorrect: true
+  - label: C
+    content: if (str1 != str2)
+  - label: D
+    content: if (strcpy(str1, str2))
+  analysis: 比较两个字符串是否相等应使用strcmp函数，返回0表示相等。str1 == str2比较的是指针地址而不是字符串内容，即使两个字符串内容相同，如果存储在内存的不同位置也会返回假。strcpy用于复制字符串，返回值是目标地址，不能用于比较。
+  difficulty: EASY
+  sortOrder: 2
+- sourceKey: quiz:c:13:03
+  chapterSourceKey: c:chapter:13
+  type: TRUE_FALSE
+  stem: strlen("Hello")的返回值是6。
+  isCorrect: false
+  analysis: "错误。strlen计算字符串的长度，统计的是空字符'\0'之前的字符个数，不包含'\0'本身。因此strlen(\"Hello\") = 5。sizeof(\"Hello\")才是6（包含'\0'）。这是sizeof和strlen的重要区别：sizeof在编译时计算（对于数组），包含'\0'；strlen在运行时计算，不包含'\0'。"
+  difficulty: MEDIUM
+  sortOrder: 3
+- sourceKey: quiz:c:13:04
+  chapterSourceKey: c:chapter:13
+  type: MULTI
+  stem: 以下关于字符串函数strcpy和strncpy的说法，哪些是正确的？（多选）
+  options:
+  - label: A
+    content: "strcpy将源字符串复制到目标缓冲区，包括结尾的'\0'"
+    isCorrect: true
+  - label: B
+    content: strncpy可以指定最大复制字符数，防止缓冲区溢出
+    isCorrect: true
+  - label: C
+    content: "strncpy复制n个字符时，如果源字符串长度>=n，不会添加'\0'"
+    isCorrect: true
+  - label: D
+    content: strcpy比strncpy更安全
+  analysis: "选项A正确：strcpy复制整个字符串包括结尾的'\0'。选项B正确：strncpy(char *dest, const char *src, size_t n)最多复制n个字符。选项C正确：这是strncpy的重要特性——当源字符串长度>=n时，目标缓冲区不会以'\0'结尾，需要手动添加。选项D错误：strcpy不检查目标缓冲区大小，容易导致缓冲区溢出，strncpy相对更安全但仍需注意'\0'的问题。在嵌入式开发中，推荐使用snprintf等更安全的替代方案。"
+  difficulty: MEDIUM
+  sortOrder: 4
+- sourceKey: quiz:c:13:05
+  chapterSourceKey: c:chapter:13
+  type: SINGLE
+  stem: '以下代码有什么问题？
+
+
+    char *p = "Hello";
+
+    p[0] = ''h'';'
+  options:
+  - label: A
+    content: 语法错误
+  - label: B
+    content: 试图修改字符串常量，导致未定义行为
+    isCorrect: true
+  - label: C
+    content: 可以正常执行，p[0]变为'h'
+  - label: D
+    content: 指针不能使用下标访问
+  analysis: char *p = "Hello"; 中p指向一个字符串常量（存储在只读数据段）。尝试通过指针修改字符串常量（p[0] = 'h'）是未定义行为，在许多系统上会导致段错误。如果希望修改字符串，应使用字符数组：char p[] = "Hello"; 这样字符串存储在可修改的栈上。
+  difficulty: HARD
+  sortOrder: 5
+- sourceKey: quiz:c:13:06
+  chapterSourceKey: c:chapter:13
+  type: TRUE_FALSE
+  stem: snprintf函数相比sprintf更安全，因为它可以指定最大输出字符数，防止缓冲区溢出。
+  isCorrect: true
+  analysis: "正确。snprintf的size参数限制目标缓冲区最多使用的字节数；当size大于0时，结果会以'\0'终止，过长内容被截断。返回值表示本来需要写入的字符数，可用于检测截断。sprintf没有容量参数，输出超过缓冲区会造成未定义行为。"
+  difficulty: MEDIUM
+  sortOrder: 6
+- sourceKey: quiz:c:13:07
+  chapterSourceKey: c:chapter:13
+  type: SINGLE
+  stem: memcpy和memmove的主要区别是什么？
+  options:
+  - label: A
+    content: memmove比memcpy快
+  - label: B
+    content: memmove处理源和目标重叠的情况，memcpy不保证
+    isCorrect: true
+  - label: C
+    content: memcpy可以复制任何类型，memmove只能复制char
+  - label: D
+    content: 两者没有任何区别
+  analysis: memcpy和memmove的主要区别在于对重叠内存的处理：memmove保证在源和目标内存区域重叠时仍能正确复制（类似先复制到临时缓冲区再写入目标），而memcpy不保证处理重叠的情况（如果重叠，行为未定义）。因此当不确定是否可能重叠时应使用memmove。memcpy在非重叠情况下可能略快。
+  difficulty: HARD
+  sortOrder: 7
+- sourceKey: quiz:c:13:08
+  chapterSourceKey: c:chapter:13
+  type: MULTI
+  stem: 以下关于字符数组和字符指针的说法，哪些是正确的？（多选）
+  options:
+  - label: A
+    content: char s[] = "abc"; 中的s是一个可修改的字符数组
+    isCorrect: true
+  - label: B
+    content: char *s = "abc"; 中的s指向一个字符串常量，不可修改
+    isCorrect: true
+  - label: C
+    content: "sizeof(char s[] = \"abc\")返回4（包含'\0'）"
+    isCorrect: true
+  - label: D
+    content: 两者在使用上完全相同，没有区别
+  analysis: "选项A正确：这里的字符数组获得字符串字面量内容的副本，数组元素可修改。选项B的核心结论正确：s指向字符串字面量，试图修改字面量是未定义行为；标准并不要求它物理存放在某个名为‘只读区’的段。选项C正确：数组包含'a','b','c','\0'共4个char。选项D错误：数组和指针在类型、sizeof、可赋值性及对象生命周期上都有本质区别。"
+  difficulty: MEDIUM
+  sortOrder: 8
+- sourceKey: quiz:c:13:09
+  chapterSourceKey: c:chapter:13
+  type: SHORT_ANSWER
+  stem: C语言中字符串的结束标志是什么？为什么需要这个标志？如果丢失会有什么后果？
+  analysis: "C语言字符串以空字符'\0'（ASCII码为0）作为结束标志。C语言没有像Java或C++那样的内置字符串类型，而是用字符数组存储字符串，通过'\0'标记字符串的结束位置。这样做的好处是：(1)不需要在字符串变量中额外存储长度信息，节省内存；(2)通过遍历直到'\0'即可处理字符串，实现简单。如果'\0'意外丢失（如缓冲区溢出覆盖、strncpy未自动添加），字符串操作函数（strlen、strcpy等）会继续读取越界内存，直到遇到内存中的下一个'\0'，导致缓冲区溢出和安全漏洞。在嵌入式系统中，接收串口或网络数据时尤其要注意手动添加'\0'。"
+  difficulty: MEDIUM
+  sortOrder: 9
+- sourceKey: quiz:c:13:10
+  chapterSourceKey: c:chapter:13
+  type: SINGLE
+  stem: memset(p, 0, 100)的功能是什么？
+  options:
+  - label: A
+    content: 将指针p指向的内存前100字节设置为0
+    isCorrect: true
+  - label: B
+    content: 将指针p的值设置为0
+  - label: C
+    content: 申请100字节的0初始化内存
+  - label: D
+    content: 将数组p的100个元素设置为NULL
+  analysis: memset(void *s, int c, size_t n)将内存区域前n个字节设置为(unsigned char)c。memset(p,0,100)只表示把前100个字节置零，前提是该区域至少有100个可写字节。它适合清零字节缓冲区和许多整数数组，但全零比特模式不保证等价于所有类型的语义零值，例如空指针或某些浮点表示；对复杂结构体应按成员语义初始化。
+  difficulty: EASY
+  sortOrder: 10
+- sourceKey: quiz:c:14:01
+  chapterSourceKey: c:chapter:14
+  type: SINGLE
+  stem: 在C语言中，定义结构体类型使用的关键字是？
+  options:
+  - label: A
+    content: struct
+    isCorrect: true
+  - label: B
+    content: union
+  - label: C
+    content: typedef
+  - label: D
+    content: enum
+  analysis: struct关键字用于定义结构体类型，将不同类型的变量组合在一起。union定义共用体，typedef定义类型别名，enum定义枚举类型。
+  difficulty: EASY
+  sortOrder: 1
+- sourceKey: quiz:c:14:02
+  chapterSourceKey: c:chapter:14
+  type: SINGLE
+  stem: 若有struct Student { char name[20]; int age; } stu; 则访问age成员的表达式是？
+  options:
+  - label: A
+    content: stu->age
+  - label: B
+    content: stu.age
+    isCorrect: true
+  - label: C
+    content: stu::age
+  - label: D
+    content: stu[age]
+  analysis: 通过结构体变量访问成员使用点运算符(.)：stu.age。通过结构体指针访问成员使用箭头运算符(->)：p->age等价于(*p).age。::是C++中的作用域运算符，C语言中没有。
+  difficulty: EASY
+  sortOrder: 2
+- sourceKey: quiz:c:14:03
+  chapterSourceKey: c:chapter:14
+  type: SINGLE
+  stem: "以下关于结构体大小的说法，正确的是？\n\nstruct S {\n    char c;\n    int i;\n};"
+  options:
+  - label: A
+    content: sizeof(struct S)等于sizeof(char)+sizeof(int)=5
+  - label: B
+    content: sizeof(struct S)通常大于5，因为存在内存对齐
+    isCorrect: true
+  - label: C
+    content: sizeof(struct S)等于sizeof(int)=4
+  - label: D
+    content: sizeof(struct S)等于sizeof(char)=1
+  analysis: 由于内存对齐（alignment），结构体大小通常不等于各成员大小之和。int通常需要4字节对齐，因此c后面会有3个填充字节（padding），使得i从偏移量4开始。典型情况下sizeof(struct S)=8（1+3填充+4）。对齐可以提高CPU内存访问效率，但会浪费一些空间。不同的编译器和平台可能有不同的对齐规则。
+  difficulty: MEDIUM
+  sortOrder: 3
+- sourceKey: quiz:c:14:04
+  chapterSourceKey: c:chapter:14
+  type: TRUE_FALSE
+  stem: 联合体（union）的所有成员共享同一块内存空间；其大小至少能容纳最大成员，并可能因对齐要求包含尾部填充。
+  isCorrect: true
+  analysis: 正确。联合体成员共享同一起始存储区域，sizeof(union)至少不小于任何成员；为了满足联合体及其数组元素的对齐要求，实际大小可以大于最大成员。读取最近未写入的其他成员涉及对象表示和实现规则，不能简单当作完全可移植的类型转换。
+  difficulty: MEDIUM
+  sortOrder: 4
+- sourceKey: quiz:c:14:05
+  chapterSourceKey: c:chapter:14
+  type: MULTI
+  stem: 以下关于结构体指针的描述，哪些是正确的？（多选）
+  options:
+  - label: A
+    content: 可以通过箭头运算符->访问结构体指针的成员
+    isCorrect: true
+  - label: B
+    content: (*p).member和p->member是等价的
+    isCorrect: true
+  - label: C
+    content: 结构体指针必须指向已分配的结构体变量才能使用
+    isCorrect: true
+  - label: D
+    content: 结构体指针不能作为函数参数
+  analysis: 选项A正确：->是结构体指针的成员访问运算符。选项B正确：(*p).member先解引用再访问成员，与p->member等价。选项C正确：指针必须先指向有效的结构体变量或动态分配的内存才能使用，否则解引用是未定义行为。选项D错误：结构体指针经常作为函数参数使用，可以避免复制整个结构体（传地址只需复制4/8字节），且可以修改原结构体的内容。
+  difficulty: MEDIUM
+  sortOrder: 5
+- sourceKey: quiz:c:14:06
+  chapterSourceKey: c:chapter:14
+  type: SINGLE
+  stem: C语言中操作文件时，使用哪个类型声明文件指针？
+  options:
+  - label: A
+    content: file
+  - label: B
+    content: FILE
+  - label: C
+    content: FILE*
+    isCorrect: true
+  - label: D
+    content: File
+  analysis: C标准库使用FILE*表示并操作流，FILE类型由stdio.h提供，其具体实现是不透明的，标准不要求用户知道它是否由某个结构体实现。fopen返回FILE*，失败时返回NULL；file和File都不是标准类型名。
+  difficulty: EASY
+  sortOrder: 6
+- sourceKey: quiz:c:14:07
+  chapterSourceKey: c:chapter:14
+  type: SINGLE
+  stem: fopen("data.txt", "r")中的"r"表示什么模式？
+  options:
+  - label: A
+    content: 以只写方式打开，如果文件不存在则创建
+  - label: B
+    content: 以只读方式打开
+    isCorrect: true
+  - label: C
+    content: 以追加方式打开
+  - label: D
+    content: 以读写方式打开
+  analysis: '"r"（read）表示以只读方式打开文本文件。如果文件不存在，fopen返回NULL。选项A是"w"（write）模式——创建新文件或截断已有文件。选项C是"a"（append）模式。选项D是"r+"模式——以读写方式打开。'
+  difficulty: EASY
+  sortOrder: 7
+- sourceKey: quiz:c:14:08
+  chapterSourceKey: c:chapter:14
+  type: MULTI
+  stem: 以下关于结构体C99指定初始化器（designated initializers）的说法，哪些是正确的？（多选）
+  options:
+  - label: A
+    content: struct Point p = {.x = 1, .y = 2}; 是合法的用法
+    isCorrect: true
+  - label: B
+    content: 可以按任意顺序初始化成员，不必按声明顺序
+    isCorrect: true
+  - label: C
+    content: 未在初始化器中指定的成员会被初始化为0
+    isCorrect: true
+  - label: D
+    content: 指定初始化器是C89标准引入的
+  analysis: 选项A正确：C99引入的指定初始化器，通过.成员名方式指定初始值。选项B正确：可以跳过部分成员、不按顺序初始化。选项C正确：如果只初始化部分成员，未指定的成员被初始化为0（对于自动变量，前提是至少有一个成员被初始化）。选项D错误：指定初始化器是C99引入的特性，C89不支持。在嵌入式开发中需注意编译器是否支持C99。
+  difficulty: HARD
+  sortOrder: 8
+- sourceKey: quiz:c:14:09
+  chapterSourceKey: c:chapter:14
+  type: SHORT_ANSWER
+  stem: C语言中文本模式（text mode）和二进制模式（binary mode）文件操作有什么区别？在哪种系统中两者没有区别？
+  analysis: "文本模式和二进制模式的主要区别在于换行符的处理。在文本模式下，写入时'\n'会被转换为系统特定的换行序列（Windows中为'\r\n'），读取时'\r\n'会被转换为'\n'。在二进制模式下，不进行任何转换，数据按原样写入和读取。在Unix/Linux系统中，文本模式和二进制模式没有区别（换行符始终为'\n'），因此两种模式表现相同。在Windows系统中，必须区分两种模式，特别是处理二进制文件（如图片、音频）时必须使用二进制模式（\"rb\"、\"wb\"），否则数据会被错误地转换。"
+  difficulty: MEDIUM
+  sortOrder: 9
+- sourceKey: quiz:c:14:10
+  chapterSourceKey: c:chapter:14
+  type: SINGLE
+  stem: 以下关于feof函数的描述，正确的是？
+  options:
+  - label: A
+    content: feof在读取操作之前预判文件是否已到末尾
+  - label: B
+    content: feof在之前的读取操作到达文件末尾后才返回非零值
+    isCorrect: true
+  - label: C
+    content: feof可以清除文件错误标志
+  - label: D
+    content: feof返回0表示文件已到末尾
+  analysis: feof函数只有在之前尝试读取文件并到达文件末尾后才会返回非零值。它不会预测下一次读取是否会到达末尾。也就是说，feof返回真表示已经发生过读取失败（因为到了末尾）。正确的文件读取模式是在读取操作之后检查feof，而不是在之前。常见的错误写法是while(!feof(fp)) { fgets(...); ... }，这会导致多处理一次数据。清除文件错误标志使用clearerr函数。
+  difficulty: MEDIUM
+  sortOrder: 10

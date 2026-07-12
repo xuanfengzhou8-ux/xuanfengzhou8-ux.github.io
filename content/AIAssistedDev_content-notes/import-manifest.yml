@@ -1,0 +1,45 @@
+schemaVersion: 1
+packageId: legacy-course-10
+version: 1.0.0
+title: AI辅助嵌入式开发课程内容包
+encoding: UTF-8
+target:
+  learningPath:
+    sourceKey: path:embedded-ai
+    slug: embedded-ai
+    name: 嵌入式 AI 路径
+    description: 认识 TinyML 与端侧模型部署，第一版提供方向导览。
+    sortOrder: 5
+  course:
+    sourceKey: course:legacy:10
+    title: AI辅助嵌入式开发
+    description: 用大模型解释、生成和审查代码。
+    level: BEGINNER
+    sortOrder: 2
+    archiveUnmanagedContent: true
+defaults:
+  status: 1
+  keywords:
+    - AI辅助嵌入式开发
+  includeReferencedAssets: true
+content:
+  - sourceKey: legacy:10:article:19
+    file: 笔记/01-高效提问.md
+    chapterTitle: 高效提问
+    articleSlug: ai-prompt-embedded
+    summary: 提供芯片、工具链、约束和错误日志。
+    keywords:
+      - AI
+      - 提问
+      - 嵌入式
+    sortOrder: 1
+  - sourceKey: legacy:10:article:20
+    file: 笔记/02-代码分析与验证.md
+    chapterTitle: 代码分析与验证
+    articleSlug: ai-code-analysis
+    summary: 把 AI 当作解释和审查助手，而非硬件事实来源。
+    keywords:
+      - AI
+      - 代码分析
+      - 验证
+    sortOrder: 2

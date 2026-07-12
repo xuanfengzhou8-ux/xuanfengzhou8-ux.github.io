@@ -1,0 +1,45 @@
+schemaVersion: 1
+packageId: legacy-course-7
+version: 1.0.0
+title: STM32开发基础课程内容包
+encoding: UTF-8
+target:
+  learningPath:
+    sourceKey: path:stm32-engineering
+    slug: stm32-engineering
+    name: STM32 工程开发路径
+    description: 从硬件基础到外设、通信协议和 FreeRTOS。
+    sortOrder: 4
+  course:
+    sourceKey: course:legacy:7
+    title: STM32开发基础
+    description: GPIO、中断、定时器和串口。
+    level: BEGINNER
+    sortOrder: 1
+    archiveUnmanagedContent: true
+defaults:
+  status: 1
+  keywords:
+    - STM32开发基础
+  includeReferencedAssets: true
+content:
+  - sourceKey: legacy:7:article:13
+    file: 笔记/01-GPIO基础.md
+    chapterTitle: GPIO基础
+    articleSlug: stm32-gpio-output
+    summary: 以 LED 为例完成 GPIO 时钟、模式与输出配置。
+    keywords:
+      - STM32F407
+      - GPIO
+      - LED
+    sortOrder: 1
+  - sourceKey: legacy:7:article:14
+    file: 笔记/02-中断与定时器.md
+    chapterTitle: 中断与定时器
+    articleSlug: stm32-timer-interrupt
+    summary: 理解预分频、计数周期和中断服务。
+    keywords:
+      - STM32
+      - 定时器
+      - 中断
+    sortOrder: 2

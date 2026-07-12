@@ -1,8 +1,13 @@
-# vinext-starter
+# Embedded Learning Materials
 
-A clean full-stack starter running on
-[vinext](https://github.com/cloudflare/vinext), with optional Cloudflare D1 and
-Drizzle support.
+嵌入式学习平台的内容源与公开阅读网站。课程笔记、练习、原始代码、图片和项目资料统一维护在 `content/`；构建前会自动校验内容清单并生成课程目录、文章数据和搜索索引。
+
+仓库职责：
+
+- `content/`：唯一内容源，新增章节从这里开始。
+- `scripts/build-content-data.mjs`：校验 Markdown 和 manifest，生成网页数据。
+- `app/`：公开阅读网站。
+- `.github/workflows/deploy-pages.yml`：推送 `main` 后自动构建并部署 GitHub Pages。
 
 ## Prerequisites
 
@@ -15,6 +20,8 @@ npm install
 npm run dev
 npm run build
 ```
+
+新增或修改内容的具体规则见 [`content/README.md`](content/README.md)。本仓库与 `embedded-kb-ai` 同级放置时，管理平台可以直接打包并导入这里的内容。
 
 This starter does not use `wrangler.jsonc`.
 

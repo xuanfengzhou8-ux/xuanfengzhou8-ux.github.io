@@ -1,17 +1,19 @@
 {
-  "name": "site-creator-vinext-starter",
+  "name": "embedded-learning-materials",
   "version": "0.1.0",
   "private": true,
   "engines": {
     "node": ">=22.13.0"
   },
   "scripts": {
-    "dev": "WRANGLER_LOG_PATH=.wrangler/wrangler.log vinext dev",
-    "build": "WRANGLER_LOG_PATH=.wrangler/wrangler.log vinext build",
-    "build:pages": "GITHUB_PAGES=true WRANGLER_LOG_PATH=.wrangler/wrangler.log vinext build",
-    "start": "WRANGLER_LOG_PATH=.wrangler/wrangler.log vinext start",
-    "sync:data": "node scripts/export-public-data.mjs",
-    "test": "npm run build && node --test tests/rendered-html.test.mjs",
+    "dev": "npm run sync:data && cross-env WRANGLER_LOG_PATH=.wrangler/wrangler.log vinext dev",
+    "build": "npm run sync:data && cross-env WRANGLER_LOG_PATH=.wrangler/wrangler.log vinext build",
+    "build:pages": "npm run sync:data && cross-env GITHUB_PAGES=true WRANGLER_LOG_PATH=.wrangler/wrangler.log vinext build",
+    "start": "cross-env WRANGLER_LOG_PATH=.wrangler/wrangler.log vinext start",
+    "sync:data": "node scripts/build-content-data.mjs",
+    "sync:api": "node scripts/export-public-data.mjs",
+    "migrate:legacy": "node scripts/migrate-legacy-snapshot.mjs",
+    "test": "npm run build && node --test",
     "lint": "eslint . --ignore-pattern dist --ignore-pattern .next",
     "db:generate": "drizzle-kit generate"
   },
@@ -21,7 +23,8 @@
     "react": "19.2.6",
     "react-dom": "19.2.6",
     "react-markdown": "^10.1.0",
-    "remark-gfm": "^4.0.1"
+    "remark-gfm": "^4.0.1",
+    "yaml": "^2.9.0"
   },
   "devDependencies": {
     "@cloudflare/vite-plugin": "1.37.1",
@@ -31,6 +34,7 @@
     "@types/react-dom": "19.2.3",
     "@vitejs/plugin-react": "6.0.2",
     "@vitejs/plugin-rsc": "0.5.26",
+    "cross-env": "^10.1.0",
     "drizzle-kit": "0.31.10",
     "eslint": "9.39.4",
     "eslint-config-next": "16.2.6",

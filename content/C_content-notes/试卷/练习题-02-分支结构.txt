@@ -1,0 +1,335 @@
+脱敏文本版：练习题-02-分支结构.docx
+原始 Word/PDF 附件已移除，避免公开仓库保留学校、公司、个人或文档作者元数据。
+
+C语言分支结构练习题
+姓名:__________	                  分数（总分100）:__________
+选择题答题处(请答完题后把答案写到答题卡)(22*3=66)：
+1~10
+
+
+
+
+
+
+
+
+
+
+11~20
+
+
+
+
+
+
+
+
+
+
+21~22
+
+
+
+
+
+
+
+
+
+
+
+    •	单项选择题 (22*3=66）
+1.C语言中的switch语句中case后 _______
+A、可为任何量或表达式
+B､只能为常量或常量表达式
+C､可为常量或表达式或有确定值的变量及表达式
+D､只能为常量
+
+2. 有以下程序
+main()
+{
+    int i=1,j=1,k=2;
+    if((j++||k++)&&i++)
+        printf("%d,%d,%d\n",i,j,k);
+}
+执行后输出结果是______
+A､2,2,2 B､2,2,3 C､l,l,2 D､2,2,l
+
+3. 判断char型变量c是否为大写字母的C的表达式是_______
+‏A､'A'<=c<='Z'
+‏B､('A'<=c)AND('Z'<=c)
+‏C､(c>='A')&&(c<='Z')
+‏D､(c>='A')&(c<='Z')
+
+4. 有如下程序
+main()
+{
+    float x=2.0,y;
+    if (x<0.0)y=0.0;
+    else if(x<10.0)y=1.0/x;
+        else y=1.0;
+    printf("%f\n",y);}
+该程序的输出结果是_____
+A､0.500000 B､0.250000
+C､1.000000 D､0.000000
+
+5. C语言的if语句中,用作判断的表达式为______
+A､关系表达式B､逻辑表达式
+C､任意表达式 D､算术表达式
+
+6. 假定所有变量均己正确定义,下列程序段运行后x的值是()._____
+    k1=1;
+    k2=2;
+    x=15;
+    if(!k1)x--;
+    else if(k2)x=4;
+        else   x=3;
+A､15 B､14 C､3 D､4
+
+7. C语言的if语句嵌套时,if与else的配对关系是()｡______
+A､每个else与if的配对是任意的
+B､每个else与if总是与最外层的if配对
+C､每个else总是与它上面的最近的未配对的if配对
+D､每个else总是与它上面的if配对
+
+8. 以下程序的运行结果是_______
+main()
+{
+    int a=2,b=-1,c=2;
+    if(a<b)
+    if(b<0) c=0;
+    else c+=1;
+    printf("%d\n",c);
+}
+A､0 B､2 C､1 D､3
+
+9. 若执行以下程序时从程盘上输入3和4,则输出结果是______
+main()
+{
+    int a,b,s;
+    scanf("%d%d",&a,&b);
+    s=a;
+    if(a<b) s=b;
+    s*=s;
+    printf("%d\n",s);
+}
+A､14 B､l6 C､20 D､l8
+
+10.int	a=1,b=2,c=3; if(a>c)b=a;a=c;c=b;
+则c的值为().____
+A､3 B､2 C､不一定D､1
+
+11. main()
+{
+    int x=1,a=0,b=0;
+    switch(x)
+    {
+        case 0:b++;
+        case 1:a++;
+        case 2:a++;b++;
+    }
+    printf("%d,%d",a,b);
+}
+该程序的输出结果是()
+A､2,2 B､2,l C,1,1 D､1,0
+
+12. 下面的程序片断所表示的数学函数关系是
+y=-1;
+if(x!=0)y=1;
+if(x>0)y=1;
+else y=0;
+A､B､y
+C､D､
+
+13. 下列程序的输出结果是______.
+main()
+{
+    int x=1,y=0,a=0,b=0;
+    switch(x)
+    {
+        case 1:switch(y)
+           {
+            case 0:a++;break;
+            case 1:b++;break;
+            }
+        case 2:a++;b++;break;
+        case 3:a++;b++;break;
+    }
+    printf("a=%d,b=%d\n",a,b);
+}
+A､a=2, b=l B､a=l, b=0
+C､a=2, b=2 D､a=l, b=l
+
+14. 有以下程序
+main()
+{
+    int a=5,b=4,c=3,d=2;
+    if(a>b>c)
+        printf("%d\n",d);
+    else if((c-1>=d)==1)
+        printf("%d\n",d+1);
+    else  printf("%d\n",d+2);
+}
+执行后输出结果是
+A､2  B､4  C､编译时出错  D､3
+
+15. 运行以下程序后,输出的结果是
+main()
+{
+    int k=-3;
+    if(k<=0)
+        printf("****\n"),
+    else printf("&&&&\n");
+}
+A､**** B､有语法错误不能通过编译
+C､&&&& D､****&&&&
+
+16. 设a､b和c都是int型变量,且a=3,b=4,c=5;则以下的表达式中,值为0的表达式是______
+A､a||b+c&&b-c 		B､a<=b
+C､!((a<b)&&!c||1) 	D､a&&b
+
+17. 以下不正确的if语句形式是().
+A､if(x<y) {x++;y++;}
+B､if(x>y&&x!=y);
+C､if(x==y)x+=y;
+D if(x!=y) scanf("%d",&x) else scanf("%d",&y);
+
+    •	Void main{int a=4,b=5;
+scanf("%d%d",&a,&b);键盘输入2和1
+if (a > b)
+printf("%d %d\n",b, a);
+
+else
+printf("%d %d\n",a, b);}
+问：最后的输出结果为_______
+A.4 5          B.5 4
+C.1 2		   D.2 1
+
+19.	void main(){int a=2;
+    int b=2;
+    switch(a)
+    {
+        case b:
+printf("*");
+        case 5:
+printf("A");
+    }}
+问：以上程序的执行结果为_______
+    •	*				B.*A
+C.A				D.编译出错
+
+20.void main()
+{
+int a = 2;
+switch（a）
+{
+default :
+printf("S");
+case 1:
+printf("O");
+    •	}
+    •	}
+    •	问：以上代码的执行结果为_______
+    •	A.S				B.O
+    •	C.SO			D.编译出错
+    •
+    •	21.if(a=b)
+    •	printf(“a==b”);
+    •	else
+    •	printf(“a!=b”);
+    •	问：以上代码段的输出结果为_____
+    •	A.a==b			B.a!=b
+    •	C.不能确定		D.编译错误
+    •
+    •	22.以下语句无法通过编译的为_____
+    •	A.if(a > b);//变量皆定义
+    •	B.if(a=b)&&(a!=0)x=y;
+    •	C.if(x!=y)a=b;else b=c;
+    •	D.if(x<y){x++;y++;}
+    •
+    •	填空题(每空2分 17*2=34)
+1.表达式和表达式语句的简单区别：_______________________________________
+2.结构化程序设计规定的三种基本结构是________结构,选择结构和_______结构。
+
+3.int i=20;
+switch(i/10)
+{
+case 2:printf("A");
+case 1:printf("B");}
+的输出结果为____________________
+
+4. 若有int i=10,j=0;则执行完语句
+if (j=0)i++;else i--;i的值为____
+
+5.若从键盘输入58,则以下程序输出的结果是____.
+main()
+{
+    int a;
+    scanf("%d",&a);
+    if(a>50) printf("%d",a);
+    if(a>40) printf("%d",a);
+    if(a>30) printf("%d",a);
+}
+
+6.若变量已正确定义,以下语句段的输出结果是____.
+    int x,y,z;
+    x=0; y=2; z=3;
+    switch(x)
+    {
+    case 0:
+switch(y==2)
+        {
+        case 1:printf("*");break;
+        case 2:printf("%");break;
+        }
+case 1:
+switch(z)
+        {
+        case 1:printf("$");
+        case 2:printf("*");break;
+        default:printf("#");
+        }
+    }
+
+    •	7.将下列数学式改写成C语言的关系表达式或逻辑表达式是:
+    •	a=b或a<c    B)|x|>4
+A)___________________________  B)__________________________.
+
+8.C语言中用_________表示逻辑真,用___________表示逻辑假.
+9.请写出以下程序的输出结果____.
+main()
+{
+ int a=100;
+ if(a>100)
+      printf(“%d\n”,a>100);
+  else
+      printf(“%d\n”,a<=100);
+}
+
+10.阅读下面程序,程序执行后的输出结果是____.
+#include "stdio.h"
+main()
+{
+    int x,y,z;
+    x=1;y=2;z=3;
+    if (x>y)
+        if (x>z) printf("%d",x);
+        else printf("%d",y);
+    printf("%d\n",z);
+}
+
+11.以下程序的输出结果是________.
+main()
+{
+   int x=100,a=10;
+   int b=20, ok1=5,ok2=0;
+    if (a<b)
+        if (b!=15)
+            if (!ok1)x=1;
+            else if(ok2) x=10;
+                else x=-1;
+    printf("%d\n",x);
+}
+
+12.当a=1､b=2､c=3时,以下if语句执行后,a､b､c中的值分别为:____､____､____
+if(a>c)b=a;a=c;c=b;

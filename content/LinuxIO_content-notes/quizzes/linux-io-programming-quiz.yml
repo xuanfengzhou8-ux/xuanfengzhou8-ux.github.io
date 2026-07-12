@@ -1,0 +1,106 @@
+schemaVersion: 1
+packageId: linux-io-programming
+version: 1.0.0
+quizzes:
+- sourceKey: quiz:linux-io:01:01
+  chapterSourceKey: linux-io:chapter:01
+  type: SINGLE
+  stem: Linux 系统 I/O 中，open 成功后返回的是什么？
+  options:
+  - label: A
+    content: 文件描述符
+    isCorrect: true
+  - label: B
+    content: FILE 指针
+  - label: C
+    content: inode 编号字符串
+  - label: D
+    content: 文件内容首地址
+  analysis: open 是系统调用接口，成功后返回文件描述符。标准 I/O 的 fopen 才返回 FILE 指针。
+  difficulty: EASY
+  sortOrder: 1
+- sourceKey: quiz:linux-io:02:01
+  chapterSourceKey: linux-io:chapter:02
+  type: SINGLE
+  stem: stat 函数主要用于获取什么信息？
+  options:
+  - label: A
+    content: 文件属性
+    isCorrect: true
+  - label: B
+    content: 当前目录路径字符串
+  - label: C
+    content: 进程退出码
+  - label: D
+    content: socket 连接状态
+  analysis: stat/lstat/fstat 用于读取文件类型、权限、大小、时间戳等属性信息。
+  difficulty: EASY
+  sortOrder: 1
+- sourceKey: quiz:linux-io:03:01
+  chapterSourceKey: linux-io:chapter:03
+  type: SINGLE
+  stem: 遍历目录时，readdir 返回的 d_name 为 "." 和 ".." 时通常应该怎么处理？
+  options:
+  - label: A
+    content: 跳过，避免递归回到当前目录或父目录
+    isCorrect: true
+  - label: B
+    content: 当作普通文件复制
+  - label: C
+    content: 立即删除
+  - label: D
+    content: 直接传给 write
+  analysis: 递归遍历目录时必须跳过 "." 和 ".."，否则会产生无限递归或重复遍历。
+  difficulty: MEDIUM
+  sortOrder: 1
+- sourceKey: quiz:linux-io:04:01
+  chapterSourceKey: linux-io:chapter:04
+  type: SINGLE
+  stem: 标准 I/O 相比系统 I/O，最重要的额外机制之一是什么？
+  options:
+  - label: A
+    content: 用户态缓冲区
+    isCorrect: true
+  - label: B
+    content: 自动创建进程
+  - label: C
+    content: 绕过内核
+  - label: D
+    content: 自动压缩文件
+  analysis: 标准 I/O 在用户态维护缓冲区，减少系统调用次数，但也会带来刷新时机和缓冲可见性问题。
+  difficulty: EASY
+  sortOrder: 1
+- sourceKey: quiz:linux-io:05:01
+  chapterSourceKey: linux-io:chapter:05
+  type: SINGLE
+  stem: setvbuf 的作用是什么？
+  options:
+  - label: A
+    content: 设置标准 I/O 流的缓冲方式和缓冲区
+    isCorrect: true
+  - label: B
+    content: 修改文件权限
+  - label: C
+    content: 创建目录
+  - label: D
+    content: 发送网络数据
+  analysis: setvbuf 可以设置全缓冲、行缓冲或无缓冲，并指定缓冲区。
+  difficulty: MEDIUM
+  sortOrder: 1
+- sourceKey: quiz:linux-io:06:01
+  chapterSourceKey: linux-io:chapter:06
+  type: SINGLE
+  stem: 帧缓冲设备通常通过哪个设备文件访问？
+  options:
+  - label: A
+    content: /dev/fb0
+    isCorrect: true
+  - label: B
+    content: /dev/null
+  - label: C
+    content: /tmp/fifo
+  - label: D
+    content: /proc/cpuinfo
+  analysis: Linux 帧缓冲常通过 /dev/fb0 暴露，应用可以 open/mmap 该设备并写入像素数据。
+  difficulty: MEDIUM
+  sortOrder: 1

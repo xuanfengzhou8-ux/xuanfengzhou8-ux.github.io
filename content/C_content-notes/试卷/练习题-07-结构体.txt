@@ -1,0 +1,240 @@
+脱敏文本版：练习题-07-结构体.doc
+原始 Word/PDF 附件已移除，避免公开仓库保留学校、公司、个人或文档作者元数据。
+
+C语言结构体练习题
+姓名:__________	                  分数（总分100）:__________
+选择题答题处(请答完题后把答案写到答题卡)(18*5=90)：
+1~1011~18
+
+一、单项选择题（18*5=90）
+1.有以下定义和语句：
+struct student
+{ int age;
+int num; };
+struct	student stu[3]={{1001,20},{1002,19},{1003,21}};
+main()
+{ struct student *p;
+p=stu;
+…… }
+则以下不正确的引用是         。
+A)(p++)->nu      B) p++
+C) (*p).num      D) p=&stu.age
+
+2.有以下结构体定义：
+struct example
+{ int x;
+int y; }v1;
+则正确的引用或定义是         。
+example.x=10
+ example v2; v2.x=10;
+struct v2; v2.x=10;
+D) struct example v2={10};
+
+3.对于如下结构体定义，若对变量person的出生年份进行赋值，正确的赋值是         。
+struct date
+{ int year,month,day;
+};
+struct worklist
+
+{ char name[20];
+  char sex;
+  struct date birth;
+}person;
+A) year=1976
+B) birth.year=1976
+C) person.birth.year=1976
+D) person.year=1976
+
+4.根据下述定义，可以输出字符'A'的语句是         。
+struct person
+{ char name[11];
+struct
+{ char name[11];
+    int age;
+}other[10];
+};
+struct person man[10]={
+  {"Jone",{"Paul",20}},
+{"Paul",{"Mary",18}},
+{"Mary",{"Adam",23}},
+{"Adam",{"Jone",22}}
+};
+printf("%c",man[2].other[0].name[0]);
+printf("%c",other[0].name[0]);
+printf("%c",man[2].(*other[0]));
+printf("%c",man[3].name);
+
+
+
+5.若有以下程序段：
+struct st
+{ int n;
+struct st *next;
+ };
+struct st a[3]=
+{5,&a[1],7,&a[2],9, '\0'} ,*p=a;
+则值为6的表达式为         。
+A)  p++->n          B) p->n++
+C) (*p).n++         D) ++p->n
+
+6.对于以下定义，不正确的叙述是         。
+union data
+{ int i;
+char c;
+float f;}a,b;
+A) 变量a所占的内存长度等于成员f的长度
+B) 变量a的地址和它的各成员地址都是相同的
+C) 不能对变量a赋初值
+D) 可以在定义的时候对a初始化
+
+7.下述程序运行结果为         。
+#include <stdio.h>
+struct st
+{ int n;
+  int *m;
+}*p;
+void main()
+{ int d[5]={10,20,30,40,50};
+struct st arr[5]=
+{100,d,200,d+1,300,d+2,400,d+3,500,d+4};
+p=arr;
+printf("%d\t",++p->n);
+printf("%d\t",(++p)->n);
+printf("%d\n",++(*p->m));
+}
+101    200    21
+101    20    30
+200    101    21
+101    101    10
+
+8、以下程序的运行结构是         。
+#include <stdio.h>
+main( )
+{ union
+{ long a;
+int b;
+char c;}m;
+printf("%d\n",sizeof(m));}
+2    B) 4      C) 6      D) 7
+
+9.若要利用下面的程序段使指针变量p指向一个存储整型变量的存储单元，则在空格中应填入的内容是         。
+int *p;
+p=        malloc(sizeof(int));
+A) int        		 B) int *
+C) (* int)           D) (int *)
+
+10、执行下述语句后的结果是         。
+enum weekday {sun,mon=3,tue,wed, thu};
+enum weekday day;
+day=wed;
+printf("%d\n",day);
+5        B) 3
+4        D) 编译时出错
+
+11、以下对枚举类型名的定义中正确的是         。
+A) enum a={one,two,three};
+B) enum a {one=9,two=-1,three};
+C) enum a={"one","two","three"};
+D) enum a {"one","two","three"};
+
+12、下面程序的输出是         。
+main()
+{enum team{ my,your=4,his,her=his+10};
+printf("%d%d%d%d\n",my,your,his,her); }
+0 1 2 3     B) 0 4 0 10
+C) 0 4 5 15    D) 1 4 5 15
+
+13、下述程序的执行结果是         。
+#include <stdio.h>
+union un
+{ int i;
+char c[2];
+};
+void main( )
+{ union un x;
+x.c[0]=10;
+x.c[1]=1;
+printf("\n%d",x.i);
+}
+266        B) 11
+265        D) 138
+注：小端模式下运行
+
+14、有以下程序
+#include <stdlib.h>
+struct node
+{ int num;
+struct node *next;};
+main()
+{ struct node *p,*q,*r;
+p=(struct node *)malloc(sizeof(struct node));
+q=(struct node *)malloc(sizeof(struct node));
+r=(struct node *)malloc(sizeof(struct node));
+p->num=10; q->num=20; r->num=30;
+p->next=q;
+q->next=r;
+printf("%d\n",p->num+p->next->num);
+}
+程序运行后的输出结果是         。
+10        B) 20
+30        D) 40
+
+15、设有以下说明语句：
+typedef struct
+{ int n;
+char ch[8];
+}per;
+则下面叙述正确的是         。
+per是结构体变量名
+per是结构体类型名
+typedef是结构体类型
+struct是结构体类型名
+
+16.32位机上，一个结构体有三个成员，分别是char、int、short类型，三个成员位于结构体中不同位置时整个结构体的大小可能是下面哪些值？
+A.12				B.7
+C.8					D.16
+
+17.定义一个结构体
+struct T{
+long long a;
+double b;
+};
+在32位机下，该类型T占多少个字节_
+A.16			B.20
+C.12			D.160
+
+
+18.C代码中可能会出现如下类型的结构体定义：
+  typedef struct holder {
+  struct holder *next;
+  struct holder *prev;
+  char data[ 0 ];
+  }holder;
+最后一行 char data[ 0 ] 作用是？(多选)__________
+
+A.方便管理内存缓冲区
+B.减少内存碎片化
+C.使结构体数据对齐
+D.没有作用
+
+二．填空题（2*3=6）
+1、下面程序的输出结果是      。
+main()
+{ enum abc{ green=3,red };
+char *clr[ ]={"red","blue","yellow","black","white","green"};
+printf("%s and ",clr[green]);
+printf("%s",clr[red]);
+}
+2、下面程序的运行结果为      。
+typedef union student
+{ char name[10];
+long sno;
+char sex;
+float score[4];
+}stu;
+main( )
+{ stu a[5];
+printf("%d\n",sizeof(a));
+}
+三．简答题（4）：
+typedef void (*func_t) (int, float);表示什么含义？

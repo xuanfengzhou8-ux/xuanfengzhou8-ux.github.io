@@ -1,0 +1,64 @@
+脱敏文本版：2020-05-22复习题--答案.doc
+原始 Word/PDF 附件已移除，避免公开仓库保留学校、公司、个人或文档作者元数据。
+
+2020-05-22复习题--答案
+1、main()
+{
+    int i = 3;
+ int j ;
+ j = sizeof(++i + ++i);
+ Printf(“i=%d  j=%d”,i,j);
+}
+这段程序的输出是:
+
+A.i=4 j=2	B.i=3 j=2	C.i=3 j=4	D.i=3j=6
+// sizeof是一个编译时刻就起效果的运算符，在其内的任何运算都没有意义，j = sizeof(++i+++i); 在编译的时候被翻译成 ,j=sizeof((++i+++i的数据类型)) 也就是 j = sizeof(int); 也就是 j= 4; (32bit系统，如果是16位系统，则j=2) 然后才会继续编译成最终的程序，当然在最终程序执行的时候，自然不会执行任何++i了。 所以选C。
+2、下面判断正确的是
+A. char *a=“china"”;等价于char *a;*a=“china”;
+B. char str[10]={“china”};等价于 char str[10]; str[ ]="china"};
+C.char *s="china"	等价于char *s; s=“china”;
+D. char c[4]=“abc”,d[4]=“abc”;等价于 char c[4]=d[4]=“abc”;
+
+答案：C
+3、连续的正整数之和。一个正整数有可能可以被表示为n(n>=2)
+        个连续正整数之和：如
+            15=1+2+3+4+5
+            15=4+5+6
+            15=7+8
+        请编写程序，根据输入的任何一个整数，找出所有可能的
+        连续正整数序列(也有可能没有)
+参考代码：
+#include <stdio.h>
+
+void main()
+{
+    int n;
+    int i,j,k,m,flag=0;
+    scanf("%d",&n);
+    //从1 开始依次增加
+    for(i=1;i<(n+1)/2;i++)
+    {
+        k=0;
+        //以上一个值为起点依次加1 并求和，
+        //当和大于等于n 时跳出循环
+        for(j=i;j<n;j++)
+        {
+            k+=j;
+            if(k>=n)
+            break;
+        }
+        //如果和(k)等于n 时就输出
+        if(k==n)
+        {
+            printf("%d=%d",n,i);
+            for(m=i+1;m<=j;m++)
+                printf("+%d",m);
+            printf("\n");
+            flag=1;
+        }
+    }
+    if(flag==0)
+    printf("NONE");
+}
+
+题目不在多，而在于你需要有计划的复习

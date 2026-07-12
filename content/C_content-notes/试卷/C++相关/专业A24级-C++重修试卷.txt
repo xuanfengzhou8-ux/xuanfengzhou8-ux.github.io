@@ -1,0 +1,195 @@
+脱敏文本版：专业A24级-C++重修试卷.doc
+原始 Word/PDF 附件已移除，避免公开仓库保留学校、公司、个人或文档作者元数据。
+
+《C/C++程序设计》课程  重修 考试试卷
+考试班级 专业A24201班-专业A24203班  考试形式  闭卷   考试时间  120  分钟
+考试学期  2025-2026学年第1学期    考试类型  考试     命题教师   虚拟教师甲
+
+题 号一二三四五六总分分 值2010103030100
+一、单项选择题 (每小题1分，共20分)
+1、以下关于 C++ 变量声明的语句中，合法的是（）
+A. int 123abc;	B. double _price = 3.14e-2;	C. float f= 5.6;	D. char &c = 'a';
+2、执行unsigned char a = 0xFF; a += 2;后，a的值是（）
+A. 0x01			B. 0x101		C. -1		D. 编译错误
+3、关于 C++11 中的auto关键字，错误的描述是（）
+A. auto可推导变量类型
+B. auto a = 10;中a为int类型
+C. auto可用于函数参数类型
+D. auto b = {1,2};中b为std::initializer_list<int>
+4、已知int a=3, b=4;，执行a^=b; b^=a; a^=b;后，a和b的值分别是（）
+A. 3,4		B. 4,3		C. 0,7		D. 7,0
+5、表达式sizeof("abc") + strlen("abc")的结果是（）
+A. 6			B. 7			C. 8			D. 不确定
+6、已知int a[5] = {1,2,3}; int *p = a + 1;则*(p+2)的值是（）
+A. 3			B. 0			C. 随机值	D. 编译错误
+7、以下关于指针的操作中，未定义行为的是（）
+A. int a=5; int *p=&a; *p++;		B. int *p=nullptr; *p=0;
+C. int a[3]={1,2,3}; int *p=a+3;	D. int a=10; int *p=&a; int &r=*p;
+8、C++ 中，int (*func)[4]表示（）
+A. 指向函数的指针，函数返回值为int[4]	B. 函数指针数组，包含 4 个元素
+C. 指向包含 4 个int元素的数组的指针		D. 返回值为int*的函数
+9、关于 C++ 函数重载，错误的是（）
+A. 参数个数不同可重载		B. 参数类型不同可重载
+C. 返回值类型不同可重载	D. 参数顺序不同不可重载
+10、预处理指令#pragma once的作用是（）
+A. 定义宏		B. 防止头文件重复包含 	C. 条件编译 	D. 链接库
+11、下列关于 C++ 基本数据类型的说法，正确的是（ ）
+A. short 类型的取值范围一定是 -32768 ~ 32767
+B. unsigned int 可以存储负数，只是符号位被用作数值位
+C. long 类型的长度一定大于等于 int 类型
+D. bool 类型的大小在所有编译器中都是 1 字节
+12、以下 C++ 表达式的结果为 true 的是（ ）
+A. 0 && 3 || 1    						B. (5 > 3) ? 0 : 1
+C. sizeof(char) == sizeof(unsigned char)   	D. 'a' + 1 == 'B'
+13、下列关于 C 语言基本数据类型的说法，正确的是（ ）
+A. short 类型的长度一定是 2 字节
+B. unsigned int 的取值范围是 0 ~ 2^32-1
+C. long 类型的长度大于等于 int 类型
+D. float 和 double 的精度完全相同
+14、关于 C 语言 const 修饰符，下列说法错误的是（ ）
+A. const int x = 5; x = 10; 编译报错
+B. const int* p 表示指针指向的内容不可修改
+C. int* const p 表示指针本身不可修改
+D. const int x; x = 5; 编译通过
+15、下列关于 C 语言变量存储类型的说法，正确的是（ ）
+A. auto 变量存储在静态存储区		B. static 变量默认初始化为 0
+C. register 变量可以取地址（&）		D.全局变量存储在栈区
+16、以下代码编译时会报错的是（ ）
+A. int* p = NULL;						B. int a[5] = {1,2,3};
+C. int a = 5; int* p = &a; int** pp = &p;	D. int a[3]; a = {1,2,3};
+17、关于 C 语言字符串，下列说法错误的是（ ）
+A. 字符串以 '\0' 作为结束标志
+B. char str[] = "abc"; 与 char str[] = {'a','b','c','\0'}; 等价
+C. char* str = "abc"; 中 str 指向的字符串是只读的
+D. strlen("abc\0def") 的返回值是 6
+18、关于 C 语言指针运算，下列说法正确的是（ ）
+A. int* p; p++; 等价于 p = p + sizeof(int)
+B. 两个指针可以直接相加（如 p1 + p2）
+C. 指针减去一个整数，结果仍是指针（指向前面的元素）
+D. void* p; p++ 编译通过
+19、以下关于 C 语言函数的说法，错误的是（ ）
+A. 函数声明可以省略参数名（如 int fun(int);）
+B. 函数定义时，参数列表必须指定参数名
+C. 函数可以返回数组类型
+D. 函数不能嵌套定义（函数内不能定义另一个函数）
+20、关于 C 语言递归函数，下列说法正确的是（ ）
+A. 递归函数必须有返回值
+B. 递归函数的执行效率比迭代高
+C. 递归函数必须有终止条件（避免无限递归）
+D. 递归函数不能调用自身多次
+二、判断题（每小题1分，共10分）
+1、若有定义 int a[5] = {1,2,3}; 和 int *p = a + 3;，则执行 *--p = 4; 后，数组 a 的元素变为 {1,2,4,0,0}。 （   ）
+2、用 malloc(10) 分配的内存若未手动释放，程序正常退出后，操作系统会自动回收该内存，因此无需担心内存泄漏问题。（   ）
+3、若函数声明为 int fun(int x, int y);，则定义时写成 int fun(int y, int x) { return x+y; } 是合法的，且调用 fun(3,5) 会返回 8。（   ）
+4、设有 typedef int ARR[5];，则 ARR a, b; 等价于 int a[5], b[5];，且 sizeof(ARR) 的值等于 sizeof(int) * 5。（   ）
+5、执行 char *str = "hello"; str[0] = 'H'; 会导致程序运行时错误，因为字符串常量存储在只读数据区（.rodata），不允许修改。（   ）
+6、若有 int x = 10; int *p = &x;，则表达式 (void *)p == (void *)&x 和 p == &x 的结果均为真，但 (char *)p + 1 == (char *)&x + 1 的结果不一定为真。（   ）
+7、宏定义 #define MAX(a,b) (a)>(b)?(a):(b) 用于计算 MAX(3+2, 4) 时结果为 5，计算 MAX(3, 2+4) 时结果为 6，因此该宏定义是可靠的。（   ）
+8、C 语言中，static 修饰的局部变量和全局变量均存储在静态数据区，且其生命周期与程序一致，但局部静态变量的作用域仅限于所在函数，全局静态变量的作用域仅限于所在文件。（   ）
+9、设有 union Data { int i; char c; float f; } d;，则 d.i = 0x12345678; 后，若系统为小端字节序，d.c 的值为 0x78；若为大端字节序，d.c 的值为 0x12，因此 d.c 的值由字节序决定。（   ）
+10、执行 int a[2][3] = {{1},{2,3}}; 后，a[1][2] 的值为 0，a[0][1] 的值为 0，a[0][2] 的值为 0，该初始化方式是完全合法的。（   ）
+
+三、填空题（每空1分，共10分）
+1、若有定义 int a[4] = {10,20,30,40}; int *p = a + 1;，则表达式 *(p + 1) - *(p - 1) + *(a + 3) 的值为__________。
+2、设有宏定义 #define SWAP(x,y) do{ typeof(x) t = (x); (x) = (y); (y) = t; }while(0)，执行 int a=5,b=8; SWAP(a,b); 后，变量 a 的值为__________，b 的值为__________。
+3、若系统为 32 位小端字节序，设有共用体 union U { int i; char c[4]; } u; u.i = 0x12345678; 则 u.c[0] 的值为__________（十六进制表示），u.c[3] 的值为__________（十六进制表示）。
+4、函数 int fun(int n) { static int sum = 0; sum += n; return sum; }，连续调用 fun(2)、fun(3)、fun(5) 后，三次调用的返回值依次为__________、__________、__________。
+5、若有定义 char *str[] = {"apple", "banana", "cherry"};，则 sizeof(str) 的值为__________（32 位系统），strlen(str[1]) 的值为__________。
+四、程序阅读题（每题5分，共30分）
+1．程序输出结果是什么？
+#include <stdio.h>
+int main() {
+    char str[] = "C11";
+    char *p = str + 1;
+    printf("%s", p);
+    return 0;
+}答：
+2．程序输出结果是什么？
+#include <stdio.h>
+int main() {
+    int a[3][2] = {{1,2}, {3,4}, {5,6}};
+    printf("%d", *(*(a+1)+1));
+    return 0;
+}答：
+3．程序输出结果是什么？
+#include <stdio.h>
+int main() {
+    int x = 5;
+    int *p = &x;
+    *p += 3;
+    printf("%d", x);
+    return 0;
+}答：
+4．程序输出结果是什么？
+#include <stdio.h>
+#define N 3
+#define M N+2
+#define MAX(a,b) ((a)>(b)?(a):(b))
+int main() {
+    int arr[M] = {1,4,2,5,3};
+    int max_val = arr[0];
+    for (int i = 1; i < M; i++) {
+        max_val = MAX(max_val, arr[i]);
+    }
+    printf("%d\n", max_val);
+}
+答：
+5．程序输出结果是什么？
+#include <stdio.h>
+struct Person {
+    char name[10];
+    int age;
+    float score;
+};
+void printInfo(struct Person* p) {
+    printf("%s %d %.1f\n", p->name, p->age, p->score);
+}
+int main() {
+    struct Person p = {"Zhang", 20, 92.5};
+    printInfo(&p);
+    return 0;
+}答：
+6．程序输出结果是什么？
+#include <stdio.h>
+typedef struct {
+    int x;
+    int y;
+} Point;
+void setPoint(Point p) {
+    p.x = 10;
+    p.y = 20;
+}
+int main() {
+    Point p = {1,2};
+    setPoint(p);
+    printf("%d %d", p.x, p.y);
+    return 0;
+}答：
+
+五、编程题（每题15分，共30分）
+1.题目：动态数组实现斐波那契数列
+要求：用malloc动态分配数组，存储前 n 项斐波那契数列（n 由用户输入）。
+
+2、题目：文件读写 —— 统计文本文件单词数
+要求：读取test.txt，统计单词数量（单词以空格分隔）。
+
+
+
+
+
+ SHAPE \* MERGEFORMAT
+
+ SHAPE \* MERGEFORMAT
+
+
+
+
+
+
+封
+
+第  PAGE  \* MERGEFORMAT 2 页     共  NUMPAGES  \* MERGEFORMAT 3 页
+
+线
+
+第  PAGE  \* MERGEFORMAT 3 页    共  NUMPAGES  \* MERGEFORMAT 3 页

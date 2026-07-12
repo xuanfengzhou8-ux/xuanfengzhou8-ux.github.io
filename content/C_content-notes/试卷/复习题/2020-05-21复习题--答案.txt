@@ -1,0 +1,95 @@
+脱敏文本版：2020-05-21复习题--答案.doc
+原始 Word/PDF 附件已移除，避免公开仓库保留学校、公司、个人或文档作者元数据。
+
+2020-05-21复习题--答案
+1、下面程序的功能是把316表示为两个加数的和,使两个加数分别能被13和ll整除,请选择填空________
+#include <stdio.h>
+main()
+{
+    int i=0,j,k;
+    do{i++,k=316-13*i;}while(______);
+    j=k/11;
+    printf("316=13*%d+11*%d",i,j);
+}
+A､k%11==0		B､k/11
+C､k%11			D､k/11==0
+
+答案:C
+
+2、以下程序段执行时，如果从键盘输入china#后回车，则输出结果为
+int v1=0, v2=0;
+char ch;
+while((ch=getchar()) != '#')
+{
+    switch (ch)
+    {
+          case 'a':
+          case 'h':
+          default:
+               v1++;
+          case '0':
+               v2++;
+    }
+}
+printf("%d,%d\n", v1, v2);
+(A)	2,0	(B)	5,0
+(C)	5,5	(D)	2,5
+
+答案：C
+
+3、求二维数组中的“鞍点”元素
+“鞍点”：是指该元素是所在行的最大值，是所在列的最小值.
+参考代码：
+#include<stdio.h>
+#define N 4
+#define M 3
+int main()
+{
+    int a[N][M]={0};
+    int i,j,max,t,k,c;
+    int flag=0;
+
+    //初始化矩阵
+    for(i = 0; i < N; i++)
+    {
+        for(j = 0; j < M; j++)
+            scanf("%d",&a[i][j]);
+    }
+
+    for(i = 0;i < N; i++)   //按行查找
+    {
+        max = a[i][0];    //用来保存最大值
+        t = 0;			  //保存最大值的下标
+        for(j = 0;j < M;j++)    //找出行的最大值
+        {
+            if(a[i][j] > max)
+            {
+                max = a[i][j];
+                t = j;
+            }
+        }
+
+        c = 1;
+        for(k = 0;k < N;k++)	//判断此行的最大值是否是此列的最小值
+        {
+            if(max > a[k][t])
+            {
+                c = 0;break;	//列中还有比它更小的，所以不是鞍点
+            }
+        }
+
+        if(c == 1)
+        {
+            printf("%d\n", max);
+            flag++;				//至少有一个鞍点
+        }
+    }
+
+    if(flag == 0)
+        printf("NO");
+    printf("\n");
+
+    return 0;
+}
+
+题目不在多，而在于你需要有计划的复习

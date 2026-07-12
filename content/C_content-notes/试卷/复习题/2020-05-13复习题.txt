@@ -1,0 +1,48 @@
+脱敏文本版：2020-05-13复习题.doc
+原始 Word/PDF 附件已移除，避免公开仓库保留学校、公司、个人或文档作者元数据。
+
+2020-05-13复习题
+1、有以下程序
+#include<stdio.h>
+Voidf(int*p,int*q);
+int Main()
+{
+intm=1,n=2,*r=&m;
+f(r,&n);
+printf(“%d,%d,m,n);
+}
+Voidf(int*p,int*q)
+{p=p+1;*q=*q+1;}
+程序运行后的输出结果是（）
+A 1,3
+B 2,3
+C 1,4
+D 1,2
+
+2、有以下程序
+#include<stdio.h>
+int b=2;
+int fun(int*k)
+{
+b=*k+b;
+return(b);
+}
+main
+{
+int a[10]={1,2,3,4,5,6,7,8},i;
+for(i=2;i<4;i++) {
+b=fun(&a[i])+b;
+printf(“%d”,b);
+}
+printf(“\n”);
+}
+程序运行后的输出结果是（）
+A 10 12
+B 8 10
+C 10 28
+D 10 16
+
+3、输入一个整数将其倒着输出，如54321——12345
+
+
+题目不在多，而在于你需要有计划的复习

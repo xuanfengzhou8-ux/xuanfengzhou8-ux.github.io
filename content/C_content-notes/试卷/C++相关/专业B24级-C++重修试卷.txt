@@ -1,0 +1,180 @@
+脱敏文本版：专业B24级-C++重修试卷.doc
+原始 Word/PDF 附件已移除，避免公开仓库保留学校、公司、个人或文档作者元数据。
+
+《C/C++程序设计》课程  重修 考试试卷
+考试班级 专业B24201班、专业B24202班 考试形式  闭卷   考试时间  120  分钟
+考试学期  2025-2026学年第1学期    考试类型  考试     命题教师   虚拟教师甲
+
+题 号一二三四五六总分分 值2010103030100
+一、单项选择题 (每小题1分，共20分)
+1、以下关于 C++ 变量声明的语句中，合法的是（）
+A. int 123abc;	B. double _price = 3.14e-2;	C. float f= 5.6;	D. char &c = 'a';
+2、执行unsigned char a = 0xFF; a += 2;后，a的值是（）
+A. 0x01			B. 0x101		C. -1		D. 编译错误
+3、关于 C++11 中的auto关键字，错误的描述是（）
+A. auto可推导变量类型			B. auto a = 10;中a为int类型
+C. auto可用于函数参数类型		D. auto b = {1,2};中b为std::initializer_list<int>
+4、已知int a=3, b=4;，执行a^=b; b^=a; a^=b;后，a和b的值分别是（）
+A. 3,4		B. 4,3		C. 0,7		D. 7,0
+5、表达式sizeof("abc") + strlen("abc")的结果是（）
+A. 6			B. 7			C. 8			D. 不确定
+6、已知int a[5] = {1,2,3}; int *p = a + 1;则*(p+2)的值是（）
+A. 3			B. 0			C. 随机值	D. 编译错误
+7、以下关于指针的操作中，未定义行为的是（）
+A. int a=5; int *p=&a; *p++;		B. int *p=nullptr; *p=0;
+C. int a[3]={1,2,3}; int *p=a+3;	D. int a=10; int *p=&a; int &r=*p;
+8、C++ 中，int (*func)[4]表示（）
+A. 指向函数的指针，函数返回值为int[4]	B. 函数指针数组，包含 4 个元素
+C. 指向包含 4 个int元素的数组的指针		D. 返回值为int*的函数
+9、关于 C++ 函数重载，错误的是（）
+A. 参数个数不同可重载		B. 参数类型不同可重载
+C. 返回值类型不同可重载	D. 参数顺序不同不可重载
+10、预处理指令#pragma once的作用是（）
+A. 定义宏		B. 防止头文件重复包含 	C. 条件编译 	D. 链接库
+11、类的构造函数特点不包括（）
+A. 与类名同名  B. 无返回值  C. 可重载  D. 可显式调用
+12、已知类A有默认构造函数和拷贝构造函数，执行A a; A b = a;时，调用的构造函数是（）
+A. 默认构造函数（a）+ 拷贝构造函数（b）
+B. 默认构造函数（a）+ 默认构造函数（b）
+C. 仅拷贝构造函数					D. 编译错误
+13、类的析构函数调用时机是（）
+A. 对象创建时  B. 对象作用域结束时  C.显式调用时  D. 程序结束时
+14、执行char c = 'A' + 32;后，c的值是（）
+A. 'a'    B. 'A32'   C. 编译错误    D. 不确定
+15、实现多态的关键是（）
+A. 函数重载	B. 虚函数		C. 运算符重载		D. 友元函数
+16、已知int a[4] = {1,2};，则a[2]的值是（）
+A. 0		B. 2		C. 随机值		D. 编译错误
+17、以下关于指针的操作中，合法的是（）
+A. int a = 5; int *p = &a; *p = 10;		B. int *p = NULL; *p = 0;
+C. int a[3] = {1,2,3}; int *p = a++;		D. int *p = 100;
+18、关于 C 语言函数，错误的描述是（）
+A. 函数定义不能嵌套	B. 函数声明必须包含返回值类型
+C. 没有返回值的函数必须声明为void
+D. 函数参数的默认值可在声明中指定
+19、关于typedef的用法，正确的是（）
+A. typedef int INT; INT a = 5;
+B. typedef struct { int x; } Point; Point p = {10};
+C. typedef int* Ptr; Ptr p = NULL;
+D. 以上都正确
+20、C++ 异常处理中，catch(...)的作用是（）
+A. 捕获所有类型异常		B. 捕获特定类型异常
+C. 抛出异常				D. 忽略异常
+二、判断题（每小题1分，共10分）
+1、C++11 中nullptr是关键字，可完全替代NULL避免指针与整数的歧义。（）
+2、类的私有成员函数不能被声明为虚函数。（）
+3、constexpr函数在 C++14 中允许包含局部变量和循环语句。（）
+4、std::unordered_map底层基于红黑树实现，查找时间复杂度为 O (logn)。（）
+5、C 语言中static修饰的全局变量作用域仅限于当前源文件。（）
+6、Lambda 表达式中[&]表示按值捕获所有外部变量。（）
+7、纯虚函数必须在派生类中实现，否则派生类仍为抽象类。（）
+8、C++ 中的inline函数一定会被编译器内联展开。（）
+9、std::shared_ptr通过引用计数实现，可解决循环引用问题。（）
+10、C++20 的concepts特性可用于限制模板参数的类型约束。（）
+
+三、填空题（每空1分，共10分）
+1、在 C11 标准中，用于判断指针是否为空的关键字是______。
+2、定义一个名为arr的整型数组，包含 5 个元素并全部初始化为 0，语句为______。
+3、函数void swap(int *a, int *b)实现两数交换，函数内交换操作的核心语句是_。
+4、C 语言中，typedef int (*FuncPtr)(int);定义的FuncPtr是指向______的指针类型。
+5、预处理指令中，用于防止头文件重复包含的#pragma指令是______。
+6、若要让结构体struct Node支持递归定义，其内部指向自身的成员应声明为______。
+7、C11 中_Generic关键字用于实现______，类似 C++ 的函数重载功能。
+8、定义const char *str = "hello";后，*(str+1)的值是______。
+9、静态局部变量的初始化发生在______阶段，而非函数每次调用时。
+10、使用fopen函数以只读方式打开二进制文件，模式参数应填写______。
+四、程序阅读题（每题5分，共30分）
+1．程序输出结果是什么？
+#include <stdio.h>
+int main() {
+    int a = 1, b = 2;
+    a ^= b; b ^= a; a ^= b;
+    printf("%d %d", a, b);
+    return 0;
+}答：
+2．程序输出结果是什么？
+#include <stdio.h>
+void func(int arr[]) {
+    arr[0] = 10;
+    printf("%zu ", sizeof(arr));
+}
+int main() {
+    int arr[5] = {1,2,3,4,5};
+    func(arr);
+    printf("%d", arr[0]);
+    return 0;
+}答：
+3．程序输出结果是什么？
+#include <stdio.h>
+#define ADD(x,y) x+y
+int main() {
+    int a = 3;
+    printf("%d", ADD(a,2)*ADD(a,2));
+    return 0;
+}答：
+4．程序输出结果是什么？
+#include <stdio.h>
+int f(int x) {
+    static int y = 0;
+    y += x;
+    return y;
+}
+int main() {
+    printf("%d %d", f(2), f(3));
+    return 0;
+}
+答：
+5．程序输出结果是什么？
+#include <stdio.h>
+int main() {
+    int i = 0;
+    while(i++ < 4) {
+        if(i % 2 == 0) continue;
+        printf("%d ", i);
+    }
+    return 0;
+}答：
+6．程序输出结果是什么？
+#include <stdio.h>
+typedef struct {
+    int x;
+    int y;
+} Point;
+void setPoint(Point p) {
+    p.x = 10;
+    p.y = 20;
+}
+int main() {
+    Point p = {1,2};
+    setPoint(p);
+    printf("%d %d", p.x, p.y);
+    return 0;
+}答：
+
+五、编程题（每题15分，共30分）
+1.题目：使用指针实现一维数组逆序
+要求：编写函数void reverseArray(int *arr, int n)，将长度为n的数组逆序，主函数输入输出验证。
+
+2、题目：计算结构体数组中学生平均分
+要求：定义struct Student（含学号、姓名、成绩），输入 3 名学生数据，计算平均分并输出。
+
+
+
+
+
+ SHAPE \* MERGEFORMAT
+
+ SHAPE \* MERGEFORMAT
+
+
+
+
+
+
+封
+
+第  PAGE  \* MERGEFORMAT 2 页     共  NUMPAGES  \* MERGEFORMAT 3 页
+
+线
+
+第  PAGE  \* MERGEFORMAT 3 页    共  NUMPAGES  \* MERGEFORMAT 3 页

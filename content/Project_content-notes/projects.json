@@ -1,0 +1,31 @@
+{
+  "projects": [
+    {
+      "title": "智慧汽车展厅公告屏",
+      "summary": "基于 LVGL 的展厅信息终端。",
+      "file": "笔记/01-智慧汽车展厅公告屏.md",
+      "difficulty": "INTERMEDIATE",
+      "knowledgePoints": "LVGL,嵌入式C,GUI布局,HTTP,资源管理",
+      "sortOrder": 1,
+      "status": 1
+    },
+    {
+      "title": "电梯多媒体呼叫系统",
+      "summary": "Linux 多进程与网络通信综合项目。",
+      "file": "笔记/02-电梯多媒体呼叫系统.md",
+      "difficulty": "ADVANCED",
+      "knowledgePoints": "Linux网络编程,进程线程,设备通信,状态机",
+      "sortOrder": 2,
+      "status": 1
+    },
+    {
+      "title": "餐厅点餐系统",
+      "summary": "Qt 与数据库综合应用。",
+      "file": "笔记/03-餐厅点餐系统.md",
+      "difficulty": "INTERMEDIATE",
+      "knowledgePoints": "Qt,SQLite,GUI,业务建模",
+      "sortOrder": 3,
+      "status": 1
+    }
+  ]
+}
